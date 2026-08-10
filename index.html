@@ -232,6 +232,28 @@ section > .wrap{position:relative;z-index:1}
 .sis:hover .fale{gap:12px}
 
 
+
+/* ---------- rotas de entrada (funil) ---------- */
+.rotas{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;margin-top:44px}
+.rota{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 26px 28px;
+  display:flex;flex-direction:column;position:relative;overflow:hidden;
+  transition:border-color .22s,transform .22s,background .22s}
+.rota::after{content:"";position:absolute;right:-70px;top:-70px;width:190px;height:190px;border-radius:50%;
+  background:var(--c);filter:blur(66px);opacity:.13;transition:opacity .3s}
+.rota:hover{border-color:var(--c);transform:translateY(-4px);background:var(--card2)}
+.rota:hover::after{opacity:.28}
+.rota .num{font-size:.72rem;font-weight:800;letter-spacing:.18em;color:var(--c);margin-bottom:16px;
+  position:relative}
+.rota b{font-size:1.24rem;font-weight:800;letter-spacing:-.02em;line-height:1.24;margin-bottom:14px;
+  position:relative;color:var(--tx)}
+.rota p{font-size:.92rem;color:var(--tx2);margin-bottom:20px;position:relative;line-height:1.55}
+.rota .link{margin-top:auto;font-size:.88rem;font-weight:700;color:var(--c);position:relative;
+  transition:letter-spacing .2s}
+.rota:hover .link{letter-spacing:.01em}
+.rota-alt{margin-top:28px;font-size:.95rem;color:var(--tx2)}
+.rota-alt a{color:var(--agua);font-weight:700;border-bottom:1px solid rgba(34,230,255,.35)}
+.rota-alt a:hover{border-bottom-color:var(--agua)}
+
 /* ---------- casos ---------- */
 .caso{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
   padding:28px 26px 26px;display:flex;flex-direction:column;min-height:430px;
@@ -406,6 +428,7 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
     </a>
     <nav class="menu">
       <a href="#reforma">Reforma</a>
+      <a href="#comecar">Começar</a>
       <a href="#sistemas">Sistemas</a>
       <a href="#entrega">Entrega</a>
       <a href="#casos">Casos</a>
@@ -560,6 +583,45 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
     <p class="ressalva">As regras da reforma continuam em regulamentação. O simulador e as análises são
       atualizados conforme cada definição se confirma, e a decisão formal é sempre tomada junto com o seu
       contador.</p>
+  </div>
+</section>
+
+<!-- ================= POR ONDE COMEÇAR ================= -->
+<section id="comecar">
+  <span class="pat pat-pontos" aria-hidden="true"></span>
+  <div class="wrap rv">
+    <span class="eyebrow">Por onde começar</span>
+    <h2>Três formas de entrar.<br>Escolha a que <span class="n-agua glow">parece com você</span>.</h2>
+    <p class="lead" style="margin-top:16px">Não precisa ler a página inteira. Diga em que ponto a sua
+      empresa está e eu te levo direto ao que interessa.</p>
+
+    <div class="rotas">
+      <a class="rota" href="#consultoria" style="--c:var(--verde)">
+        <span class="num">01</span>
+        <b>“Sei que algo está errado,<br>mas não sei o quê.”</b>
+        <p>O dinheiro não sobra, o mês fecha apertado e você não consegue apontar onde o resultado se
+          perde. Aqui a porta é o diagnóstico: primeiro enxergar, depois agir.</p>
+        <span class="link">Começar pelo Diagnóstico 360º →</span>
+      </a>
+      <a class="rota" href="#sistemas" style="--c:var(--agua)">
+        <span class="num">02</span>
+        <b>“Já sei o problema.<br>Quero a ferramenta.”</b>
+        <p>Você sabe exatamente o que trava — o orçamento, a comissão, a OS, o caixa — e quer o sistema
+          que resolve aquilo. São 13 prontos para adaptar à sua operação.</p>
+        <span class="link">Ver os sistemas →</span>
+      </a>
+      <a class="rota" href="#consultoria" style="--c:var(--roxo)">
+        <span class="num">03</span>
+        <b>“Quero isso fora<br>das minhas costas.”</b>
+        <p>A rotina financeira, o departamento pessoal e o RH consomem o seu dia e tiram você de onde
+          deveria estar. Aqui a saída é terceirizar com quem entende de gestão.</p>
+        <span class="link">Ver BPO, DP e RH →</span>
+      </a>
+    </div>
+
+    <p class="rota-alt">Não se encaixou em nenhuma?
+      <a href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20N%C3%A3o%20sei%20bem%20por%20onde%20come%C3%A7ar%20-%20posso%20te%20contar%20a%20situa%C3%A7%C3%A3o%3F" target="_blank" rel="noopener">Me conte a situação em duas linhas</a>
+      que eu digo por onde começar.</p>
   </div>
 </section>
 
@@ -1157,10 +1219,9 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
 
     </div>
     <div class="sl-pontos" aria-hidden="true"></div>
-
-    <p class="ressalva">Sistemas desenvolvidos e mantidos por Cyr Andrade Consultoria Empresarial, com
-      autorização dos clientes para divulgação. Valores financeiros foram omitidos ou arredondados; nenhum
-      dado operacional de cliente é exibido nesta página.</p>
+    <p class="rota-alt" style="margin-top:30px">Quer ver um destes de perto?
+      <a href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20ver%20uma%20demonstra%C3%A7%C3%A3o%20de%20um%20sistema%20parecido%20com%20o%20da%20minha%20opera%C3%A7%C3%A3o." target="_blank" rel="noopener">Peça uma demonstração</a>
+      do que mais se parece com a sua operação.</p>
   </div>
 </section>
 
@@ -1447,6 +1508,55 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
   </div>
 </section>
 
+<!-- ================= FAQ ================= -->
+<section class="faixa">
+  <div class="wrap rv">
+    <span class="eyebrow" style="color:var(--roxo)">Perguntas frequentes</span>
+    <h2 style="text-align:center;max-width:20ch;margin:0 auto">O que costumam me perguntar</h2>
+    <div class="faq">
+      <details>
+        <summary>Quanto custa um sistema desses?</summary>
+        <p>Depende do tamanho do problema, não do tamanho da sua empresa. Um orçamento personalizado é bem
+          mais simples que um DRF completo com projeção de caixa. Por isso o valor só sai depois da conversa
+          inicial, que é gratuita — e vem por escrito, com escopo e prazo fechados.</p>
+      </details>
+      <details>
+        <summary>Quanto custa manter o sistema no ar?</summary>
+        <p>O desenvolvimento é pago uma vez. Depois existe só o custo de hospedagem, dimensionado ao seu
+          uso e informado na proposta — normalmente uma fração do que se paga por licença de sistema de
+          prateleira, e sem cobrança por usuário. Se você preferir não ter esse custo, entrego a versão
+          local, que roda na sua máquina sem hospedagem. Novas funções são combinadas à parte, quando
+          você quiser.</p>
+      </details>
+      <details>
+        <summary>Isso substitui o meu ERP?</summary>
+        <p>Na maioria das vezes não, e nem é o objetivo. O ERP cuida da nota fiscal e da obrigação. O que eu
+          construo cobre exatamente aquilo que o ERP não faz do seu jeito — e que hoje você resolve na
+          planilha, no caderno ou na base do improviso.</p>
+      </details>
+      <details>
+        <summary>Meus números ficam seguros?</summary>
+        <p>Sim. Na nuvem, o acesso é individual e registrado, com backup e histórico de alterações — mais
+          seguro do que a planilha que hoje circula por e-mail e vive numa pasta compartilhada. Se a sua
+          operação exige que o dado não saia de dentro da empresa, entrego a versão local. Em qualquer um
+          dos formatos, o projeto pode ser conduzido sob acordo de confidencialidade, e nenhum número de
+          cliente vira material de divulgação.</p>
+      </details>
+      <details>
+        <summary>Minha empresa é pequena demais para isso?</summary>
+        <p>É justamente o contrário. Empresa grande já tem controladoria, RH e TI. Quem mais sente falta de
+          informação organizada é a micro e a pequena, onde o dono acumula funções e decide no escuro. O
+          escopo é dimensionado ao tamanho do seu negócio.</p>
+      </details>
+      <details>
+        <summary>Você atende fora de Juiz de Fora?</summary>
+        <p>Sim. Presencialmente em Juiz de Fora e na Zona da Mata, e online para empresas de todo o Brasil —
+          que é como boa parte dos projetos de finanças e sistemas já é conduzida.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <!-- ================= CTA ================= -->
 <section class="faixa">
   <div class="wrap rv">
@@ -1535,55 +1645,6 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
       </button>
       <p class="aviso">Abre o WhatsApp com a mensagem já escrita. Este site não guarda nada.</p>
     </form>
-  </div>
-</section>
-
-<!-- ================= FAQ ================= -->
-<section class="faixa">
-  <div class="wrap rv">
-    <span class="eyebrow" style="color:var(--roxo)">Perguntas frequentes</span>
-    <h2 style="text-align:center;max-width:20ch;margin:0 auto">O que costumam me perguntar</h2>
-    <div class="faq">
-      <details>
-        <summary>Quanto custa um sistema desses?</summary>
-        <p>Depende do tamanho do problema, não do tamanho da sua empresa. Um orçamento personalizado é bem
-          mais simples que um DRF completo com projeção de caixa. Por isso o valor só sai depois da conversa
-          inicial, que é gratuita — e vem por escrito, com escopo e prazo fechados.</p>
-      </details>
-      <details>
-        <summary>Quanto custa manter o sistema no ar?</summary>
-        <p>O desenvolvimento é pago uma vez. Depois existe só o custo de hospedagem, dimensionado ao seu
-          uso e informado na proposta — normalmente uma fração do que se paga por licença de sistema de
-          prateleira, e sem cobrança por usuário. Se você preferir não ter esse custo, entrego a versão
-          local, que roda na sua máquina sem hospedagem. Novas funções são combinadas à parte, quando
-          você quiser.</p>
-      </details>
-      <details>
-        <summary>Isso substitui o meu ERP?</summary>
-        <p>Na maioria das vezes não, e nem é o objetivo. O ERP cuida da nota fiscal e da obrigação. O que eu
-          construo cobre exatamente aquilo que o ERP não faz do seu jeito — e que hoje você resolve na
-          planilha, no caderno ou na base do improviso.</p>
-      </details>
-      <details>
-        <summary>Meus números ficam seguros?</summary>
-        <p>Sim. Na nuvem, o acesso é individual e registrado, com backup e histórico de alterações — mais
-          seguro do que a planilha que hoje circula por e-mail e vive numa pasta compartilhada. Se a sua
-          operação exige que o dado não saia de dentro da empresa, entrego a versão local. Em qualquer um
-          dos formatos, o projeto pode ser conduzido sob acordo de confidencialidade, e nenhum número de
-          cliente vira material de divulgação.</p>
-      </details>
-      <details>
-        <summary>Minha empresa é pequena demais para isso?</summary>
-        <p>É justamente o contrário. Empresa grande já tem controladoria, RH e TI. Quem mais sente falta de
-          informação organizada é a micro e a pequena, onde o dono acumula funções e decide no escuro. O
-          escopo é dimensionado ao tamanho do seu negócio.</p>
-      </details>
-      <details>
-        <summary>Você atende fora de Juiz de Fora?</summary>
-        <p>Sim. Presencialmente em Juiz de Fora e na Zona da Mata, e online para empresas de todo o Brasil —
-          que é como boa parte dos projetos de finanças e sistemas já é conduzida.</p>
-      </details>
-    </div>
   </div>
 </section>
 
