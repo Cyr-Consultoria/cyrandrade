@@ -231,6 +231,28 @@ section > .wrap{position:relative;z-index:1}
   align-items:center;transition:gap .2s}
 .sis:hover .fale{gap:12px}
 
+
+/* ---------- casos ---------- */
+.caso{background:var(--card);border:1px solid var(--line);border-radius:var(--r);
+  padding:28px 26px 26px;display:flex;flex-direction:column;min-height:430px;
+  position:relative;overflow:hidden;transition:border-color .24s,transform .24s,background .24s}
+.caso::before{content:"";position:absolute;inset:-1px -1px auto -1px;height:3px;background:var(--c);
+  box-shadow:0 0 20px var(--c)}
+.caso::after{content:"";position:absolute;right:-70px;top:-70px;width:200px;height:200px;border-radius:50%;
+  background:var(--c);filter:blur(72px);opacity:.12;transition:opacity .3s}
+.caso:hover{transform:translateY(-4px);background:var(--card2);border-color:#2C3A4B}
+.caso:hover::after{opacity:.24}
+.caso .cat{font-size:.63rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:var(--c);
+  margin-bottom:12px;display:block;position:relative}
+.caso h3{margin-bottom:14px;position:relative;font-size:1.08rem}
+.caso p{font-size:.9rem;color:var(--tx2);margin-bottom:13px;position:relative;line-height:1.55}
+.caso p b{color:var(--tx)}
+.caso .prob b{color:var(--c)}
+.caso ul{list-style:none;margin-top:auto;padding-top:16px;border-top:1px solid var(--line);position:relative}
+.caso li{font-size:.845rem;color:var(--tx3);padding-left:18px;position:relative;margin-bottom:6px}
+.caso li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:1px;
+  background:var(--c);box-shadow:0 0 8px var(--c)}
+
 /* ---------- garantias ---------- */
 .gar{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2px;margin-top:44px;
   background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
@@ -371,6 +393,7 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
       <a href="#reforma">Reforma</a>
       <a href="#sistemas">Sistemas</a>
       <a href="#entrega">Entrega</a>
+      <a href="#casos">Casos</a>
       <a href="#consultoria">Consultoria</a>
       <a href="#metodo">Método</a>
       <a href="#quem">Quem faz</a>
@@ -461,7 +484,7 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
       <div><b class="n-agua glow">13</b><span>sistemas prontos para adaptar ao seu negócio</span></div>
       <div><b class="n-verde glow">2027</b><span>o ano em que a reforma pesa no seu preço</span></div>
       <div><b class="n-roxo glow">+15</b><span>anos dentro de empresas, não em teoria</span></div>
-      <div><b class="n-amarelo glow">8</b><span>setores atendidos, do varejo à indústria</span></div>
+      <div><b class="n-amarelo glow">8</b><span>sistemas em produção, rodando hoje</span></div>
     </div>
   </div>
 </section>
@@ -980,6 +1003,151 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
   </div>
 </section>
 
+<!-- ================= CASOS ================= -->
+<section id="casos">
+  <span class="pat pat-pontos" aria-hidden="true"></span>
+  <div class="wrap rv">
+    <div class="sl-topo">
+      <div>
+        <span class="eyebrow" style="color:var(--verde)">Quem já usa</span>
+        <h2>Sistemas <span class="n-verde glow">em produção</span>,<br>rodando todo dia.</h2>
+        <p class="lead" style="margin-top:16px">Não são protótipos nem telas de demonstração. São sistemas
+          que empresas reais abrem toda manhã para tocar a operação. Alguns números foram arredondados ou
+          omitidos a pedido dos clientes.</p>
+      </div>
+      <div class="sl-nav">
+        <button class="sl-btn" data-ir="-1" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4-4.6-4.6z"/></svg></button>
+        <button class="sl-btn" data-ir="1" aria-label="Próximo"><svg viewBox="0 0 24 24"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4 4.6 4.6z"/></svg></button>
+      </div>
+    </div>
+
+    <div class="sl-pista" data-slider tabindex="0" role="region" aria-label="Casos de clientes">
+
+      <article class="caso" style="--c:var(--amarelo)">
+        <span class="cat">Locação de empilhadeiras</span>
+        <h3>Descobriu que sairia do Simples — com um ano de antecedência</h3>
+        <p class="prob"><b>O problema:</b> a empresa cresceu, cruzou o teto do Simples Nacional e ninguém
+          havia refeito a conta. A saída obrigatória chegaria em 2027, de surpresa, no meio do ano.</p>
+        <p><b>O que foi construído:</b> um planejamento tributário completo comparando Simples, Presumido e
+          Real sobre 12 meses móveis, com DRE simulada, memória de cálculo, análise por segmento de receita
+          e simulador de elisões — mais um diagnóstico de transição com as armadilhas específicas de
+          locação, venda de peças e manutenção.</p>
+        <ul>
+          <li>Sublimite de ICMS/ISS já ultrapassado, identificado antes da autuação</li>
+          <li>Migração planejada com antecedência, em vez de enquadramento forçado</li>
+          <li>Pauta técnica pronta para a reunião com a contabilidade</li>
+        </ul>
+      </article>
+
+      <article class="caso" style="--c:var(--roxo)">
+        <span class="cat">Locação de empilhadeiras</span>
+        <h3>Gerenciador de manutenções e ordens de serviço</h3>
+        <p class="prob"><b>O problema:</b> as ordens de serviço viviam em planilha e ninguém sabia dizer
+          quanto custava manter cada máquina, nem quanto do trabalho era retrabalho.</p>
+        <p><b>O que foi construído:</b> um painel analítico de OS com filtro por período, mecânico,
+          propulsão, fabricante, modelo, UF e cliente — separando receita de cliente externo do custo
+          interno da própria frota.</p>
+        <ul>
+          <li>Tempo médio de atendimento, mediana e P90 por OS</li>
+          <li>Índice de retrabalho e horas improdutivas isoladas</li>
+          <li>Volume e horas por mecânico, com relatório pronto para o cliente</li>
+        </ul>
+      </article>
+
+      <article class="caso" style="--c:var(--agua)">
+        <span class="cat">Indústria · Grupo Alta Patente</span>
+        <h3>PCP em produção, com acesso por perfil</h3>
+        <p class="prob"><b>O problema:</b> ordens de produção, prazos e capacidade controlados no papel e
+          na memória de quem estava no chão de fábrica.</p>
+        <p><b>O que foi construído:</b> sistema de PCP na nuvem, com login e perfis de acesso distintos por
+          função. Ao lado dele, calculadora de pregão e painel de acompanhamento de editais.</p>
+        <ul>
+          <li>Sistema em produção, usado pela operação no dia a dia</li>
+          <li>Cada função enxerga apenas o que lhe cabe</li>
+          <li>Manual de operação entregue junto com o sistema</li>
+        </ul>
+      </article>
+
+      <article class="caso" style="--c:var(--verde)">
+        <span class="cat">Comunicação visual · Seu Letreiro</span>
+        <h3>Painel comercial com meta, comissão e ticket médio</h3>
+        <p class="prob"><b>O problema:</b> meta acompanhada por planilha, comissão recalculada à mão todo
+          mês e discussão recorrente sobre quanto cada vendedor tinha a receber.</p>
+        <p><b>O que foi construído:</b> painel comercial com recorte por vendedor, produto, cliente e meta,
+          comparando sempre com o período anterior equivalente. Junto: sistema de orçamentos e painel de
+          agendamentos.</p>
+        <ul>
+          <li>Comissão apurada pela regra da casa, sem recálculo manual</li>
+          <li>Ticket médio e evolução por vendedor no mesmo lugar</li>
+          <li>Comparativo automático com o período anterior</li>
+        </ul>
+      </article>
+
+      <article class="caso" style="--c:var(--agua)">
+        <span class="cat">Varejo e serviços · VavaSom</span>
+        <h3>DRE gerencial e apuração de CMV</h3>
+        <p class="prob"><b>O problema:</b> faturamento acompanhado de perto, resultado só descoberto quando
+          a contabilidade fechava — semanas depois.</p>
+        <p><b>O que foi construído:</b> DRE gerencial com análise de receitas, apuração de CMV por período
+          e unidade, e uma trilha de onboarding de 90 dias para a nova contratação do administrativo.</p>
+        <ul>
+          <li>Resultado do mês disponível sem esperar o fechamento contábil</li>
+          <li>CMV apurado por unidade, com comparativo entre períodos</li>
+          <li>Integração feita a partir das planilhas que a empresa já usava</li>
+        </ul>
+      </article>
+
+      <article class="caso" style="--c:var(--roxo)">
+        <span class="cat">Locação de equipamentos · BeltLoc</span>
+        <h3>Gerenciador financeiro e giro do ativo</h3>
+        <p class="prob"><b>O problema:</b> controle financeiro fragmentado e nenhuma visão de quanto cada
+          equipamento devolvia sobre o que custava.</p>
+        <p><b>O que foi construído:</b> gerenciador financeiro com fluxo de caixa, painel de giro do ativo,
+          dashboards de manutenção por período e um consolidado de inteligência da base de clientes.</p>
+        <ul>
+          <li>Fluxo de caixa e financeiro no mesmo sistema</li>
+          <li>Manutenção acompanhada mês a mês, por equipamento</li>
+          <li>Base de clientes analisada para orientar a ação comercial</li>
+        </ul>
+      </article>
+
+      <article class="caso" style="--c:var(--amarelo)">
+        <span class="cat">Hotelaria · Hotel Atria</span>
+        <h3>Caixa, contratos e manutenção predial</h3>
+        <p class="prob"><b>O problema:</b> movimento de caixa, contratos e manutenções tratados em
+          controles separados, sem ninguém enxergando o conjunto.</p>
+        <p><b>O que foi construído:</b> sistema de caixa em produção, painel de manutenções e controle de
+          contratos, todos acessíveis pelo navegador.</p>
+        <ul>
+          <li>Caixa registrado no ato, sem fechamento manual no fim do dia</li>
+          <li>Manutenção predial com histórico por ambiente</li>
+          <li>Contratos com vencimento visível antes de vencer</li>
+        </ul>
+      </article>
+
+      <article class="caso" style="--c:var(--verde)">
+        <span class="cat">Veículos · Rio Branco Automóveis</span>
+        <h3>Painel de vendas da loja</h3>
+        <p class="prob"><b>O problema:</b> desempenho de vendas acompanhado por planilha e conversa, sem
+          leitura consolidada do mês.</p>
+        <p><b>O que foi construído:</b> painel de vendas na nuvem, com acompanhamento do resultado por
+          período e por vendedor.</p>
+        <ul>
+          <li>Resultado do mês visível a qualquer momento</li>
+          <li>Acompanhamento individual da equipe de vendas</li>
+          <li>Acesso pelo navegador, sem instalação</li>
+        </ul>
+      </article>
+
+    </div>
+    <div class="sl-pontos" aria-hidden="true"></div>
+
+    <p class="ressalva">Sistemas desenvolvidos e mantidos por Cyr Andrade Consultoria Empresarial, com
+      autorização dos clientes para divulgação. Valores financeiros foram omitidos ou arredondados; nenhum
+      dado operacional de cliente é exibido nesta página.</p>
+  </div>
+</section>
+
 <!-- ================= SLIDER: CONSULTORIA ================= -->
 <section id="consultoria">
   <div class="wrap rv">
@@ -1412,7 +1580,7 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
         <span><span class="wm wm-branco" style="width:138px;height:14px" aria-hidden="true"></span><span class="sub">CONSULTORIA EMPRESARIAL</span></span>
       </a>
       <div class="rp-links">
-        <a href="#reforma">Reforma tributária</a><a href="#sistemas">Sistemas</a><a href="#entrega">Como é entregue</a>
+        <a href="#reforma">Reforma tributária</a><a href="#sistemas">Sistemas</a><a href="#entrega">Como é entregue</a><a href="#casos">Casos</a>
         <a href="#consultoria">Consultoria</a><a href="#metodo">Método</a>
         <a href="#quem">Quem faz</a><a href="#contato">Contato</a>
         <a href="https://www.instagram.com/cyrandrade/" target="_blank" rel="noopener">Instagram</a>
