@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sistemas de gestão sob medida para a sua empresa | Cyr Andrade</title>
-<meta name="description" content="Orçamentos, DRE, DRF, simulador de regimes tributários, PCP, folha, recrutamento, calculadoras de marketplace e licitação e inteligência de mercado — sistemas sob medida para a sua empresa, sem mensalidade. Consultoria empresarial em Juiz de Fora/MG.">
+<meta name="description" content="Reforma tributária, DRE, DRF, orçamento, comercial, manutenção e OS, PCP, folha e recrutamento — sistemas de gestão sob medida, na nuvem. Consultoria empresarial, BPO financeiro e DP/RH em Juiz de Fora/MG.">
 <meta name="author" content="Cyr Andrade">
 <link rel="canonical" href="https://cyrandrade.com.br/">
 <meta name="theme-color" content="#07090C">
@@ -14,7 +14,7 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Cyr Andrade Consultoria Empresarial">
 <meta property="og:title" content="Sistemas de gestão sob medida | Cyr Andrade Consultoria">
-<meta property="og:description" content="O sistema que a sua empresa precisa ninguém vende pronto. Orçamento, DRE, DRF, regime tributário, PCP, folha, recrutamento, marketplace e licitação — feitos para a sua operação.">
+<meta property="og:description" content="O sistema que a sua empresa precisa ninguém vende pronto. Reforma tributária, DRE, DRF, orçamento, comercial, manutenção, PCP, folha e recrutamento — feitos para a sua operação.">
 <meta property="og:url" content="https://cyrandrade.com.br/">
 <meta property="og:image" content="https://cyrandrade.com.br/og-capa.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -74,12 +74,12 @@ header{position:sticky;top:0;z-index:80;background:rgba(7,9,12,.82);
 .brand .wm{width:146px;height:15px}
 .brand .sub{display:block;font-size:.545rem;letter-spacing:.315em;color:var(--tx3);font-weight:600;
   margin-top:5px;white-space:nowrap}
-.menu{display:flex;gap:28px;font-size:.9rem;font-weight:600;color:var(--tx2)}
+.menu{display:flex;gap:24px;white-space:nowrap;font-size:.9rem;font-weight:600;color:var(--tx2)}
 .menu a{position:relative;transition:color .18s}
 .menu a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--agua);
   transform:scaleX(0);transition:transform .22s;box-shadow:0 0 10px var(--agua)}
 .menu a:hover{color:var(--tx)} .menu a:hover::after{transform:scaleX(1)}
-@media(max-width:1000px){.menu{display:none}}
+@media(max-width:1120px){.menu{display:none}}
 @media(max-width:560px){.nav{height:62px}.brand .wm{width:112px;height:18px}.nav>.btn{display:none}}
 
 /* ---------- botões ---------- */
@@ -154,6 +154,15 @@ section > .wrap{position:relative;z-index:1}
   background:var(--c);filter:blur(60px);opacity:.10;transition:opacity .3s}
 .sis:hover .sis-vis::after{opacity:.2}
 .sis-vis svg{position:relative;display:block;width:100%;height:100%}
+/* gramática das miniaturas: mesma linguagem dos dashboards entregues */
+.sis-vis .lb{font-family:Arial,sans-serif;font-size:8.5px;letter-spacing:.9px;fill:#66748A;font-weight:bold}
+.sis-vis .vl{font-family:Arial,sans-serif;font-size:17px;font-weight:bold;fill:#E9EFF7}
+.sis-vis .tile rect{fill:#0E1520;stroke:#1E2733}
+.sis-vis .chip rect{fill:#141C26;stroke:#1E2733}
+.sis-vis .rw rect,.sis-vis .rwf{fill:#2A3644}
+.sis-vis .gr{stroke:#18202B}
+.sis-vis .pn{fill:#0E1520;stroke:#1E2733}
+
 .hero-mk{position:absolute;right:-60px;top:-30px;width:min(520px,52vw);height:min(560px,56vw);
   opacity:.07;pointer-events:none;
   background:linear-gradient(160deg,var(--agua),var(--roxo));
@@ -228,6 +237,26 @@ section > .wrap{position:relative;z-index:1}
 .gar div{background:var(--bg2);padding:30px 26px}
 .gar b{display:block;font-size:1rem;margin-bottom:8px;letter-spacing:-.01em}
 .gar span{font-size:.88rem;color:var(--tx2);display:block}
+
+
+/* ---------- reforma tributária ---------- */
+.linha-tempo{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin-top:44px}
+.lt{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 20px 24px;
+  position:relative;overflow:hidden}
+.lt::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--c);
+  box-shadow:0 0 16px var(--c)}
+.lt b{display:block;font-size:1.32rem;font-weight:800;letter-spacing:-.02em;color:var(--c);margin-bottom:9px}
+.lt span{font-size:.88rem;color:var(--tx2);display:block;line-height:1.5}
+.impactos{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:14px;margin-top:14px}
+.imp{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px 22px;
+  position:relative;overflow:hidden;transition:border-color .2s,transform .2s}
+.imp:hover{border-color:#2C3A4B;transform:translateY(-2px)}
+.imp::after{content:"";position:absolute;right:-60px;top:-60px;width:170px;height:170px;border-radius:50%;
+  background:var(--c);filter:blur(60px);opacity:.12}
+.imp b{display:block;font-size:1.02rem;margin-bottom:9px;color:var(--c);position:relative}
+.imp span{font-size:.91rem;color:var(--tx2);display:block;position:relative;line-height:1.55}
+.ressalva{margin-top:26px;font-size:.83rem;color:var(--tx3);max-width:78ch;line-height:1.55;
+  padding-left:16px;border-left:2px solid var(--line)}
 
 /* ---------- método ---------- */
 .passo{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 28px 32px;
@@ -339,8 +368,9 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
       <span><span class="wm wm-branco" aria-hidden="true"></span><span class="sub">CONSULTORIA EMPRESARIAL</span></span>
     </a>
     <nav class="menu">
+      <a href="#reforma">Reforma</a>
       <a href="#sistemas">Sistemas</a>
-      <a href="#entrega">Como é entregue</a>
+      <a href="#entrega">Entrega</a>
       <a href="#consultoria">Consultoria</a>
       <a href="#metodo">Método</a>
       <a href="#quem">Quem faz</a>
@@ -364,9 +394,9 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
     <div>
     <span class="eyebrow">Sistemas sob medida · Juiz de Fora/MG</span>
     <h1>O sistema que a sua empresa precisa <span class="n-verde glow">ninguém vende pronto</span>.</h1>
-    <p class="lead">Você paga mensalidade num sistema que usa 10%, resolve o resto no WhatsApp e na planilha,
-      e ainda descobre o resultado do mês quando o dinheiro já acabou. Aqui é o contrário: primeiro a gente
-      entende como a sua empresa funciona de verdade — depois eu construo a ferramenta exata para ela.</p>
+    <p class="lead">Você paga por um sistema de prateleira que usa 10%, resolve o resto no WhatsApp e na planilha, e ainda
+      descobre o resultado do mês quando o dinheiro já acabou. Aqui é o contrário: primeiro a gente entende
+      como a sua empresa funciona de verdade — depois eu construo a ferramenta exata para ela.</p>
     <div class="cta-row">
       <a class="btn btn-neon" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20conversar%20sobre%20um%20sistema%20sob%20medida%20para%20a%20minha%20empresa." target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4-.1-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.2-.6-.4zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
@@ -428,11 +458,70 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
    </div>
 
     <div class="marcadores">
-      <div><b class="n-agua glow">12</b><span>sistemas prontos para adaptar ao seu negócio</span></div>
-      <div><b class="n-verde glow">R$ 0</b><span>de mensalidade — o sistema é seu</span></div>
+      <div><b class="n-agua glow">13</b><span>sistemas prontos para adaptar ao seu negócio</span></div>
+      <div><b class="n-verde glow">2027</b><span>o ano em que a reforma pesa no seu preço</span></div>
       <div><b class="n-roxo glow">+15</b><span>anos dentro de empresas, não em teoria</span></div>
       <div><b class="n-amarelo glow">8</b><span>setores atendidos, do varejo à indústria</span></div>
     </div>
+  </div>
+</section>
+
+<!-- ================= REFORMA TRIBUTÁRIA ================= -->
+<section id="reforma" class="faixa">
+  <span class="pat pat-grade" aria-hidden="true"></span>
+  <div class="wrap rv">
+    <span class="eyebrow" style="color:var(--amarelo)">A conta que quase ninguém refez</span>
+    <h2>A reforma tributária já começou.<br>Você sabe <span class="n-amarelo glow">quanto vai pagar</span>?</h2>
+    <p class="lead" style="margin-top:18px">Não é um assunto de 2033. A transição está correndo agora, e ela
+      mexe em três coisas ao mesmo tempo: no seu <strong>preço</strong>, no seu <strong>crédito</strong> e
+      no seu <strong>caixa</strong>. Quem não refizer a conta vai descobrir o tamanho do impacto quando já
+      não der para reagir.</p>
+
+    <div class="linha-tempo">
+      <div class="lt" style="--c:var(--amarelo)"><b>2026</b><span>Ano de teste. As novas alíquotas
+        aparecem na nota em valor simbólico — é o ensaio geral do sistema.</span></div>
+      <div class="lt" style="--c:var(--amarelo)"><b>2027</b><span>A CBS substitui PIS e Cofins. Entra o
+        Imposto Seletivo. É aqui que o efeito no preço fica real.</span></div>
+      <div class="lt" style="--c:var(--agua)"><b>2029–2032</b><span>ICMS e ISS vão sendo reduzidos ano a
+        ano, enquanto o IBS sobe na mesma proporção.</span></div>
+      <div class="lt" style="--c:var(--verde)"><b>2033</b><span>Sistema novo pleno. O modelo antigo deixa
+        de existir.</span></div>
+    </div>
+
+    <div class="impactos">
+      <div class="imp" style="--c:var(--amarelo)">
+        <b>O seu preço muda</b>
+        <span>O imposto deixa de estar embutido e passa a ser destacado. Quem repassar a tabela do jeito
+          que está hoje vai perder margem sem perceber — ou perder venda por parecer mais caro que o
+          concorrente que recalculou.</span>
+      </div>
+      <div class="imp" style="--c:var(--agua)">
+        <b>O seu crédito muda</b>
+        <span>Com a não cumulatividade plena, despesas que hoje não geram crédito passam a gerar. Para
+          algumas empresas isso é dinheiro novo; para outras, é crédito que se perde. Depende do seu mix
+          de compras — e ninguém descobre isso sem fazer a conta.</span>
+      </div>
+      <div class="imp" style="--c:var(--roxo)">
+        <b>O seu caixa muda</b>
+        <span>Com o recolhimento na liquidação financeira, o imposto sai na hora do pagamento. O dinheiro
+          que antes passava pela sua conta e financiava o giro por alguns dias deixa de passar.</span>
+      </div>
+    </div>
+
+    <div class="destaque" style="border-left-color:var(--amarelo);
+      background:linear-gradient(100deg,rgba(255,216,77,.10),rgba(34,230,255,.04) 60%,transparent)">
+      <p><strong>O que eu faço:</strong> rodo os números da sua empresa nos dois sistemas, ano a ano da
+        transição, e mostro o efeito em preço, margem, crédito e caixa. Você sai com a conta feita, com o
+        que precisa mudar na tabela de preços e com a pauta pronta para a conversa com o seu contador.</p>
+    </div>
+
+    <div class="cta-row" style="margin-top:34px">
+      <a class="btn btn-neon" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20saber%20o%20impacto%20da%20reforma%20tribut%C3%A1ria%20na%20minha%20empresa." target="_blank" rel="noopener">Quero a conta da minha empresa</a>
+      <a class="btn btn-ghost" href="#sistemas">Ver o simulador</a>
+    </div>
+    <p class="ressalva">As regras da reforma continuam em regulamentação. O simulador e as análises são
+      atualizados conforme cada definição se confirma, e a decisão formal é sempre tomada junto com o seu
+      contador.</p>
   </div>
 </section>
 
@@ -481,111 +570,52 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
 
     <div class="sl-pista" data-slider tabindex="0" role="region" aria-label="Sistemas sob medida">
 
-      <article class="sis" style="--c:var(--agua)">
-        <div class="sis-vis"><svg viewBox="0 0 300 124" aria-hidden="true">
-          <rect x="20" y="14" width="150" height="96" rx="7" fill="#0E1520" stroke="#1E2733"/>
-          <rect x="32" y="26" width="62" height="6" rx="3" fill="var(--c)" opacity=".85"/>
-          <g fill="#2A3644"><rect x="32" y="42" width="126" height="5" rx="2.5"/>
-            <rect x="32" y="55" width="104" height="5" rx="2.5"/>
-            <rect x="32" y="68" width="118" height="5" rx="2.5"/></g>
-          <rect x="32" y="84" width="126" height="16" rx="5" fill="var(--c)" opacity=".16"/>
-          <rect x="38" y="90" width="44" height="5" rx="2.5" fill="var(--c)"/>
-          <rect x="120" y="90" width="32" height="5" rx="2.5" fill="var(--c)"/>
-          <rect x="190" y="30" width="90" height="30" rx="8" fill="#0E1520" stroke="var(--c)" stroke-opacity=".45"/>
-          <circle cx="206" cy="45" r="6" fill="none" stroke="var(--c)" stroke-width="2"/>
-          <path d="M203 45l2.4 2.6 4.2-4.6" fill="none" stroke="var(--c)" stroke-width="2" stroke-linecap="round"/>
-          <rect x="220" y="42" width="48" height="6" rx="3" fill="var(--c)" opacity=".6"/>
-          <rect x="190" y="70" width="90" height="40" rx="8" fill="#0E1520" stroke="#1E2733"/>
-          <rect x="202" y="82" width="30" height="5" rx="2.5" fill="#2A3644"/>
-          <rect x="202" y="94" width="56" height="8" rx="4" fill="var(--c)" opacity=".75"/>
-        </svg></div>
-        <span class="cat">Vendas</span>
-        <h3>Orçamento personalizado</h3>
-        <p>Seu vendedor monta a proposta em dois minutos, com o seu layout, e o sistema não deixa passar
-          preço abaixo da margem mínima.</p>
-        <ul>
-          <li>Proposta em PDF com a sua marca</li>
-          <li>Trava de desconto e margem por item</li>
-          <li>Histórico de orçamentos e taxa de fechamento</li>
-        </ul>
-        <a class="fale" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20um%20sistema%20de%20or%C3%A7amento%20personalizado." target="_blank" rel="noopener">Quero esse →</a>
-      </article>
-
-      <article class="sis" style="--c:var(--verde)">
-        <div class="sis-vis"><svg viewBox="0 0 300 124" aria-hidden="true">
-          <g stroke="#18202B"><line x1="24" y1="40" x2="276" y2="40"/><line x1="24" y1="66" x2="276" y2="66"/>
-            <line x1="24" y1="92" x2="276" y2="92"/></g>
-          <g fill="var(--c)" opacity=".55">
-            <rect x="34" y="62" width="22" height="46" rx="4"/><rect x="70" y="48" width="22" height="60" rx="4"/>
-            <rect x="106" y="70" width="22" height="38" rx="4"/><rect x="142" y="42" width="22" height="66" rx="4"/>
-            <rect x="178" y="56" width="22" height="52" rx="4"/><rect x="214" y="34" width="22" height="74" rx="4"/></g>
-          <path d="M45 78 L81 66 L117 84 L153 58 L189 72 L225 50" fill="none" stroke="var(--c)"
-                stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="225" cy="50" r="4.5" fill="var(--c)"/>
-          <rect x="196" y="14" width="80" height="22" rx="11" fill="#0E1520" stroke="var(--c)" stroke-opacity=".4"/>
-          <text x="209" y="29" fill="var(--c)" font-family="Arial" font-size="11" font-weight="bold">margem real</text>
-        </svg></div>
-        <span class="cat">Vendas</span>
-        <h3>Calculadora de marketplace</h3>
-        <p>Quanto sobra de verdade em cada anúncio depois da comissão, do frete, da devolução e do imposto.
-          Antes de você anunciar, não depois.</p>
-        <ul>
-          <li>Margem real por SKU e por canal</li>
-          <li>Simulação de preço, frete grátis e campanha</li>
-          <li>Alerta de anúncio vendendo no prejuízo</li>
-        </ul>
-        <a class="fale" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20a%20calculadora%20de%20marketplace." target="_blank" rel="noopener">Quero esse →</a>
-      </article>
-
       <article class="sis" style="--c:var(--amarelo)">
         <div class="sis-vis"><svg viewBox="0 0 300 124" aria-hidden="true">
-          <rect x="20" y="16" width="146" height="92" rx="7" fill="#0E1520" stroke="#1E2733"/>
-          <rect x="20" y="16" width="146" height="20" rx="7" fill="var(--c)" opacity=".14"/>
-          <g fill="var(--c)" opacity=".75"><rect x="30" y="24" width="34" height="5" rx="2.5"/>
-            <rect x="76" y="24" width="26" height="5" rx="2.5"/><rect x="116" y="24" width="38" height="5" rx="2.5"/></g>
-          <g fill="#2A3644">
-            <rect x="30" y="46" width="34" height="4.5" rx="2"/><rect x="76" y="46" width="26" height="4.5" rx="2"/><rect x="116" y="46" width="38" height="4.5" rx="2"/>
-            <rect x="30" y="64" width="34" height="4.5" rx="2"/><rect x="76" y="64" width="26" height="4.5" rx="2"/><rect x="116" y="64" width="38" height="4.5" rx="2"/>
-            <rect x="30" y="82" width="34" height="4.5" rx="2"/><rect x="76" y="82" width="26" height="4.5" rx="2"/></g>
-          <rect x="116" y="80" width="38" height="9" rx="4.5" fill="var(--c)" opacity=".8"/>
-          <g stroke="var(--c)" stroke-width="2.4" stroke-linecap="round" fill="none" opacity=".9">
-            <path d="M190 34h64"/><path d="M198 56h56"/><path d="M208 78h46"/></g>
-            <g fill="var(--c)"><circle cx="190" cy="34" r="3.5"/><circle cx="198" cy="56" r="3.5"/><circle cx="208" cy="78" r="3.5"/></g>
-          <path d="M262 92 L272 92 L272 34" fill="none" stroke="var(--c)" stroke-width="2" stroke-dasharray="3 4" opacity=".6"/>
-          <text x="186" y="108" fill="#66748A" font-family="Arial" font-size="10" letter-spacing="1">PISO DE LANCE</text>
+          <g class="chip"><rect x="14" y="10" width="40" height="13" rx="6.5"/><rect x="58" y="10" width="30" height="13" rx="6.5"/><rect x="92" y="10" width="34" height="13" rx="6.5"/></g>
+          <rect x="14" y="10" width="40" height="13" rx="6.5" fill="var(--c)" opacity=".9"/>
+          <g class="tile"><rect x="14" y="31" width="86" height="42" rx="6"/><rect x="14" y="31" width="86" height="2.5" rx="1.2" fill="var(--c)"/></g>
+          <text x="22" y="47" class="lb">HOJE</text><text x="22" y="65" class="vl">R$ 41,2k</text>
+          <g class="tile"><rect x="107" y="31" width="86" height="42" rx="6"/><rect x="107" y="31" width="86" height="2.5" rx="1.2" fill="var(--c)"/></g>
+          <text x="115" y="47" class="lb">COM IBS/CBS</text><text x="115" y="65" class="vl" fill="var(--c)">R$ 46,8k</text>
+          <g class="tile"><rect x="200" y="31" width="86" height="42" rx="6"/><rect x="200" y="31" width="86" height="2.5" rx="1.2" fill="#F05252"/></g>
+          <text x="208" y="47" class="lb">VARIAÇÃO</text><text x="208" y="65" class="vl" fill="#F05252">+13,6%</text>
+          <line x1="14" y1="86" x2="286" y2="86" class="gr"/>
+          <g class="rw"><rect x="14" y="93" width="52" height="6" rx="3"/><rect x="14" y="107" width="46" height="6" rx="3"/></g>
+          <rect x="76" y="93" width="150" height="6" rx="3" fill="var(--c)" opacity=".8"/>
+          <rect x="76" y="107" width="96" height="6" rx="3" fill="var(--c)" opacity=".4"/>
+          <text x="238" y="99" class="lb" fill="var(--c)">2027</text><text x="238" y="113" class="lb">2033</text>
         </svg></div>
-        <span class="cat">Vendas</span>
-        <h3>Calculadora de licitação</h3>
-        <p>Monte a planilha de formação de preço do edital com custo, tributo, BDI e margem — e saiba até
-          onde pode ir no lance sem perder dinheiro.</p>
+        <span class="cat">Tributário</span>
+        <h3>Reforma tributária e simulador de regimes</h3>
+        <p>Quanto a sua empresa vai pagar a mais — ou a menos — na transição, ano a ano. E qual regime faz
+          sentido daqui para a frente, com os seus números.</p>
         <ul>
-          <li>Composição de custo item a item</li>
-          <li>Piso de lance calculado, não chutado</li>
-          <li>Comparativo entre editais disputados</li>
+          <li>Impacto do IBS/CBS no seu preço e na sua margem</li>
+          <li>Simples, Presumido e Real comparados ano a ano</li>
+          <li>Crédito aproveitável e efeito no caixa</li>
         </ul>
-        <a class="fale" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20a%20calculadora%20de%20licita%C3%A7%C3%A3o." target="_blank" rel="noopener">Quero esse →</a>
+        <a class="fale" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20o%20simulador%20de%20reforma%20tribut%C3%A1ria%20e%20regimes." target="_blank" rel="noopener">Quero esse →</a>
       </article>
 
       <article class="sis" style="--c:var(--agua)">
         <div class="sis-vis"><svg viewBox="0 0 300 124" aria-hidden="true">
-          <g fill="#2A3644"><rect x="22" y="22" width="52" height="5" rx="2.5"/>
-            <rect x="22" y="42" width="40" height="4.5" rx="2"/><rect x="22" y="60" width="46" height="4.5" rx="2"/>
-            <rect x="22" y="78" width="36" height="4.5" rx="2"/></g>
-          <rect x="22" y="94" width="56" height="7" rx="3.5" fill="var(--c)" opacity=".85"/>
-          <g><rect x="96" y="18" width="18" height="12" rx="3" fill="var(--c)" opacity=".85"/>
-             <rect x="120" y="18" width="72" height="12" rx="3" fill="var(--c)" opacity=".28"/></g>
-          <g><rect x="96" y="38" width="44" height="12" rx="3" fill="var(--c)" opacity=".6"/>
-             <rect x="146" y="38" width="34" height="12" rx="3" fill="var(--c)" opacity=".22"/></g>
-          <g><rect x="96" y="56" width="30" height="12" rx="3" fill="var(--c)" opacity=".6"/>
-             <rect x="132" y="56" width="52" height="12" rx="3" fill="var(--c)" opacity=".22"/></g>
-          <g><rect x="96" y="74" width="58" height="12" rx="3" fill="var(--c)" opacity=".6"/>
-             <rect x="160" y="74" width="24" height="12" rx="3" fill="var(--c)" opacity=".22"/></g>
-          <rect x="96" y="92" width="96" height="12" rx="3" fill="var(--c)"/>
-          <rect x="206" y="16" width="72" height="92" rx="8" fill="#0E1520" stroke="#1E2733"/>
-          <text x="218" y="38" fill="#66748A" font-family="Arial" font-size="9" letter-spacing="1">RESULTADO</text>
-          <text x="218" y="62" fill="var(--c)" font-family="Arial" font-size="17" font-weight="bold">18,7%</text>
-          <path d="M218 84 L232 76 L246 82 L262 68" fill="none" stroke="var(--c)" stroke-width="2.2"
-                stroke-linecap="round" stroke-linejoin="round"/>
+          <g class="chip"><rect x="14" y="10" width="34" height="13" rx="6.5"/><rect x="52" y="10" width="42" height="13" rx="6.5"/><rect x="98" y="10" width="28" height="13" rx="6.5"/></g>
+          <rect x="52" y="10" width="42" height="13" rx="6.5" fill="var(--c)" opacity=".9"/>
+          <g class="rw">
+            <rect x="14" y="34" width="48" height="5" rx="2.5"/><rect x="14" y="50" width="40" height="5" rx="2.5"/>
+            <rect x="14" y="66" width="52" height="5" rx="2.5"/><rect x="14" y="82" width="36" height="5" rx="2.5"/></g>
+          <rect x="14" y="100" width="56" height="6" rx="3" fill="var(--c)"/>
+          <g><rect x="80" y="30" width="24" height="13" rx="3" fill="var(--c)" opacity=".85"/><rect x="108" y="30" width="88" height="13" rx="3" fill="var(--c)" opacity=".2"/>
+             <rect x="80" y="46" width="62" height="13" rx="3" fill="var(--c)" opacity=".6"/><rect x="146" y="46" width="42" height="13" rx="3" fill="var(--c)" opacity=".2"/>
+             <rect x="80" y="62" width="44" height="13" rx="3" fill="var(--c)" opacity=".6"/><rect x="128" y="62" width="58" height="13" rx="3" fill="var(--c)" opacity=".2"/>
+             <rect x="80" y="78" width="72" height="13" rx="3" fill="var(--c)" opacity=".6"/>
+             <rect x="80" y="97" width="116" height="13" rx="3" fill="var(--c)"/></g>
+          <g class="tile"><rect x="206" y="28" width="80" height="82" rx="6"/></g>
+          <text x="214" y="45" class="lb">MARGEM</text>
+          <text x="214" y="66" class="vl" fill="var(--c)">18,7%</text>
+          <path d="M214 90 L232 80 L250 86 L272 68" fill="none" stroke="var(--c)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="272" cy="68" r="3.4" fill="var(--c)"/>
         </svg></div>
         <span class="cat">Financeiro</span>
         <h3>DRE personalizado</h3>
@@ -602,20 +632,17 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
       <article class="sis" style="--c:var(--agua)">
         <div class="sis-vis"><svg viewBox="0 0 300 124" aria-hidden="true">
           <defs><linearGradient id="gDrf" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="currentColor" stop-opacity=".3"/>
-            <stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs>
-          <g color="var(--c)">
-            <line x1="20" y1="70" x2="280" y2="70" stroke="#2A3644" stroke-dasharray="4 5"/>
-            <path d="M24 58 L60 46 L96 62 L132 54 L168 88 L204 74 L240 40 L276 30"
-                  fill="none" stroke="var(--c)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M24 58 L60 46 L96 62 L132 54 L168 88 L204 74 L240 40 L276 30 L276 108 L24 108 Z"
-                  fill="url(#gDrf)"/>
-          </g>
-          <circle cx="168" cy="88" r="5.5" fill="#0A0E14" stroke="var(--c)" stroke-width="2.4"/>
-          <rect x="126" y="14" width="86" height="20" rx="10" fill="#0E1520" stroke="var(--c)" stroke-opacity=".45"/>
-          <text x="137" y="28" fill="var(--c)" font-family="Arial" font-size="10" font-weight="bold">aperto em D+21</text>
-          <path d="M168 34 L168 80" stroke="var(--c)" stroke-width="1.4" stroke-dasharray="3 4" opacity=".7"/>
-          <text x="22" y="120" fill="#66748A" font-family="Arial" font-size="9" letter-spacing="1">CAIXA PROJETADO · 90 DIAS</text>
+            <stop offset="0" stop-color="#22E6FF" stop-opacity=".34"/><stop offset="1" stop-color="#22E6FF" stop-opacity="0"/></linearGradient></defs>
+          <g class="tile"><rect x="14" y="10" width="80" height="34" rx="6"/><rect x="14" y="10" width="80" height="2.5" rx="1.2" fill="var(--c)"/></g>
+          <text x="22" y="25" class="lb">SALDO HOJE</text><text x="22" y="39" class="vl" fill="var(--c)">R$ 62k</text>
+          <g class="tile"><rect x="100" y="10" width="80" height="34" rx="6"/><rect x="100" y="10" width="80" height="2.5" rx="1.2" fill="#F05252"/></g>
+          <text x="108" y="25" class="lb">MENOR D+90</text><text x="108" y="39" class="vl" fill="#F05252">-R$ 8k</text>
+          <g class="tile"><rect x="186" y="10" width="100" height="34" rx="6"/><rect x="186" y="10" width="100" height="2.5" rx="1.2" fill="var(--c)"/></g>
+          <text x="194" y="25" class="lb">A RECEBER</text><text x="194" y="39" class="vl">R$ 214k</text>
+          <line x1="14" y1="86" x2="286" y2="86" class="gr"/>
+          <path d="M18 74 L58 62 L98 78 L138 70 L172 104 L212 88 L250 56 L282 46" fill="none" stroke="var(--c)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18 74 L58 62 L98 78 L138 70 L172 104 L212 88 L250 56 L282 46 L282 118 L18 118 Z" fill="url(#gDrf)"/>
+          <circle cx="172" cy="104" r="5" fill="#0A0E14" stroke="#F05252" stroke-width="2.4"/>
         </svg></div>
         <span class="cat">Financeiro</span>
         <h3>DRF — Demonstrativo do Resultado Financeiro</h3>
@@ -629,49 +656,169 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
         <a class="fale" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20o%20sistema%20de%20DRF." target="_blank" rel="noopener">Quero esse →</a>
       </article>
 
-      <article class="sis" style="--c:var(--amarelo)">
+      <article class="sis" style="--c:var(--verde)">
         <div class="sis-vis"><svg viewBox="0 0 300 124" aria-hidden="true">
-          <g stroke="#18202B"><line x1="24" y1="46" x2="176" y2="46"/><line x1="24" y1="70" x2="176" y2="70"/>
-            <line x1="24" y1="94" x2="176" y2="94"/></g>
-          <rect x="38" y="52" width="30" height="46" rx="4" fill="var(--c)" opacity=".35"/>
-          <rect x="86" y="34" width="30" height="64" rx="4" fill="var(--c)" opacity=".25"/>
-          <rect x="134" y="66" width="30" height="32" rx="4" fill="var(--c)"/>
-          <rect x="126" y="12" width="46" height="18" rx="9" fill="var(--c)"/>
-          <text x="134" y="25" fill="#07090C" font-family="Arial" font-size="10" font-weight="bold">menor</text>
-          <g fill="#66748A" font-family="Arial" font-size="9" text-anchor="middle" letter-spacing=".4">
-            <text x="53" y="114">SIMPLES</text><text x="101" y="114">PRESUM.</text><text x="149" y="114">REAL</text></g>
-          <rect x="192" y="16" width="86" height="92" rx="8" fill="#0E1520" stroke="#1E2733"/>
-          <path d="M202 92 L232 66 L262 34" fill="none" stroke="var(--c)" stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M202 40 L232 62 L262 88" fill="none" stroke="#2A3644" stroke-width="2.2" stroke-linecap="round"/>
-          <circle cx="232" cy="64" r="5" fill="#0E1520" stroke="var(--c)" stroke-width="2.2"/>
-          <text x="202" y="104" fill="#66748A" font-family="Arial" font-size="8" letter-spacing=".7">PONTO DE VIRADA</text>
+          <rect x="14" y="10" width="152" height="104" rx="7" class="pn"/>
+          <rect x="14" y="10" width="152" height="18" rx="7" fill="#131A24"/>
+          <text x="24" y="23" class="lb">PROPOSTA 1042</text>
+          <g class="rw"><rect x="24" y="38" width="72" height="5" rx="2.5"/>
+            <rect x="24" y="52" width="120" height="4.5" rx="2"/><rect x="24" y="64" width="96" height="4.5" rx="2"/>
+            <rect x="24" y="76" width="110" height="4.5" rx="2"/></g>
+          <rect x="24" y="90" width="132" height="16" rx="5" fill="var(--c)" opacity=".16"/>
+          <text x="32" y="101" class="lb" fill="var(--c)">TOTAL</text>
+          <text x="112" y="101" class="lb" fill="var(--c)">R$ 18.940</text>
+          <g class="tile"><rect x="178" y="10" width="108" height="46" rx="6"/><rect x="178" y="10" width="108" height="2.5" rx="1.2" fill="var(--c)"/></g>
+          <text x="186" y="27" class="lb">MARGEM DA PROPOSTA</text>
+          <text x="186" y="47" class="vl" fill="var(--c)">27,3%</text>
+          <g class="tile"><rect x="178" y="62" width="108" height="52" rx="6"/></g>
+          <text x="186" y="78" class="lb">DESCONTO MÁX.</text>
+          <rect x="186" y="86" width="92" height="7" rx="3.5" fill="#1E2733"/>
+          <rect x="186" y="86" width="54" height="7" rx="3.5" fill="var(--c)"/>
+          <text x="186" y="107" class="lb" fill="var(--c)">travado em 8%</text>
         </svg></div>
-        <span class="cat">Tributário</span>
-        <h3>Simulador de regimes tributários</h3>
-        <p>Simples Nacional, Lucro Presumido e Lucro Real lado a lado, com os números da sua empresa — e não
-          com a regra geral que serve para qualquer um.</p>
+        <span class="cat">Vendas</span>
+        <h3>Orçamento personalizado</h3>
+        <p>Seu vendedor monta a proposta em dois minutos, com o seu layout, e o sistema não deixa passar
+          preço abaixo da margem mínima.</p>
         <ul>
-          <li>Carga tributária comparada nos três regimes</li>
-          <li>Fator R e enquadramento por anexo do Simples</li>
-          <li>Faturamento em que um regime passa a compensar mais que o outro</li>
+          <li>Proposta em PDF com a sua marca</li>
+          <li>Trava de desconto e margem por item</li>
+          <li>Histórico de orçamentos e taxa de fechamento</li>
         </ul>
-        <a class="fale" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20o%20simulador%20de%20regimes%20tribut%C3%A1rios." target="_blank" rel="noopener">Quero esse →</a>
+        <a class="fale" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20um%20sistema%20de%20or%C3%A7amento%20personalizado." target="_blank" rel="noopener">Quero esse →</a>
       </article>
 
-      <article class="sis" style="--c:var(--roxo)">
+      <article class="sis" style="--c:var(--verde)">
         <div class="sis-vis"><svg viewBox="0 0 300 124" aria-hidden="true">
-          <g stroke="#18202B"><line x1="86" y1="14" x2="86" y2="110"/><line x1="140" y1="14" x2="140" y2="110"/>
-            <line x1="194" y1="14" x2="194" y2="110"/><line x1="248" y1="14" x2="248" y2="110"/></g>
-          <g fill="#2A3644"><rect x="22" y="26" width="44" height="5" rx="2.5"/>
-            <rect x="22" y="52" width="36" height="5" rx="2.5"/><rect x="22" y="78" width="40" height="5" rx="2.5"/></g>
-          <rect x="86" y="22" width="88" height="13" rx="5" fill="var(--c)" opacity=".8"/>
-          <rect x="122" y="48" width="112" height="13" rx="5" fill="var(--c)" opacity=".55"/>
-          <rect x="176" y="74" width="76" height="13" rx="5" fill="var(--c)" opacity=".35"/>
-          <path d="M86 14 L86 110" stroke="var(--c)" stroke-width="2" stroke-dasharray="4 4" opacity=".85"/>
-          <text x="22" y="106" fill="#66748A" font-family="Arial" font-size="8" letter-spacing=".7">CAPACIDADE</text>
-          <rect x="86" y="98" width="132" height="7" rx="3.5" fill="#1E2733"/>
-          <rect x="86" y="98" width="104" height="7" rx="3.5" fill="var(--c)"/>
-          <text x="226" y="105" fill="var(--c)" font-family="Arial" font-size="9" font-weight="bold">79%</text>
+          <g class="chip"><rect x="14" y="10" width="36" height="13" rx="6.5"/><rect x="54" y="10" width="30" height="13" rx="6.5"/><rect x="88" y="10" width="38" height="13" rx="6.5"/></g>
+          <rect x="14" y="10" width="36" height="13" rx="6.5" fill="var(--c)" opacity=".9"/>
+          <g class="tile"><rect x="14" y="31" width="84" height="40" rx="6"/><rect x="14" y="31" width="84" height="2.5" rx="1.2" fill="var(--c)"/></g>
+          <text x="22" y="46" class="lb">ALCANCE</text><text x="22" y="64" class="vl" fill="var(--c)">83,1%</text>
+          <g class="tile"><rect x="104" y="31" width="84" height="40" rx="6"/><rect x="104" y="31" width="84" height="2.5" rx="1.2" fill="#FFD84D"/></g>
+          <text x="112" y="46" class="lb">PROJEÇÃO</text><text x="112" y="64" class="vl">R$ 292k</text>
+          <g class="tile"><rect x="194" y="31" width="92" height="40" rx="6"/><rect x="194" y="31" width="92" height="2.5" rx="1.2" fill="var(--c)"/></g>
+          <text x="202" y="46" class="lb">COMISSÃO</text><text x="202" y="64" class="vl">R$ 14,6k</text>
+          <g class="rw"><rect x="14" y="82" width="40" height="5" rx="2.5"/><rect x="14" y="96" width="34" height="5" rx="2.5"/><rect x="14" y="110" width="44" height="5" rx="2.5"/></g>
+          <g><rect x="66" y="80" width="180" height="8" rx="4" fill="#1E2733"/><rect x="66" y="80" width="146" height="8" rx="4" fill="var(--c)"/>
+             <rect x="66" y="94" width="180" height="8" rx="4" fill="#1E2733"/><rect x="66" y="94" width="88" height="8" rx="4" fill="#FFD84D"/>
+             <rect x="66" y="108" width="180" height="8" rx="4" fill="#1E2733"/><rect x="66" y="108" width="118" height="8" rx="4" fill="var(--c)"/></g>
+          <g class="lb" fill="#66748A"><text x="254" y="87">81%</text><text x="254" y="101">49%</text><text x="254" y="115">66%</text></g>
+        </svg></div>
+        <span class="cat">Comercial</span>
+        <h3>Acompanhamento comercial, metas e comissões</h3>
+        <p>Quanto cada vendedor, cada região e cada linha de produto entregou contra a meta — e quanto isso
+          gera de comissão, calculado sem discussão no fim do mês.</p>
+        <ul>
+          <li>Meta e alcance por vendedor, região e segmento</li>
+          <li>Comissão apurada pela sua regra, com prévia para o vendedor</li>
+          <li>Projeção do mês e alerta de meta em risco</li>
+        </ul>
+        <a class="fale" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20o%20sistema%20de%20acompanhamento%20comercial%2C%20metas%20e%20comiss%C3%B5es." target="_blank" rel="noopener">Quero esse →</a>
+      </article>
+
+      <article class="sis" style="--c:var(--verde)">
+        <div class="sis-vis"><svg viewBox="0 0 300 124" aria-hidden="true">
+          <g class="chip"><rect x="14" y="10" width="44" height="13" rx="6.5"/><rect x="62" y="10" width="34" height="13" rx="6.5"/><rect x="100" y="10" width="30" height="13" rx="6.5"/></g>
+          <rect x="14" y="10" width="44" height="13" rx="6.5" fill="var(--c)" opacity=".9"/>
+          <line x1="14" y1="52" x2="196" y2="52" class="gr"/><line x1="14" y1="76" x2="196" y2="76" class="gr"/><line x1="14" y1="100" x2="196" y2="100" class="gr"/>
+          <g fill="var(--c)" opacity=".55">
+            <rect x="22" y="66" width="20" height="42" rx="3"/><rect x="52" y="54" width="20" height="54" rx="3"/>
+            <rect x="82" y="74" width="20" height="34" rx="3"/><rect x="112" y="48" width="20" height="60" rx="3"/>
+            <rect x="142" y="62" width="20" height="46" rx="3"/><rect x="172" y="40" width="20" height="68" rx="3"/></g>
+          <path d="M32 82 L62 70 L92 88 L122 62 L152 76 L182 54" fill="none" stroke="var(--c)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <g class="tile"><rect x="206" y="31" width="80" height="34" rx="6"/></g>
+          <text x="214" y="45" class="lb">MARGEM REAL</text><text x="214" y="59" class="vl" fill="var(--c)">11,4%</text>
+          <g class="tile"><rect x="206" y="71" width="80" height="37" rx="6"/><rect x="206" y="71" width="80" height="2.5" rx="1.2" fill="#F05252"/></g>
+          <text x="214" y="87" class="lb">NO PREJUÍZO</text><text x="214" y="102" class="vl" fill="#F05252">7 SKUs</text>
+        </svg></div>
+        <span class="cat">Vendas</span>
+        <h3>Calculadora de marketplace</h3>
+        <p>Quanto sobra de verdade em cada anúncio depois da comissão, do frete, da devolução e do imposto.
+          Antes de você anunciar, não depois.</p>
+        <ul>
+          <li>Margem real por SKU e por canal</li>
+          <li>Simulação de preço, frete grátis e campanha</li>
+          <li>Alerta de anúncio vendendo no prejuízo</li>
+        </ul>
+        <a class="fale" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20a%20calculadora%20de%20marketplace." target="_blank" rel="noopener">Quero esse →</a>
+      </article>
+
+      <article class="sis" style="--c:var(--verde)">
+        <div class="sis-vis"><svg viewBox="0 0 300 124" aria-hidden="true">
+          <rect x="14" y="10" width="150" height="104" rx="7" class="pn"/>
+          <rect x="14" y="10" width="150" height="18" rx="7" fill="#131A24"/>
+          <text x="24" y="23" class="lb">PLANILHA DE CUSTOS</text>
+          <g class="rw">
+            <rect x="24" y="38" width="42" height="4.5" rx="2"/><rect x="76" y="38" width="30" height="4.5" rx="2"/><rect x="116" y="38" width="38" height="4.5" rx="2"/>
+            <rect x="24" y="54" width="42" height="4.5" rx="2"/><rect x="76" y="54" width="30" height="4.5" rx="2"/><rect x="116" y="54" width="38" height="4.5" rx="2"/>
+            <rect x="24" y="70" width="42" height="4.5" rx="2"/><rect x="76" y="70" width="30" height="4.5" rx="2"/></g>
+          <rect x="116" y="68" width="38" height="8" rx="4" fill="var(--c)" opacity=".8"/>
+          <rect x="24" y="88" width="130" height="16" rx="5" fill="var(--c)" opacity=".14"/>
+          <text x="32" y="99" class="lb" fill="var(--c)">BDI + MARGEM</text>
+          <text x="122" y="99" class="lb" fill="var(--c)">R$ 91k</text>
+          <g stroke="var(--c)" stroke-width="2.4" stroke-linecap="round" fill="none">
+            <path d="M182 32h74"/><path d="M192 58h64"/><path d="M204 84h52"/></g>
+          <g fill="var(--c)"><circle cx="182" cy="32" r="3.4"/><circle cx="192" cy="58" r="3.4"/><circle cx="204" cy="84" r="3.4"/></g>
+          <path d="M268 96 L276 96 L276 32" fill="none" stroke="var(--c)" stroke-width="1.8" stroke-dasharray="3 4" opacity=".6"/>
+          <text x="180" y="110" class="lb">PISO DE LANCE</text>
+        </svg></div>
+        <span class="cat">Vendas</span>
+        <h3>Calculadora de licitação</h3>
+        <p>Monte a planilha de formação de preço do edital com custo, tributo, BDI e margem — e saiba até
+          onde pode ir no lance sem perder dinheiro.</p>
+        <ul>
+          <li>Composição de custo item a item</li>
+          <li>Piso de lance calculado, não chutado</li>
+          <li>Comparativo entre editais disputados</li>
+        </ul>
+        <a class="fale" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20a%20calculadora%20de%20licita%C3%A7%C3%A3o." target="_blank" rel="noopener">Quero esse →</a>
+      </article>
+
+      <article class="sis" style="--c:var(--amarelo)">
+        <div class="sis-vis"><svg viewBox="0 0 300 124" aria-hidden="true">
+          <g class="chip"><rect x="14" y="10" width="32" height="13" rx="6.5"/><rect x="50" y="10" width="40" height="13" rx="6.5"/><rect x="94" y="10" width="34" height="13" rx="6.5"/></g>
+          <rect x="50" y="10" width="40" height="13" rx="6.5" fill="var(--c)" opacity=".9"/>
+          <g class="tile"><rect x="14" y="31" width="66" height="40" rx="6"/><rect x="14" y="31" width="66" height="2.5" rx="1.2" fill="var(--c)"/></g>
+          <text x="21" y="46" class="lb">OS ABERTAS</text><text x="21" y="64" class="vl" fill="var(--c)">18</text>
+          <g class="tile"><rect x="86" y="31" width="66" height="40" rx="6"/><rect x="86" y="31" width="66" height="2.5" rx="1.2" fill="var(--c)"/></g>
+          <text x="93" y="46" class="lb">TMA</text><text x="93" y="64" class="vl">2,3h</text>
+          <g class="tile"><rect x="158" y="31" width="60" height="40" rx="6"/><rect x="158" y="31" width="60" height="2.5" rx="1.2" fill="#F05252"/></g>
+          <text x="165" y="46" class="lb">ATRASO</text><text x="165" y="64" class="vl" fill="#F05252">3</text>
+          <g class="tile"><rect x="224" y="31" width="62" height="40" rx="6"/></g>
+          <text x="231" y="46" class="lb">PREVENT.</text><text x="231" y="64" class="vl">92%</text>
+          <g class="rw"><rect x="14" y="82" width="46" height="5" rx="2.5"/><rect x="14" y="96" width="38" height="5" rx="2.5"/><rect x="14" y="110" width="42" height="5" rx="2.5"/></g>
+          <g><rect x="70" y="80" width="176" height="8" rx="4" fill="#1E2733"/><rect x="70" y="80" width="140" height="8" rx="4" fill="var(--c)"/>
+             <rect x="70" y="94" width="176" height="8" rx="4" fill="#1E2733"/><rect x="70" y="94" width="96" height="8" rx="4" fill="var(--c)" opacity=".65"/>
+             <rect x="70" y="108" width="176" height="8" rx="4" fill="#1E2733"/><rect x="70" y="108" width="62" height="8" rx="4" fill="var(--c)" opacity=".45"/></g>
+          <text x="254" y="87" class="lb">h/mec</text>
+        </svg></div>
+        <span class="cat">Operação</span>
+        <h3>Manutenção e ordens de serviço</h3>
+        <p>Cada OS registrada, com horas, peças e responsável. Você passa a saber o custo real de manter
+          cada máquina — e quanto a corretiva está custando por não ter feito a preventiva.</p>
+        <ul>
+          <li>Abertura, apontamento e fechamento de OS</li>
+          <li>Tempo médio de atendimento, retrabalho e atraso</li>
+          <li>Plano de preventiva por máquina, com alerta de vencimento</li>
+        </ul>
+        <a class="fale" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20o%20sistema%20de%20manuten%C3%A7%C3%A3o%20e%20ordens%20de%20servi%C3%A7o." target="_blank" rel="noopener">Quero esse →</a>
+      </article>
+
+      <article class="sis" style="--c:var(--amarelo)">
+        <div class="sis-vis"><svg viewBox="0 0 300 124" aria-hidden="true">
+          <g class="chip"><rect x="14" y="10" width="38" height="13" rx="6.5"/><rect x="56" y="10" width="32" height="13" rx="6.5"/></g>
+          <rect x="14" y="10" width="38" height="13" rx="6.5" fill="var(--c)" opacity=".9"/>
+          <g class="gr" stroke="#18202B"><line x1="92" y1="30" x2="92" y2="114"/><line x1="140" y1="30" x2="140" y2="114"/>
+            <line x1="188" y1="30" x2="188" y2="114"/><line x1="236" y1="30" x2="236" y2="114"/></g>
+          <g class="rw"><rect x="14" y="40" width="44" height="5" rx="2.5"/><rect x="14" y="62" width="36" height="5" rx="2.5"/><rect x="14" y="84" width="40" height="5" rx="2.5"/></g>
+          <rect x="92" y="36" width="82" height="13" rx="5" fill="var(--c)" opacity=".85"/>
+          <rect x="126" y="58" width="104" height="13" rx="5" fill="var(--c)" opacity=".55"/>
+          <rect x="176" y="80" width="72" height="13" rx="5" fill="var(--c)" opacity=".35"/>
+          <path d="M92 30 L92 114" stroke="var(--c)" stroke-width="2" stroke-dasharray="4 4" opacity=".85"/>
+          <text x="14" y="108" class="lb">CAPACIDADE</text>
+          <rect x="92" y="102" width="140" height="8" rx="4" fill="#1E2733"/>
+          <rect x="92" y="102" width="110" height="8" rx="4" fill="var(--c)"/>
+          <text x="242" y="109" class="lb" fill="var(--c)">79%</text>
         </svg></div>
         <span class="cat">Produção</span>
         <h3>PCP — Planejamento e Controle da Produção</h3>
@@ -687,25 +834,23 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
 
       <article class="sis" style="--c:var(--roxo)">
         <div class="sis-vis"><svg viewBox="0 0 300 124" aria-hidden="true">
+          <g class="chip"><rect x="14" y="10" width="36" height="13" rx="6.5"/><rect x="54" y="10" width="42" height="13" rx="6.5"/></g>
+          <rect x="54" y="10" width="42" height="13" rx="6.5" fill="var(--c)" opacity=".9"/>
           <g>
-            <g transform="translate(0,0)"><circle cx="34" cy="26" r="8" fill="var(--c)" opacity=".5"/>
-              <rect x="50" y="22" width="70" height="5" rx="2.5" fill="#2A3644"/>
-              <rect x="140" y="21" width="46" height="7" rx="3.5" fill="var(--c)" opacity=".45"/></g>
-            <g transform="translate(0,26)"><circle cx="34" cy="26" r="8" fill="var(--c)" opacity=".5"/>
-              <rect x="50" y="22" width="58" height="5" rx="2.5" fill="#2A3644"/>
-              <rect x="140" y="21" width="34" height="7" rx="3.5" fill="var(--c)" opacity=".45"/></g>
-            <g transform="translate(0,52)"><circle cx="34" cy="26" r="8" fill="var(--c)" opacity=".5"/>
-              <rect x="50" y="22" width="64" height="5" rx="2.5" fill="#2A3644"/>
-              <rect x="140" y="21" width="52" height="7" rx="3.5" fill="var(--c)" opacity=".45"/></g>
-          </g>
-          <line x1="24" y1="98" x2="196" y2="98" stroke="#2A3644"/>
-          <rect x="140" y="104" width="56" height="8" rx="4" fill="var(--c)"/>
-          <rect x="212" y="16" width="66" height="92" rx="8" fill="#0E1520" stroke="#1E2733"/>
-          <text x="224" y="36" fill="#66748A" font-family="Arial" font-size="8.5" letter-spacing=".8">CUSTO REAL</text>
-          <g><rect x="224" y="46" width="42" height="9" rx="4.5" fill="var(--c)" opacity=".85"/>
-             <rect x="224" y="60" width="30" height="9" rx="4.5" fill="var(--c)" opacity=".5"/>
-             <rect x="224" y="74" width="36" height="9" rx="4.5" fill="var(--c)" opacity=".3"/></g>
-          <text x="224" y="99" fill="var(--c)" font-family="Arial" font-size="12" font-weight="bold">+68%</text>
+            <circle cx="24" cy="42" r="7" fill="var(--c)" opacity=".5"/><rect x="38" y="39" width="62" height="5" rx="2.5" class="rwf"/>
+            <rect x="112" y="38" width="44" height="7" rx="3.5" fill="var(--c)" opacity=".45"/>
+            <circle cx="24" cy="64" r="7" fill="var(--c)" opacity=".5"/><rect x="38" y="61" width="52" height="5" rx="2.5" class="rwf"/>
+            <rect x="112" y="60" width="34" height="7" rx="3.5" fill="var(--c)" opacity=".45"/>
+            <circle cx="24" cy="86" r="7" fill="var(--c)" opacity=".5"/><rect x="38" y="83" width="58" height="5" rx="2.5" class="rwf"/>
+            <rect x="112" y="82" width="50" height="7" rx="3.5" fill="var(--c)" opacity=".45"/></g>
+          <line x1="14" y1="100" x2="166" y2="100" class="gr"/>
+          <rect x="112" y="106" width="54" height="8" rx="4" fill="var(--c)"/>
+          <g class="tile"><rect x="180" y="30" width="106" height="38" rx="6"/><rect x="180" y="30" width="106" height="2.5" rx="1.2" fill="var(--c)"/></g>
+          <text x="188" y="45" class="lb">CUSTO TOTAL / FUNC.</text><text x="188" y="62" class="vl" fill="var(--c)">+68%</text>
+          <g class="tile"><rect x="180" y="74" width="106" height="40" rx="6"/></g>
+          <text x="188" y="89" class="lb">ENCARGOS E PROVISÕES</text>
+          <rect x="188" y="96" width="90" height="7" rx="3.5" fill="#1E2733"/>
+          <rect x="188" y="96" width="58" height="7" rx="3.5" fill="var(--c)" opacity=".8"/>
         </svg></div>
         <span class="cat">Pessoas</span>
         <h3>Folha de pagamento</h3>
@@ -721,22 +866,20 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
 
       <article class="sis" style="--c:var(--roxo)">
         <div class="sis-vis"><svg viewBox="0 0 300 124" aria-hidden="true">
+          <g class="chip"><rect x="14" y="10" width="46" height="13" rx="6.5"/><rect x="64" y="10" width="30" height="13" rx="6.5"/></g>
+          <rect x="14" y="10" width="46" height="13" rx="6.5" fill="var(--c)" opacity=".9"/>
           <line x1="42" y1="62" x2="258" y2="62" stroke="#2A3644" stroke-width="3" stroke-linecap="round"/>
           <line x1="42" y1="62" x2="150" y2="62" stroke="var(--c)" stroke-width="3" stroke-linecap="round"/>
-          <g>
-            <circle cx="42" cy="62" r="13" fill="#0E1520" stroke="var(--c)" stroke-width="2.4"/>
-            <path d="M36.5 62l4 4.2 7-7.6" fill="none" stroke="var(--c)" stroke-width="2.2" stroke-linecap="round"/>
-            <circle cx="114" cy="62" r="13" fill="#0E1520" stroke="var(--c)" stroke-width="2.4"/>
-            <path d="M108.5 62l4 4.2 7-7.6" fill="none" stroke="var(--c)" stroke-width="2.2" stroke-linecap="round"/>
-            <circle cx="186" cy="62" r="13" fill="#0E1520" stroke="var(--c)" stroke-width="2.4" stroke-dasharray="3 3"/>
-            <circle cx="258" cy="62" r="13" fill="#0E1520" stroke="#2A3644" stroke-width="2.4"/>
-          </g>
-          <g fill="#66748A" font-family="Arial" font-size="9" text-anchor="middle" letter-spacing=".6">
-            <text x="42" y="96">DIA 1</text><text x="114" y="96">30</text>
-            <text x="186" y="96">60</text><text x="258" y="96">90</text></g>
-          <g fill="var(--c)" font-family="Arial" font-size="9" text-anchor="middle" opacity=".9">
-            <text x="42" y="34">docs</text><text x="114" y="34">treino</text></g>
-          <text x="186" y="34" fill="#66748A" font-family="Arial" font-size="9" text-anchor="middle">avaliação</text>
+          <circle cx="42" cy="62" r="13" fill="#0E1520" stroke="var(--c)" stroke-width="2.4"/>
+          <path d="M36.5 62l4 4.2 7-7.6" fill="none" stroke="var(--c)" stroke-width="2.2" stroke-linecap="round"/>
+          <circle cx="114" cy="62" r="13" fill="#0E1520" stroke="var(--c)" stroke-width="2.4"/>
+          <path d="M108.5 62l4 4.2 7-7.6" fill="none" stroke="var(--c)" stroke-width="2.2" stroke-linecap="round"/>
+          <circle cx="186" cy="62" r="13" fill="#0E1520" stroke="var(--c)" stroke-width="2.4" stroke-dasharray="3 3"/>
+          <circle cx="258" cy="62" r="13" fill="#0E1520" stroke="#2A3644" stroke-width="2.4"/>
+          <g class="lb" text-anchor="middle"><text x="42" y="96">DIA 1</text><text x="114" y="96">30</text><text x="186" y="96">60</text><text x="258" y="96">90</text></g>
+          <g class="lb" text-anchor="middle" fill="var(--c)"><text x="42" y="40">docs</text><text x="114" y="40">treino</text></g>
+          <text x="186" y="40" class="lb" text-anchor="middle">avaliação</text>
+          <text x="14" y="116" class="lb">3 EM INTEGRAÇÃO</text>
         </svg></div>
         <span class="cat">Pessoas</span>
         <h3>Onboarding de funcionários</h3>
@@ -752,16 +895,18 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
 
       <article class="sis" style="--c:var(--roxo)">
         <div class="sis-vis"><svg viewBox="0 0 300 124" aria-hidden="true">
+          <g class="chip"><rect x="14" y="10" width="40" height="13" rx="6.5"/><rect x="58" y="10" width="34" height="13" rx="6.5"/></g>
+          <rect x="14" y="10" width="40" height="13" rx="6.5" fill="var(--c)" opacity=".9"/>
           <g fill="var(--c)">
-            <path d="M40 18h132l-16 22H56z" opacity=".8"/>
-            <path d="M58 46h96l-14 22H72z" opacity=".6"/>
-            <path d="M74 74h64l-12 22H86z" opacity=".42"/>
-            <path d="M88 102h36l-6 14h-24z" opacity=".95"/>
-          </g>
-          <g fill="#66748A" font-family="Arial" font-size="9" letter-spacing=".5">
-            <text x="196" y="34">inscritos 48</text><text x="196" y="62">entrevista 12</text>
-            <text x="196" y="90">finalistas 4</text></g>
-          <text x="196" y="115" fill="var(--c)" font-family="Arial" font-size="9" font-weight="bold">contratado 1</text>
+            <path d="M30 34h124l-15 20H45z" opacity=".8"/>
+            <path d="M47 58h90l-13 20H60z" opacity=".6"/>
+            <path d="M62 82h60l-11 20H73z" opacity=".42"/></g>
+          <g class="tile"><rect x="176" y="30" width="110" height="30" rx="6"/></g>
+          <text x="184" y="42" class="lb">INSCRITOS</text><text x="250" y="50" class="vl">48</text>
+          <g class="tile"><rect x="176" y="64" width="110" height="30" rx="6"/></g>
+          <text x="184" y="76" class="lb">ENTREVISTADOS</text><text x="250" y="84" class="vl">12</text>
+          <g class="tile"><rect x="176" y="98" width="110" height="24" rx="6"/><rect x="176" y="98" width="110" height="2.5" rx="1.2" fill="var(--c)"/></g>
+          <text x="184" y="115" class="lb" fill="var(--c)">CONTRATADO 1</text>
         </svg></div>
         <span class="cat">Pessoas</span>
         <h3>Recrutamento e seleção</h3>
@@ -775,54 +920,23 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
         <a class="fale" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20o%20sistema%20de%20recrutamento%20e%20sele%C3%A7%C3%A3o." target="_blank" rel="noopener">Quero esse →</a>
       </article>
 
-      <article class="sis" style="--c:var(--amarelo)">
-        <div class="sis-vis"><svg viewBox="0 0 300 124" aria-hidden="true">
-          <g stroke="#1E2733" fill="none">
-            <circle cx="76" cy="62" r="42"/><circle cx="76" cy="62" r="28"/><circle cx="76" cy="62" r="14"/>
-            <line x1="76" y1="20" x2="76" y2="104"/><line x1="34" y1="62" x2="118" y2="62"/></g>
-          <polygon points="76,28 110,52 98,94 54,90 42,54" fill="var(--c)" fill-opacity=".2"
-                   stroke="var(--c)" stroke-width="2"/>
-          <g fill="var(--c)"><circle cx="76" cy="28" r="3.2"/><circle cx="110" cy="52" r="3.2"/>
-            <circle cx="98" cy="94" r="3.2"/><circle cx="54" cy="90" r="3.2"/><circle cx="42" cy="54" r="3.2"/></g>
-          <g>
-            <text x="146" y="30" fill="#66748A" font-family="Arial" font-size="9" letter-spacing=".8">PREÇO NA PRAÇA</text>
-            <rect x="146" y="38" width="112" height="8" rx="4" fill="var(--c)" opacity=".85"/>
-            <rect x="146" y="54" width="80" height="8" rx="4" fill="#2A3644"/>
-            <rect x="146" y="70" width="96" height="8" rx="4" fill="#2A3644"/>
-            <rect x="146" y="86" width="62" height="8" rx="4" fill="#2A3644"/>
-            <text x="146" y="112" fill="var(--c)" font-family="Arial" font-size="9" font-weight="bold">você</text>
-          </g>
-        </svg></div>
-        <span class="cat">Mercado</span>
-        <h3>Inteligência de mercado</h3>
-        <p>Pare de descobrir o movimento do concorrente pelo cliente que foi embora. Preço, sortimento e
-          demanda da sua praça organizados num painel só.</p>
-        <ul>
-          <li>Monitoramento de preço e sortimento dos concorrentes</li>
-          <li>Sazonalidade e demanda da sua região</li>
-          <li>Painel de oportunidades e ameaças por período</li>
-        </ul>
-        <a class="fale" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20o%20sistema%20de%20intelig%C3%AAncia%20de%20mercado." target="_blank" rel="noopener">Quero esse →</a>
-      </article>
-
       <article class="sis" style="--c:var(--verde)">
         <div class="sis-vis"><svg viewBox="0 0 300 124" aria-hidden="true">
-          <rect x="24" y="14" width="132" height="96" rx="8" fill="#0E1520" stroke="#1E2733"/>
-          <rect x="24" y="14" width="132" height="16" rx="8" fill="#131A24"/>
-          <g fill="#2A3644"><circle cx="34" cy="22" r="2.4"/><circle cx="42" cy="22" r="2.4"/><circle cx="50" cy="22" r="2.4"/></g>
-          <rect x="36" y="42" width="86" height="8" rx="4" fill="var(--c)" opacity=".85"/>
-          <rect x="36" y="56" width="108" height="4.5" rx="2" fill="#2A3644"/>
-          <rect x="36" y="66" width="72" height="4.5" rx="2" fill="#2A3644"/>
-          <rect x="36" y="82" width="60" height="16" rx="8" fill="var(--c)"/>
-          <text x="46" y="93" fill="#07090C" font-family="Arial" font-size="9" font-weight="bold">Falar agora</text>
-          <path d="M164 90 C196 90 196 52 224 52" fill="none" stroke="var(--c)" stroke-width="2"
-                stroke-dasharray="4 4" opacity=".75"/>
-          <path d="M218 47l7 5-7 5" fill="none" stroke="var(--c)" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round"/>
-          <rect x="230" y="30" width="48" height="44" rx="12" fill="#0E1520" stroke="var(--c)" stroke-opacity=".5"/>
-          <path d="M242 74l-6 12 14-12z" fill="#0E1520" stroke="var(--c)" stroke-opacity=".5"/>
-          <g fill="var(--c)" opacity=".7"><rect x="240" y="44" width="28" height="4" rx="2"/>
-            <rect x="240" y="54" width="18" height="4" rx="2"/></g>
+          <rect x="14" y="10" width="130" height="104" rx="7" class="pn"/>
+          <rect x="14" y="10" width="130" height="16" rx="7" fill="#131A24"/>
+          <g fill="#2A3644"><circle cx="24" cy="18" r="2.4"/><circle cx="32" cy="18" r="2.4"/><circle cx="40" cy="18" r="2.4"/></g>
+          <rect x="26" y="38" width="84" height="8" rx="4" fill="var(--c)" opacity=".85"/>
+          <rect x="26" y="52" width="104" height="4.5" rx="2" fill="#2A3644"/>
+          <rect x="26" y="62" width="70" height="4.5" rx="2" fill="#2A3644"/>
+          <rect x="26" y="78" width="60" height="16" rx="8" fill="var(--c)"/>
+          <text x="36" y="89" font-family="Arial" font-size="9" font-weight="bold" fill="#07090C">Falar agora</text>
+          <g class="tile"><rect x="160" y="20" width="126" height="38" rx="6"/><rect x="160" y="20" width="126" height="2.5" rx="1.2" fill="var(--c)"/></g>
+          <text x="168" y="35" class="lb">TAXA DE CONVERSÃO</text><text x="168" y="52" class="vl" fill="var(--c)">9,4%</text>
+          <g class="tile"><rect x="160" y="62" width="126" height="52" rx="6"/></g>
+          <text x="168" y="77" class="lb">ORIGEM DO CONTATO</text>
+          <rect x="168" y="84" width="106" height="6" rx="3" fill="var(--c)" opacity=".85"/>
+          <rect x="168" y="95" width="70" height="6" rx="3" fill="var(--c)" opacity=".5"/>
+          <rect x="168" y="106" width="42" height="6" rx="3" fill="var(--c)" opacity=".3"/>
         </svg></div>
         <span class="cat">Conversão</span>
         <h3>Landing page de conversão</h3>
@@ -846,15 +960,23 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
   <span class="pat pat-grade" aria-hidden="true"></span>
   <div class="wrap rv">
     <span class="eyebrow" style="color:var(--verde)">Como chega até você</span>
-    <h2>Um arquivo. <span class="n-verde glow">Seu.</span> Para sempre.</h2>
-    <p class="lead" style="margin-top:16px">Sem contrato de licença, sem servidor para contratar, sem
-      fornecedor para depender. Você recebe o sistema, abre e usa.</p>
+    <h2>Na <span class="n-verde glow">nuvem</span>, acessível de onde<br>a sua empresa estiver.</h2>
+    <p class="lead" style="margin-top:16px">O sistema fica hospedado e você entra pelo navegador — do
+      escritório, da obra, do celular no cliente. Sua equipe trabalha na mesma informação, ao mesmo tempo,
+      sem versão de planilha circulando por e-mail.</p>
     <div class="gar">
-      <div><b class="n-verde">Sem mensalidade</b><span>Você paga o desenvolvimento uma vez. Depois é seu, e ninguém pode desligar.</span></div>
-      <div><b class="n-agua">Abre no navegador</b><span>Computador, notebook ou celular. Sem instalar programa e sem criar login.</span></div>
-      <div><b class="n-roxo">Seus dados ficam com você</b><span>Roda na sua máquina, funciona sem internet, e seus números não sobem para lugar nenhum.</span></div>
-      <div><b class="n-amarelo">Fala a sua língua</b><span>Os cálculos são os da sua empresa: sua tabela, seus impostos, sua comissão.</span></div>
+      <div><b class="n-verde">Acesso de qualquer lugar</b><span>Computador, notebook ou celular, dentro
+        ou fora da empresa. Nada para instalar.</span></div>
+      <div><b class="n-agua">Cada um com o seu acesso</b><span>Vendedor vê o que é dele, gestor vê tudo.
+        Com registro de quem alterou o quê.</span></div>
+      <div><b class="n-roxo">Backup e histórico</b><span>Os dados ficam protegidos e versionados. Ninguém
+        apaga um mês inteiro por engano.</span></div>
+      <div><b class="n-amarelo">Também roda local</b><span>Se a sua operação exige que o dado não saia de
+        dentro da empresa, entrego a versão que funciona offline, na sua máquina.</span></div>
     </div>
+    <p class="ressalva">Sistema na nuvem envolve um custo de hospedagem, que é dimensionado ao seu uso e
+      informado na proposta — sem surpresa depois. A versão local não tem esse custo, mas abre mão do
+      acesso remoto e do trabalho simultâneo.</p>
   </div>
 </section>
 
@@ -926,6 +1048,45 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
           <li>Rotina de inventário e política de compras</li>
         </ul>
         <a class="fale" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20ajuda%20com%20CMV%2C%20estoque%20e%20margem." target="_blank" rel="noopener">Quero esse →</a>
+      </article>
+
+      <article class="sis" style="--c:var(--agua);min-height:352px">
+        <span class="cat">BPO</span>
+        <h3>BPO financeiro</h3>
+        <p>A rotina financeira sai das suas costas. Contas a pagar e a receber, conciliação e relatórios
+          rodando com quem entende — e você recebendo a informação pronta para decidir.</p>
+        <ul>
+          <li>Contas a pagar, a receber e conciliação bancária</li>
+          <li>Fechamento mensal com DRE e fluxo de caixa</li>
+          <li>Relatório gerencial e reunião de resultado</li>
+        </ul>
+        <a class="fale" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20saber%20sobre%20BPO%20financeiro." target="_blank" rel="noopener">Quero esse →</a>
+      </article>
+
+      <article class="sis" style="--c:var(--roxo);min-height:352px">
+        <span class="cat">BPO</span>
+        <h3>Departamento pessoal</h3>
+        <p>Admissão, folha, férias, rescisão e obrigações acontecendo no prazo, sem você precisar lembrar
+          de cada data — e sem multa por perder uma.</p>
+        <ul>
+          <li>Admissão, rescisão, férias e obrigações mensais</li>
+          <li>Conferência da folha e dos encargos antes do pagamento</li>
+          <li>Controle de ponto, banco de horas e escala</li>
+        </ul>
+        <a class="fale" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20saber%20sobre%20departamento%20pessoal." target="_blank" rel="noopener">Quero esse →</a>
+      </article>
+
+      <article class="sis" style="--c:var(--roxo);min-height:352px">
+        <span class="cat">Pessoas</span>
+        <h3>Recursos Humanos</h3>
+        <p>Da vaga aberta ao funcionário rendendo. Recrutamento, integração, cargos e avaliação
+          estruturados — para a sua empresa parar de perder gente boa por falta de método.</p>
+        <ul>
+          <li>Recrutamento, seleção e integração de novos funcionários</li>
+          <li>Descrição de cargos, faixa salarial e plano de carreira</li>
+          <li>Avaliação de desempenho, metas e política de bonificação</li>
+        </ul>
+        <a class="fale" href="https://wa.me/5532988431897?text=Ol%C3%A1%2C%20Cyr.%20Quero%20saber%20sobre%20Recursos%20Humanos." target="_blank" rel="noopener">Quero esse →</a>
       </article>
 
       <article class="sis" style="--c:var(--amarelo);min-height:352px">
@@ -1152,17 +1313,18 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
       <label for="a">O que você precisa agora</label>
       <select id="a" name="a">
         <optgroup label="Sistemas sob medida">
+          <option>Reforma tributária — impacto na minha empresa</option>
           <option>Orçamento personalizado</option>
           <option>Calculadora de marketplace</option>
           <option>Calculadora de licitação</option>
           <option>DRE personalizado</option>
           <option>DRF — resultado financeiro e caixa</option>
-          <option>Simulador de regimes tributários</option>
+          <option>Acompanhamento comercial, metas e comissões</option>
+          <option>Manutenção e ordens de serviço</option>
           <option>PCP — planejamento e controle da produção</option>
           <option>Folha de pagamento</option>
           <option>Onboarding de funcionários</option>
           <option>Recrutamento e seleção</option>
-          <option>Inteligência de mercado</option>
           <option>Landing page de conversão</option>
         </optgroup>
         <optgroup label="Consultoria">
@@ -1173,6 +1335,9 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
           <option>Auditoria (financeira, contábil ou de marketing)</option>
           <option>Processos e documentação</option>
           <option>Plano de negócios</option>
+          <option>BPO financeiro</option>
+          <option>Departamento pessoal</option>
+          <option>Recursos Humanos</option>
           <option>Mentoria para gestores</option>
         </optgroup>
         <option>Ainda não sei — quero conversar</option>
@@ -1201,9 +1366,12 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
           inicial, que é gratuita — e vem por escrito, com escopo e prazo fechados.</p>
       </details>
       <details>
-        <summary>Vou precisar pagar mensalidade depois?</summary>
-        <p>Não. Você paga o desenvolvimento uma vez e o sistema é seu. Se mais tarde quiser uma função nova,
-          a gente combina esse ajuste na hora — mas nada é cobrado para continuar usando o que já existe.</p>
+        <summary>Quanto custa manter o sistema no ar?</summary>
+        <p>O desenvolvimento é pago uma vez. Depois existe só o custo de hospedagem, dimensionado ao seu
+          uso e informado na proposta — normalmente uma fração do que se paga por licença de sistema de
+          prateleira, e sem cobrança por usuário. Se você preferir não ter esse custo, entrego a versão
+          local, que roda na sua máquina sem hospedagem. Novas funções são combinadas à parte, quando
+          você quiser.</p>
       </details>
       <details>
         <summary>Isso substitui o meu ERP?</summary>
@@ -1213,9 +1381,11 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
       </details>
       <details>
         <summary>Meus números ficam seguros?</summary>
-        <p>Ficam na sua máquina. O sistema é um arquivo que roda no seu navegador, funciona sem internet e
-          não envia dado nenhum para servidor. Todo projeto pode ser conduzido sob acordo de
-          confidencialidade, e nenhum número de cliente vira material de divulgação.</p>
+        <p>Sim. Na nuvem, o acesso é individual e registrado, com backup e histórico de alterações — mais
+          seguro do que a planilha que hoje circula por e-mail e vive numa pasta compartilhada. Se a sua
+          operação exige que o dado não saia de dentro da empresa, entrego a versão local. Em qualquer um
+          dos formatos, o projeto pode ser conduzido sob acordo de confidencialidade, e nenhum número de
+          cliente vira material de divulgação.</p>
       </details>
       <details>
         <summary>Minha empresa é pequena demais para isso?</summary>
@@ -1242,7 +1412,7 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
         <span><span class="wm wm-branco" style="width:138px;height:14px" aria-hidden="true"></span><span class="sub">CONSULTORIA EMPRESARIAL</span></span>
       </a>
       <div class="rp-links">
-        <a href="#sistemas">Sistemas</a><a href="#entrega">Como é entregue</a>
+        <a href="#reforma">Reforma tributária</a><a href="#sistemas">Sistemas</a><a href="#entrega">Como é entregue</a>
         <a href="#consultoria">Consultoria</a><a href="#metodo">Método</a>
         <a href="#quem">Quem faz</a><a href="#contato">Contato</a>
         <a href="https://www.instagram.com/cyrandrade/" target="_blank" rel="noopener">Instagram</a>
@@ -1276,12 +1446,13 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Calculadora de licitação"}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"DRE personalizado"}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"DRF — Demonstrativo do Resultado Financeiro"}},
-    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Simulador de regimes tributários (Simples Nacional, Lucro Presumido e Lucro Real)"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Reforma tributária e simulador de regimes (IBS, CBS, Simples Nacional, Lucro Presumido e Lucro Real)"}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Sistema de PCP — Planejamento e Controle da Produção"}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Sistema de folha de pagamento"}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Sistema de onboarding de funcionários"}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Sistema de recrutamento e seleção"}},
-    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Sistema de inteligência de mercado"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Sistema de acompanhamento comercial, metas e comissões"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Sistema de manutenção e ordens de serviço"}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Landing page de conversão"}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Diagnóstico Empresarial 360º"}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Gestão financeira e fluxo de caixa"}},
@@ -1290,6 +1461,9 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Auditoria financeira, contábil e de marketing"}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Processos e documentação (POP)"}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Plano de negócios e viabilidade"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"BPO financeiro"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Departamento pessoal (BPO de DP)"}},
+    {"@type":"Offer","itemOffered":{"@type":"Service","name":"Recursos Humanos"}},
     {"@type":"Offer","itemOffered":{"@type":"Service","name":"Mentoria para gestores"}}
   ]}
 }
@@ -1298,9 +1472,9 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
 {
   "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
     {"@type":"Question","name":"Quanto custa um sistema de gestão sob medida?","acceptedAnswer":{"@type":"Answer","text":"Depende do escopo. O valor sai depois da conversa inicial, que é gratuita, e vem por escrito com escopo e prazo fechados."}},
-    {"@type":"Question","name":"Tem mensalidade?","acceptedAnswer":{"@type":"Answer","text":"Não. Você paga o desenvolvimento uma vez e o sistema é seu. Nada é cobrado para continuar usando."}},
+    {"@type":"Question","name":"Quanto custa manter o sistema no ar?","acceptedAnswer":{"@type":"Answer","text":"O desenvolvimento é pago uma vez. Depois há apenas o custo de hospedagem, dimensionado ao uso e informado na proposta, sem cobrança por usuário. Há também a opção de versão local, que roda na máquina da empresa sem custo de hospedagem."}},
     {"@type":"Question","name":"Substitui o ERP?","acceptedAnswer":{"@type":"Answer","text":"Na maioria das vezes não. O ERP cuida da obrigação fiscal; o sistema sob medida cobre o que o ERP não faz do jeito da empresa."}},
-    {"@type":"Question","name":"Meus dados ficam seguros?","acceptedAnswer":{"@type":"Answer","text":"Sim. O sistema é um arquivo que roda no navegador da sua máquina, funciona sem internet e não envia dados para servidor."}}
+    {"@type":"Question","name":"Meus dados ficam seguros?","acceptedAnswer":{"@type":"Answer","text":"Sim. Na nuvem o acesso é individual e registrado, com backup e histórico de alterações. Para operações que exigem dado dentro da empresa, há a versão local. Em ambos os casos o projeto pode ser conduzido sob acordo de confidencialidade."}}
   ]}
 </script>
 
