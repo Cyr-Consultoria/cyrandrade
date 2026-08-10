@@ -253,6 +253,21 @@ section > .wrap{position:relative;z-index:1}
 .caso li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:1px;
   background:var(--c);box-shadow:0 0 8px var(--c)}
 
+
+/* ---------- índice: tudo visível de uma vez ---------- */
+.indice{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px;padding-top:24px;
+  border-top:1px solid var(--line);align-items:center}
+.indice .rot{font-size:.7rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--tx3);margin-right:6px}
+.indice button{background:transparent;border:1px solid var(--line);border-radius:100px;
+  padding:8px 15px;font-size:.815rem;font-family:inherit;color:var(--tx2);cursor:pointer;
+  transition:all .18s;display:inline-flex;align-items:center;gap:8px;line-height:1.2}
+.indice button::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ic);
+  box-shadow:0 0 8px var(--ic);flex-shrink:0}
+.indice button:hover{border-color:var(--ic);color:var(--tx);
+  box-shadow:0 0 18px color-mix(in srgb,var(--ic) 25%,transparent)}
+.indice button.on{border-color:var(--ic);color:var(--tx);background:rgba(255,255,255,.035)}
+
 /* ---------- garantias ---------- */
 .gar{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2px;margin-top:44px;
   background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
@@ -975,6 +990,7 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
 
     </div>
     <div class="sl-pontos" aria-hidden="true"></div>
+    <nav class="indice" data-indice aria-label="Todos os sistemas"></nav>
   </div>
 </section>
 
@@ -1335,6 +1351,7 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
 
     </div>
     <div class="sl-pontos" aria-hidden="true"></div>
+    <nav class="indice" data-indice aria-label="Todos os serviços de consultoria"></nav>
   </div>
 </section>
 
@@ -1688,12 +1705,39 @@ document.querySelectorAll('[data-slider]').forEach(function (pista) {
     pontos.appendChild(b);
   });
 
+
+  /* índice: lista todos os itens do slider e leva até o card */
+  var listaIndice = bloco.querySelector('[data-indice]');
+  if (listaIndice) {
+    var rot = document.createElement('span');
+    rot.className = 'rot';
+    rot.textContent = 'Todos os ' + itens.length + ':';
+    listaIndice.appendChild(rot);
+    itens.forEach(function (card, i) {
+      var h = card.querySelector('h3');
+      if (!h) return;
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = h.textContent.trim();
+      b.style.setProperty('--ic', getComputedStyle(card).getPropertyValue('--c') || 'var(--agua)');
+      b.addEventListener('click', function () {
+        pista.scrollTo({ left: i * passo(), behavior: 'smooth' });
+        pista.focus({ preventScroll: true });
+      });
+      listaIndice.appendChild(b);
+    });
+  }
+
   function pintar() {
     var i = indice(), max = paginas() - 1;
     Array.prototype.forEach.call(pontos.children, function (p, k) {
       p.classList.toggle('on', k === Math.min(i, max));
       p.style.display = k > max ? 'none' : '';
     });
+    if (listaIndice) {
+      var bts = listaIndice.querySelectorAll('button');
+      bts.forEach(function (b, k) { b.classList.toggle('on', k === i); });
+    }
     botoes[0].disabled = pista.scrollLeft < 8;
     botoes[1].disabled = pista.scrollLeft > pista.scrollWidth - pista.clientWidth - 8;
   }
