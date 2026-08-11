@@ -416,10 +416,134 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
   .sl-pista{scroll-behavior:auto}
 }
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ============================================================
+   CAMADA DE ACABAMENTO — movimento, material e tipografia
+   Princípios: resposta no pointerdown, molas em vez de durações,
+   translucidez com hierarquia, tracking por tamanho.
+   ============================================================ */
+
+:root{
+  /* molas: criticamente amortecida (padrão) e com quique (momento) */
+  --mola:   cubic-bezier(.22,1,.36,1);
+  --mola-b: cubic-bezier(.34,1.4,.5,1);
+  --resp:   .42s;
+  --resp-r: .16s;   /* resposta ao toque: quase instantânea */
+  /* elevação em camadas — sombra de material, não de caixa */
+  --elev-1: 0 1px 0 rgba(255,255,255,.04) inset, 0 2px 8px rgba(0,0,0,.4);
+  --elev-2: 0 1px 0 rgba(255,255,255,.055) inset, 0 8px 30px rgba(0,0,0,.5);
+  --elev-3: 0 1px 0 rgba(255,255,255,.07) inset, 0 30px 90px rgba(0,0,0,.62);
+}
+
+/* ---------- tipografia: tracking e leading por tamanho ---------- */
+h1{letter-spacing:-.035em;line-height:1.03}
+h2{letter-spacing:-.028em;line-height:1.07}
+h3{letter-spacing:-.016em;line-height:1.26}
+.lead{letter-spacing:-.004em;line-height:1.6}
+p{letter-spacing:0}
+.eyebrow,.cat,.lb{letter-spacing:.16em}
+.marcadores b,.lt b,.passo b{letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.vl,.trust b{font-variant-numeric:tabular-nums}
+
+/* ---------- barra de progresso da leitura ---------- */
+.progresso{position:fixed;top:0;left:0;height:2px;z-index:120;width:0;
+  background:linear-gradient(90deg,var(--agua),var(--verde) 55%,var(--amarelo));
+  box-shadow:0 0 14px rgba(34,230,255,.6);transition:width .1s linear}
+
+/* ---------- cabeçalho: material translúcido com borda de luz ---------- */
+header{background:rgba(7,9,12,.62);backdrop-filter:saturate(180%) blur(22px);
+  -webkit-backdrop-filter:saturate(180%) blur(22px);border-bottom:0;
+  box-shadow:0 1px 0 rgba(255,255,255,.045)}
+header::after{content:"";position:absolute;left:0;right:0;top:100%;height:26px;pointer-events:none;
+  background:linear-gradient(180deg,rgba(7,9,12,.55),transparent)}
+header.rolado{background:rgba(7,9,12,.82);box-shadow:0 1px 0 rgba(255,255,255,.06),0 10px 30px rgba(0,0,0,.35)}
+
+/* ---------- resposta ao toque: acontece no pointerdown ---------- */
+.btn,.sl-btn,.rota,.sis,.caso,.indice button,summary,.zap{
+  transition:transform var(--resp) var(--mola),box-shadow var(--resp) var(--mola),
+             border-color var(--resp) var(--mola),background var(--resp) var(--mola)}
+.btn.press,.sl-btn.press,.indice button.press,.zap.press{transform:scale(.965);transition-duration:var(--resp-r)}
+.rota.press,.sis.press,.caso.press{transform:scale(.992) translateY(-2px);transition-duration:var(--resp-r)}
+
+/* ---------- materialidade dos cartões ---------- */
+.sis,.caso,.rota,.lt,.imp,.dor,.ficha,.painel,form,details,.gar div,.passo{box-shadow:var(--elev-1)}
+.sis:hover,.caso:hover,.rota:hover{box-shadow:var(--elev-2)}
+.painel{box-shadow:var(--elev-3)}
+.cta-box{box-shadow:var(--elev-3)}
+
+/* ---------- holofote que segue o ponteiro ---------- */
+.sis,.caso,.rota,.imp{position:relative}
+.sis::before,.caso .holo,.rota .holo,.imp .holo{pointer-events:none}
+.holo{position:absolute;inset:0;border-radius:inherit;opacity:0;pointer-events:none;
+  transition:opacity .35s var(--mola);
+  background:radial-gradient(340px circle at var(--mx,50%) var(--my,0%),
+    color-mix(in srgb,var(--c,var(--agua)) 16%,transparent),transparent 62%)}
+.sis:hover .holo,.caso:hover .holo,.rota:hover .holo,.imp:hover .holo{opacity:1}
+
+/* ---------- revelação em cascata ---------- */
+.rv{opacity:0;transform:translateY(26px);
+  transition:opacity .7s var(--mola),transform .7s var(--mola)}
+.rv.on{opacity:1;transform:none}
+.rv .esc{opacity:0;transform:translateY(18px);
+  transition:opacity .62s var(--mola),transform .62s var(--mola);
+  transition-delay:calc(var(--i,0) * 55ms)}
+.rv.on .esc{opacity:1;transform:none}
+
+/* ---------- painel do hero: profundidade e paralaxe ---------- */
+.painel{transform:perspective(1400px) rotateY(calc(var(--px,0) * -3deg)) rotateX(calc(var(--py,0) * 2deg))
+  translate3d(calc(var(--px,0) * -6px), calc(var(--py,0) * -6px), 0);
+  transition:transform .5s var(--mola);will-change:transform}
+.painel:hover{transition-duration:.15s}
+.painel-brilho{position:absolute;inset:0;pointer-events:none;border-radius:18px;
+  background:radial-gradient(500px circle at calc(50% + var(--px,0) * 30%) calc(30% + var(--py,0) * 30%),
+    rgba(255,255,255,.06),transparent 60%)}
+
+/* ---------- botão magnético ---------- */
+.btn-neon{will-change:transform}
+
+/* ---------- retrato ---------- */
+.retrato{position:relative;border-radius:20px;overflow:hidden;margin-bottom:26px;
+  background:linear-gradient(160deg,#101720,#0A0E14);box-shadow:var(--elev-2);
+  aspect-ratio:4/5}
+.retrato img{width:100%;height:100%;object-fit:cover;object-position:center 18%;
+  filter:saturate(.66) contrast(1.08) brightness(.88);
+  transition:transform 1.1s var(--mola),filter .6s var(--mola)}
+.retrato:hover img{transform:scale(1.035);filter:saturate(.92) contrast(1.04) brightness(1)}
+.retrato::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(175deg,rgba(10,14,20,.55),rgba(34,230,255,.14) 30%,transparent 55%),
+             linear-gradient(0deg,rgba(7,9,12,.95),rgba(7,9,12,.35) 42%,rgba(7,9,12,.06) 72%);
+  mix-blend-mode:normal}
+.retrato::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:20px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.08),inset 0 -80px 90px -60px rgba(57,255,136,.22)}
+.retrato figcaption{position:absolute;left:24px;right:24px;bottom:20px;z-index:3}
+.retrato figcaption b{display:block;font-size:1.16rem;font-weight:800;letter-spacing:-.02em;color:var(--tx)}
+.retrato figcaption span{display:block;font-size:.74rem;letter-spacing:.17em;text-transform:uppercase;
+  color:var(--agua);font-weight:700;margin-top:5px}
+
+/* ---------- números que contam ---------- */
+.marcadores b{font-feature-settings:"tnum"}
+
+/* ---------- acessibilidade ---------- */
+@media (prefers-reduced-motion: reduce){
+  .rv,.rv .esc{opacity:1;transform:none;transition:opacity .2s linear}
+  .painel{transform:none!important}
+  .retrato img{transition:none}
+  .holo{display:none}
+  .progresso{transition:none}
+}
+@media (prefers-reduced-transparency: reduce){
+  header{background:#07090C;backdrop-filter:none;-webkit-backdrop-filter:none}
+}
+@media (prefers-contrast: more){
+  .sis,.caso,.rota,.lt,.imp,.dor{border-color:#3B4A5C}
+  .lead,.sis>p,.caso p{color:#C8D4E2}
+}
+
 </style>
 </head>
 <body>
 
+<div class="progresso" aria-hidden="true"></div>
 <header>
   <div class="wrap nav">
     <a href="#topo" class="brand" aria-label="Cyr Andrade Consultoria Empresarial">
@@ -469,6 +593,7 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
 
     <!-- painel: como um sistema entregue se parece -->
     <div class="painel">
+      <span class="painel-brilho" aria-hidden="true"></span>
       <div class="painel-topo"><i></i><i></i><i></i><span>Resultado do mês · sua empresa</span></div>
       <svg viewBox="0 0 520 330" role="img" aria-label="Ilustração de um painel gerencial com indicadores, gráfico de barras e linha de tendência">
         <defs>
@@ -1489,6 +1614,11 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
       </div>
     </div>
     <div class="ficha">
+      <figure class="retrato">
+        <img src="foto-cyr.jpg" width="820" height="1025" loading="lazy" decoding="async"
+             alt="Cyr Andrade, consultor empresarial em Juiz de Fora">
+        <figcaption><b>Cyr Andrade</b><span>Consultor empresarial</span></figcaption>
+      </figure>
       <h3>O que eu levo para dentro<br>da sua empresa</h3>
       <div class="item"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 4.5 1.6 3.4 3.7.5-2.7 2.6.7 3.7-3.3-1.8-3.3 1.8.7-3.7L6.7 10.4l3.7-.5L12 6.5z"/></svg>
         <span><b style="color:var(--tx)">Construção de sistemas com IA.</b> Do desenho da sua regra de negócio
@@ -1726,6 +1856,112 @@ footer{background:#05070A;border-top:1px solid var(--line);padding:56px 0 36px;f
 
 <script>
 document.getElementById('ano').textContent = new Date().getFullYear();
+
+/* ============================================================
+   ACABAMENTO: resposta imediata, holofote, paralaxe, contadores
+   ============================================================ */
+(function () {
+  var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* --- resposta no pointerdown, não no clique --- */
+  var pressionaveis = '.btn, .sl-btn, .indice button, .zap, .rota, .sis, .caso';
+  document.addEventListener('pointerdown', function (ev) {
+    var el = ev.target.closest(pressionaveis);
+    if (el) el.classList.add('press');
+  }, { passive: true });
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (t) {
+    document.addEventListener(t, function () {
+      document.querySelectorAll('.press').forEach(function (el) { el.classList.remove('press'); });
+    }, { passive: true });
+  });
+
+  if (reduz) return;
+
+  /* --- holofote que segue o ponteiro dentro dos cartões --- */
+  document.querySelectorAll('.sis, .caso, .rota, .imp').forEach(function (card) {
+    var h = document.createElement('span');
+    h.className = 'holo';
+    card.appendChild(h);
+    card.addEventListener('pointermove', function (ev) {
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', ((ev.clientX - r.left) / r.width * 100).toFixed(1) + '%');
+      card.style.setProperty('--my', ((ev.clientY - r.top) / r.height * 100).toFixed(1) + '%');
+    }, { passive: true });
+  });
+
+  /* --- paralaxe do painel do hero, eixos X e Y independentes --- */
+  var painel = document.querySelector('.painel');
+  var hero = document.querySelector('.hero');
+  if (painel && hero && window.matchMedia('(pointer:fine)').matches) {
+    hero.addEventListener('pointermove', function (ev) {
+      var r = hero.getBoundingClientRect();
+      painel.style.setProperty('--px', (((ev.clientX - r.left) / r.width) * 2 - 1).toFixed(3));
+      painel.style.setProperty('--py', (((ev.clientY - r.top) / r.height) * 2 - 1).toFixed(3));
+    }, { passive: true });
+    hero.addEventListener('pointerleave', function () {
+      painel.style.setProperty('--px', 0); painel.style.setProperty('--py', 0);
+    }, { passive: true });
+  }
+
+  /* --- botão magnético: atração sutil em direção ao cursor --- */
+  document.querySelectorAll('.cta-row .btn-neon').forEach(function (b) {
+    b.addEventListener('pointermove', function (ev) {
+      var r = b.getBoundingClientRect();
+      b.style.transform = 'translate(' + ((ev.clientX - r.left - r.width / 2) * .14).toFixed(1) + 'px,'
+                                       + ((ev.clientY - r.top - r.height / 2) * .22).toFixed(1) + 'px)';
+    }, { passive: true });
+    b.addEventListener('pointerleave', function () { b.style.transform = ''; }, { passive: true });
+  });
+
+  /* --- cabeçalho ganha peso ao rolar + barra de progresso --- */
+  var cab = document.querySelector('header');
+  var barra = document.querySelector('.progresso');
+  var tique = false;
+  window.addEventListener('scroll', function () {
+    if (tique) return;
+    tique = true;
+    requestAnimationFrame(function () {
+      var y = window.scrollY;
+      cab.classList.toggle('rolado', y > 12);
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      barra.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+      tique = false;
+    });
+  }, { passive: true });
+
+  /* --- contadores: o número sobe quando entra em cena --- */
+  var contadores = document.querySelectorAll('.marcadores b');
+  var obsNum = new IntersectionObserver(function (es) {
+    es.forEach(function (x) {
+      if (!x.isIntersecting) return;
+      obsNum.unobserve(x.target);
+      var el = x.target, bruto = el.textContent.trim();
+      var m = bruto.match(/^(\D*)(\d+)(.*)$/);
+      if (!m) return;
+      var pre = m[1], alvo = parseInt(m[2], 10), pos = m[3], t0 = null;
+      function passo(t) {
+        if (!t0) t0 = t;
+        var p = Math.min((t - t0) / 900, 1);
+        var e = 1 - Math.pow(1 - p, 3);           /* desaceleração, sem quique */
+        el.textContent = pre + Math.round(alvo * e) + pos;
+        if (p < 1) requestAnimationFrame(passo);
+      }
+      requestAnimationFrame(passo);
+    });
+  }, { threshold: .6 });
+  contadores.forEach(function (c) { obsNum.observe(c); });
+
+  /* --- cascata: filhos entram em sequência dentro de cada bloco --- */
+  document.querySelectorAll('.rv').forEach(function (bloco) {
+    var filhos = bloco.querySelectorAll(
+      '.dor, .sis, .caso, .rota, .lt, .imp, .gar div, .passo, .item, .tag, details, .indice button');
+    filhos.forEach(function (f, i) {
+      f.classList.add('esc');
+      f.style.setProperty('--i', Math.min(i, 10));
+    });
+  });
+})();
+
 
 /* ---------- formulário → WhatsApp ---------- */
 document.getElementById('f').addEventListener('submit', function (ev) {
