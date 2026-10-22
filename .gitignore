@@ -1,0 +1,12 @@
+# Só o site vai para o GitHub. Todo o resto é material de trabalho e fica local.
+*
+!.gitignore
+!index.html
+!logo-simbolo.png
+!logo-texto.png
+!og-capa.png
+!robots.txt
+!sitemap.xml
+!foto-cyr.jpg
+!logo-simbolo-cor.png
+!CNAME
