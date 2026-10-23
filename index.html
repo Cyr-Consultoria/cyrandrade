@@ -841,6 +841,9 @@ header.rolado .btn-sm,header.vidro .btn-sm{background:var(--card);color:var(--tx
 }
 html.reduz .dica{display:none}
 
+/* telas reais (geradas do código dos sistemas, base inventada) */
+.app-voo img.app{display:block;width:1280px;height:800px;border-radius:10px;background:#fff}
+
 .batida.raiz{margin:0 auto;max-width:980px}
 .reforma .linha-tempo .trilho i{transition:none}
 </style>
@@ -874,11 +877,11 @@ html.reduz .dica{display:none}
     <div class="claro" id="claro"></div>
     <div class="app-voo" id="app-voo" aria-hidden="true">
       <div class="app-sombra" id="app-sombra"></div>
-      <div class="app on" data-view="resultado"></div>
-      <div class="app" data-view="caixa"></div>
-      <div class="app" data-view="metas"></div>
-      <div class="app" data-view="os"></div>
-      <div class="app" data-view="folha"></div>
+      <img class="app on" src="tela-dre.webp" width="1280" height="800" alt="" decoding="async">
+      <img class="app" src="tela-dre-tabela.webp" width="1280" height="800" alt="" decoding="async" loading="lazy">
+      <img class="app" src="tela-comercial.webp" width="1280" height="800" alt="" decoding="async" loading="lazy">
+      <img class="app" src="tela-pcp.webp" width="1280" height="800" alt="" decoding="async" loading="lazy">
+      <img class="app" src="tela-ponto.webp" width="1280" height="800" alt="" decoding="async" loading="lazy">
       <div class="app-escuro" id="app-escuro"></div>
     </div>
     <div class="veu" id="veu"></div>
@@ -904,7 +907,7 @@ html.reduz .dica{display:none}
         <article class="tour-item" data-i="2"><span class="num">03 · Operação e produção</span><h3>Manutenção e PCP</h3>
           <p>Cada OS registrada, com horas, peças e responsável. Você passa a saber o custo real de manter cada máquina. E para de prometer prazo no chute.</p>
           <div class="chips"><span>Manutenção e ordens de serviço</span><span>PCP</span></div></article>
-        <article class="tour-item" data-i="3"><span class="num">04 · Pessoas</span><h3>Folha, seleção e integração</h3>
+        <article class="tour-item" data-i="3"><span class="num">04 · Pessoas</span><h3>Ponto, folha e seleção</h3>
           <p>Confira a folha antes de pagar e simule antes de contratar. Você para de descobrir o custo real de um funcionário depois que ele já está no time.</p>
           <div class="chips"><span>Folha de pagamento</span><span>Recrutamento e seleção</span><span>Onboarding de funcionários</span></div></article>
       </div>
@@ -1300,7 +1303,7 @@ html.reduz .dica{display:none}
       '<span class="a-pill">Out/2026 ▾</span><span class="a-pill">Todas as lojas ▾</span><span class="a-busca">Buscar</span><span class="a-exp">Exportar</span></div>' +
       '<div class="a-body">' + VIEWS[v].body() + '</div></div>';
   }
-  $$('.app[data-view]').forEach(montaApp);
+  $$('div.app[data-view]').forEach(montaApp);
 
   function homografia(src, dst) {
     var A = [], b = [];
