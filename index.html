@@ -540,7 +540,6 @@ header.vidro{color:#fff;background:rgba(16,24,32,.5);-webkit-backdrop-filter:blu
 /* menos movimento: nada fica preso; tudo aparece em ordem */
 html.reduz .cena{height:auto!important}
 html.reduz .palco-fixo{position:relative;height:auto;min-height:100svh}
-html.reduz .tour{display:none}
 html.reduz .batidas{position:relative;display:flex;flex-direction:column;gap:56px;padding:120px 24px}
 html.reduz .batida{opacity:1;transform:none}
 html.reduz .fotos img:first-child{opacity:1;display:block}
@@ -651,6 +650,197 @@ html.reduz .cs-brilho,html.reduz .cs-progresso,html.reduz .mt-linha{display:none
 .hero-txt{will-change:opacity,transform}
 .batidas,.cs-dir,.mt-cards{will-change:transform}
 
+/* recibo revisor-vieses 23/10 */
+.tour-nota{display:none;font-size:.78rem;color:var(--tx2)}
+@media screen and (max-width:760px){.tour-nota{display:block}}
+.erro-campo{color:var(--erro);font-size:.9rem;font-weight:600;margin:-10px 0 16px}
+input[aria-invalid="true"]{border-color:var(--erro);box-shadow:0 0 0 4px rgba(198,40,40,.12)}
+form .garantia-form{font-size:.95rem;font-weight:600;color:var(--tx);text-align:center;margin-top:12px}
+html.reduz .tour{display:flex;position:relative;inset:auto;width:auto;max-width:calc(var(--col) + 48px);margin:100svh auto 0;padding:80px 24px;opacity:1!important;background:var(--bg);z-index:4}
+html.reduz .tour-itens{min-height:0;display:flex;flex-direction:column;gap:40px}
+html.reduz .tour-item{position:relative;opacity:1;transform:none}
+html.reduz .tour-passos{display:none}
+html.reduz .tour-nota{display:block}
+
+/* =====================================================================
+   v6 · só a abertura presa à rolagem; o resto rola normal.
+   Animação dispara uma vez ao entrar (classe .on via IntersectionObserver)
+   e, onde o navegador suporta, o paralaxe roda no motor gráfico (view()).
+   ===================================================================== */
+:root{--erro:#C62828}
+.sec{position:relative;padding:var(--cap) 0}
+.sec.escuro{background:var(--tinta);color:#fff}
+.sec.escuro h2{color:#A6B4C2}
+.sec.escuro h2 b{color:#fff}
+.sec.escuro .chapeu{color:#9FE0EC}
+.sec.escuro .texto{color:#C6D2DD}
+.sec.escuro .nota{color:#A6B4C2}
+.sec.escuro .link{color:#fff}
+.cab-sec{margin-bottom:56px}
+.rv{opacity:0;transform:translateY(22px)}
+.rv.on{opacity:1;transform:none;transition:opacity .7s ease,transform 1.2s var(--assenta);transition-delay:calc(var(--d,0)*110ms)}
+
+/* dores: mosaico */
+.mosaico{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.dor-card{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:#18232E;margin:0}
+.dor-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.1);transition:transform 1.6s var(--assenta)}
+.dor-card.on img{transform:scale(1.02)}
+.dor-card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,24,32,.95) 0%,rgba(16,24,32,.82) 34%,rgba(16,24,32,.25) 62%,rgba(16,24,32,0) 80%)}
+.dor-card figcaption{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:26px 26px 28px;font:400 clamp(1.15rem,1.6vw,1.4rem)/1.32 var(--fm);letter-spacing:-.01em;color:#fff}
+.raiz{margin-top:72px;max-width:980px}
+.raiz p{font-size:clamp(1.12rem,1.6vw,1.35rem);line-height:1.5;color:#C6D2DD;max-width:780px}
+.raiz .numeros{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;border-top:1px solid rgba(255,255,255,.18)}
+.raiz .numeros li{padding:24px 20px 0 0}
+.raiz .numeros li+li{padding-left:20px;border-left:1px solid rgba(255,255,255,.14)}
+.raiz .numeros b{display:block;font:300 clamp(2rem,3.6vw,3.2rem)/1.03 var(--fm);letter-spacing:-.025em;color:#fff}
+.raiz .numeros span{display:block;color:#C6D2DD;margin-top:8px;font-size:.95rem}
+@supports (animation-timeline: view()){
+  .dor-card.on img{animation:paralaxe linear both;animation-timeline:view();animation-range:cover;transition:none}
+  @keyframes paralaxe{from{transform:translateY(-5%) scale(1.12)}to{transform:translateY(5%) scale(1.12)}}
+}
+@media screen and (max-width:900px){.mosaico{grid-template-columns:1fr 1fr}}
+@media screen and (max-width:560px){
+  .mosaico{grid-template-columns:1fr;gap:12px}
+  .dor-card{aspect-ratio:4/3.4}
+  .raiz .numeros{grid-template-columns:1fr 1fr}
+  .raiz .numeros li:nth-child(3){padding-left:0;border-left:0}
+  .raiz .numeros li{padding-bottom:18px}
+}
+
+/* Reforma Tributária */
+.reforma2{border-top:1px solid rgba(255,255,255,.08)}
+.rf2{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px 64px;align-items:end}
+.reforma2 .texto+.texto{margin-top:14px}
+.reforma2 .link{margin-top:14px}
+.tempo{margin-top:64px;padding-top:44px;position:relative}
+.tempo-trilho{position:absolute;left:0;right:0;top:0;height:3px;border-radius:3px;background:rgba(255,255,255,.16)}
+.tempo-trilho i{position:absolute;inset:0 auto 0 0;width:0;border-radius:3px;background:var(--marca);transition:width 2s var(--assenta) .3s}
+.tempo.on .tempo-trilho i{width:var(--hoje,20%)}
+.tempo-hoje{position:absolute;top:-34px;left:var(--hoje,20%);transform:translateX(-50%);font:700 .72rem/1 var(--ff);letter-spacing:.14em;text-transform:uppercase;background:var(--marca);color:var(--marca-tx);padding:6px 9px;border-radius:6px;opacity:0;transition:opacity .5s ease 1.8s}
+.tempo.on .tempo-hoje{opacity:1}
+.tempo ol{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.tempo li b{display:block;font:700 1.2rem/1 var(--fm);color:#fff}
+.tempo li span{display:block;color:#C6D2DD;margin-top:8px;font-size:.98rem;line-height:1.45}
+.reforma2 .nota{margin-top:28px}
+@media screen and (max-width:860px){.rf2{grid-template-columns:1fr;gap:20px}.tempo ol{grid-template-columns:1fr 1fr}}
+
+/* consultoria (carro-chefe) */
+.consult2{background:var(--bg);overflow:hidden}
+.cs-luz{position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(40% 30% at 85% 18%,rgba(11,124,147,.10),transparent 70%),radial-gradient(35% 28% at 10% 62%,rgba(107,50,189,.07),transparent 70%),radial-gradient(30% 25% at 90% 92%,rgba(156,100,19,.07),transparent 70%)}
+.cs-intro{max-width:860px;margin-bottom:64px}
+.cs-intro h2{font-size:clamp(2rem,3.8vw,3.3rem)}
+.diag2{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;background:var(--card);border-radius:20px;padding:48px;
+  box-shadow:0 1px 2px rgba(16,42,74,.04),0 24px 60px rgba(16,42,74,.08)}
+.diag2 h3{font-size:clamp(1.7rem,2.8vw,2.4rem);letter-spacing:-.025em;margin:6px 0 10px}
+.diag2-txt>p{color:var(--tx2);font-size:1.1rem;line-height:1.5}
+.recebe2{list-style:none;counter-reset:r;margin:20px 0 16px}
+.recebe2 li{counter-increment:r;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);opacity:0;transform:translateX(14px);transition:opacity .5s ease,transform .9s var(--assenta)}
+.recebe2 li::before{content:counter(r,decimal-leading-zero);font:700 .82rem/1.65 var(--fm);color:var(--agua-f);min-width:24px}
+.diag2.on .recebe2 li{opacity:1;transform:none}
+.diag2.on .recebe2 li:nth-child(1){transition-delay:.5s}
+.diag2.on .recebe2 li:nth-child(2){transition-delay:.62s}
+.diag2.on .recebe2 li:nth-child(3){transition-delay:.74s}
+.diag2.on .recebe2 li:nth-child(4){transition-delay:.86s}
+.diag2-radar{margin:0;text-align:center}
+.diag2-radar figcaption{font-size:.85rem;color:var(--tx2);margin-top:6px}
+.radar2{width:100%;max-width:420px;overflow:visible}
+.radar2 .grade polygon{fill:none;stroke:var(--line-forte)}
+.radar2 .grade line{stroke:var(--line)}
+.radar2 .forma{fill:rgba(11,124,147,.14);stroke:var(--agua);stroke-width:2;stroke-linejoin:round;transform:scale(0);transform-origin:0 0;transition:transform 1.4s var(--assenta) .25s}
+.diag2.on .radar2 .forma{transform:scale(1)}
+.radar2 .pt{fill:#fff;stroke:var(--agua);stroke-width:2;opacity:0;transition:opacity .4s ease}
+.diag2.on .radar2 .pt{opacity:1;transition-delay:calc(1.1s + var(--k)*.08s)}
+.radar2 text{font:600 13px var(--ff);fill:var(--tx)}
+.familias{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.fam{background:var(--card);border-radius:16px;padding:26px 24px 12px;box-shadow:0 1px 2px rgba(16,42,74,.04),0 10px 30px rgba(16,42,74,.06);position:relative;overflow:hidden}
+.fam::before{content:"";position:absolute;left:0;top:0;right:0;height:4px;background:var(--c);transform:scaleX(0);transform-origin:left;transition:transform 1s var(--assenta) .2s}
+.fam.on::before{transform:scaleX(1)}
+.fam-n{font:300 2.6rem/1 var(--fm);letter-spacing:-.04em;color:var(--tx)}
+.fam h3{font-size:1.2rem;margin:10px 0 12px;line-height:1.25}
+.srv2{padding:14px 0;border-top:1px solid var(--line);opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .9s var(--assenta)}
+.fam.on .srv2{opacity:1;transform:none}
+.fam.on .srv2:nth-of-type(1){transition-delay:calc(var(--d,0)*110ms + .3s)}
+.fam.on .srv2:nth-of-type(2){transition-delay:calc(var(--d,0)*110ms + .42s)}
+.fam.on .srv2:nth-of-type(3){transition-delay:calc(var(--d,0)*110ms + .54s)}
+.srv2 b{display:block;font:700 .98rem/1.3 var(--fm)}
+.srv2 span{display:block;color:var(--tx2);font-size:.93rem;line-height:1.45;margin-top:6px}
+.consult2 .nota{margin-top:28px;max-width:860px}
+@media screen and (max-width:1100px){.familias{grid-template-columns:1fr 1fr}}
+@media screen and (max-width:860px){.diag2{grid-template-columns:1fr;padding:26px;gap:24px}.radar2{max-width:300px}}
+@media screen and (max-width:560px){.familias{grid-template-columns:1fr}}
+
+/* casos: faixa lateral com setas */
+.faixa-casos{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:max(24px,calc((100vw - var(--col)) / 2));
+  padding:0 max(24px,calc((100vw - var(--col)) / 2)) 8px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.25) transparent;overscroll-behavior-x:contain}
+.caso3{position:relative;flex:0 0 min(46vw,600px);aspect-ratio:3/2.15;border-radius:var(--r);overflow:hidden;background:#18232E;scroll-snap-align:start}
+.caso3 img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.caso3>div{position:absolute;left:0;right:0;bottom:0;padding:28px;background:linear-gradient(0deg,rgba(16,24,32,.96) 0%,rgba(16,24,32,.86) 45%,rgba(16,24,32,.4) 75%,rgba(16,24,32,0))}
+.caso3 .seg{font:700 .76rem/1 var(--ff);letter-spacing:.16em;text-transform:uppercase;color:#BFEAF2}
+.caso3 h3{font-size:clamp(1.25rem,1.8vw,1.6rem);margin-top:10px;color:#fff}
+.caso3 p{color:#DDE5EC;margin-top:8px;line-height:1.45;max-width:540px}
+.segs-card>div{top:0;display:flex;flex-direction:column;justify-content:flex-end;background:none}
+.segs-card p{font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.6;color:#fff}
+.setas2{display:flex;justify-content:flex-end;gap:10px;margin-top:20px}
+.seta2{width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.12);cursor:pointer;display:grid;place-items:center;transition:background .3s}
+.seta2:hover:not(:disabled){background:rgba(255,255,255,.22)}
+.seta2:disabled{opacity:.35;cursor:default}
+.seta2 svg{width:20px;height:20px;fill:#fff}
+@media screen and (max-width:760px){.caso3{flex-basis:84vw;aspect-ratio:3/3.2}.caso3>div{padding:20px}.faixa-casos{scroll-padding-left:16px;padding:0 16px 8px}}
+
+/* etapas: a linha se desenha e as etapas acendem em sequência */
+.etapas3{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:28px;position:relative;padding-top:36px}
+.etapas3::before{content:"";position:absolute;left:0;right:0;top:8px;height:2px;background:var(--line-forte)}
+.etapas3::after{content:"";position:absolute;left:0;right:0;top:8px;height:2px;background:var(--tx);transform:scaleX(0);transform-origin:left;transition:transform 2.4s var(--assenta) .2s}
+.etapas3.on::after{transform:scaleX(1)}
+.etapas3 li{position:relative}
+.etapas3 .no{position:absolute;left:0;top:-36px;width:18px;height:18px;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 0 2px var(--line-forte);transition:background .4s,box-shadow .4s;transition-delay:calc(.3s + var(--d,0)*.45s)}
+.etapas3.on .no{background:var(--tx);box-shadow:none}
+.etapas3 li:first-child .no{background:var(--marca);box-shadow:0 0 0 6px rgba(245,166,35,.2)}
+.etapas3 .en{display:block;font:300 3rem/1 var(--fm);letter-spacing:-.04em}
+.etapas3 h3{font-size:1.15rem;margin:12px 0 8px;line-height:1.25}
+.etapas3 p{color:var(--tx2);font-size:.98rem;line-height:1.5}
+@media screen and (max-width:1000px){
+  .etapas3{grid-template-columns:1fr;gap:0;padding:0 0 0 36px}
+  .etapas3::before,.etapas3::after{left:8px;right:auto;top:0;bottom:0;width:2px;height:auto}
+  .etapas3::after{transform:scaleY(0);transform-origin:top}
+  .etapas3.on::after{transform:scaleY(1)}
+  .etapas3 li{padding:0 0 32px}
+  .etapas3 .no{left:-36px;top:4px}
+  .etapas3 .en{font-size:2.2rem}
+}
+
+/* fechamento com foto própria */
+.fecho-foto{object-position:50% 40%}
+.fecho-veu{background:linear-gradient(90deg,rgba(16,24,32,.95),rgba(16,24,32,.88) 55%,rgba(16,24,32,.72))!important}
+@media screen and (max-width:900px){.fecho-veu{background:rgba(16,24,32,.9)!important}}
+.contato-linha{color:#C6D2DD!important}
+
+/* cabeçalho: um vidro claro só, sem desfoque (custo de pintura) e sem troca de tema por seção */
+header.rolado,header.vidro{color:var(--tx);background:rgba(246,248,251,.96);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 1px 0 var(--line)}
+header.rolado .btn-sm,header.vidro .btn-sm{background:var(--card);color:var(--tx);box-shadow:inset 0 0 0 1px var(--line-forte)}
+@media screen and (max-width:420px){.marca small{font-size:.58rem}}
+
+/* tour no celular: tela menor, sem os chips, para caber com a barra do Safari */
+@media screen and (max-width:760px){
+  .tour .chips{display:none}
+  .tour-itens{min-height:150px}
+  .tour{gap:12px}
+}
+
+/* menos movimento */
+@media (prefers-reduced-motion:reduce){
+  .rv,.recebe2 li,.srv2{opacity:1!important;transform:none!important}
+  .dor-card img,.dor-card.on img{animation:none!important;transform:none}
+  .radar2 .forma{transform:none}
+  .radar2 .pt{opacity:1}
+  .tempo .tempo-trilho i{width:var(--hoje,20%)}
+  .tempo .tempo-hoje{opacity:1}
+  .etapas3::after{transform:none}
+  .fam::before{transform:none}
+}
+html.reduz .dica{display:none}
+
 .batida.raiz{margin:0 auto;max-width:980px}
 .reforma .linha-tempo .trilho i{transition:none}
 </style>
@@ -668,7 +858,7 @@ html.reduz .cs-brilho,html.reduz .cs-progresso,html.reduz .mt-linha{display:none
       <a href="#consultoria">Consultoria</a>
       <a href="#metodo">Como funciona</a>
     </nav>
-    <a class="btn btn-sm" href="#conversa">Conversar</a>
+    <a class="btn btn-sm" data-zap="Olá, Cyr. Vim pelo site e quero conversar sobre a minha empresa." href="#conversa">Conversar</a>
   </div>
 </header>
 
@@ -681,7 +871,6 @@ html.reduz .cs-brilho,html.reduz .cs-progresso,html.reduz .mt-linha{display:none
       <img id="foto" src="foto-painel.webp" alt="Notebook e celular sobre uma mesa de madeira" width="1600" height="1067" fetchpriority="high">
       <div class="fone-tampa" id="fone-tampa" aria-hidden="true"><b>Resultado do mês</b><span>Out/2026 · todas as lojas</span></div>
     </div>
-    <div class="veu" id="veu"></div>
     <div class="claro" id="claro"></div>
     <div class="app-voo" id="app-voo" aria-hidden="true">
       <div class="app-sombra" id="app-sombra"></div>
@@ -692,12 +881,13 @@ html.reduz .cs-brilho,html.reduz .cs-progresso,html.reduz .mt-linha{display:none
       <div class="app" data-view="folha"></div>
       <div class="app-escuro" id="app-escuro"></div>
     </div>
+    <div class="veu" id="veu"></div>
     <div class="hero-txt" id="hero-txt">
       <span class="chapeu sobe">Consultoria e sistemas sob medida · Juiz de Fora/MG</span>
       <h1 class="sobe" style="--d:1">O sistema que a sua empresa precisa <b>ninguém vende pronto</b>.</h1>
       <p class="sub sobe" style="--d:2">Você paga por um sistema de prateleira que cobre só parte da operação, resolve o resto no WhatsApp e na planilha, e ainda descobre o resultado do mês quando o dinheiro já acabou.</p>
       <div class="acao sobe" style="--d:3">
-        <a class="btn btn-prim" data-zap="Olá, Cyr. Quero conversar sobre um sistema sob medida para a minha empresa." href="#conversa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.4-.9-2.8-1.2-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1.9 2 1.2 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.2 1.4z"/></svg> Falar sobre a minha empresa</a>
+        <a class="btn btn-prim" data-zap="Olá, Cyr. Vim pelo site e quero conversar sobre a minha empresa." href="#conversa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.4-.9-2.8-1.2-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1.9 2 1.2 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.2 1.4z"/></svg> Falar sobre a minha empresa</a>
         <span class="garantia">A primeira conversa não custa nada e dura 20 minutos.</span>
       </div>
       <span class="dica sobe" style="--d:5" aria-hidden="true">Role para ver o sistema por dentro<i></i></span>
@@ -719,181 +909,160 @@ html.reduz .cs-brilho,html.reduz .cs-progresso,html.reduz .mt-linha{display:none
           <div class="chips"><span>Folha de pagamento</span><span>Recrutamento e seleção</span><span>Onboarding de funcionários</span></div></article>
       </div>
       <div class="tour-passos" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <p class="tour-nota">Telas ilustrativas, com números de exemplo.</p>
     </div>
     <p class="ilustra-voo" id="ilustra-voo">Telas ilustrativas, com números de exemplo. Na nuvem, com acesso por pessoa; também há versão local.</p>
   </div>
 </section>
 
-<!-- CENA 2 · as dores, uma por vez, sobre foto -->
-<section class="cena dores" id="dores" data-tema="escuro">
-  <div class="palco-fixo">
-    <div class="fotos" aria-hidden="true">
-      <img src="caso-industria.webp" alt="" decoding="async">
-      <img src="foto-painel.webp" alt="" decoding="async">
-      <img src="caso-comvisual.webp" alt="" decoding="async">
-      <img src="caso-varejo.webp" alt="" decoding="async">
-      <img src="foto-reuniao.webp" alt="" decoding="async">
-      <img src="caso-industria.webp" alt="" decoding="async">
-      <img src="caso-manutencao.webp" alt="" decoding="async">
-      <img src="foto-painel.webp" alt="" loading="lazy">
+<!-- 2 · dores: mosaico de fotos, rolagem normal -->
+<section class="sec escuro" id="dores" data-tema="escuro">
+  <div class="wrap">
+    <div class="cab-sec rv">
+      <span class="chapeu">Provavelmente você já viveu isso</span>
+      <h2><b>Não é falta de esforço.</b> É falta de informação na hora certa.</h2>
     </div>
-    <div class="veu-dores"></div>
-    <div class="batidas">
-      <div class="batida"><span class="chapeu">Provavelmente você já viveu isso</span><h2><b>Não é falta de esforço.</b> É falta de informação na hora certa.</h2></div>
-      <p class="batida dor">Você fecha o mês com boas vendas e mesmo assim não sobra dinheiro em caixa.</p>
-      <p class="batida dor">Cada orçamento sai de um jeito, depende de quem fez, e ninguém garante a margem.</p>
-      <p class="batida dor">O preço foi formado "olhando o concorrente" e ninguém sabe se ele paga os custos.</p>
-      <p class="batida dor">A folha chega fechada do contador e você só confere se bate com o mês anterior.</p>
-      <p class="batida dor">Contratar é sempre correria: currículo no WhatsApp, entrevista sem roteiro, aposta no feeling.</p>
-      <p class="batida dor">Funcionário novo aprende "vendo o colega fazer" e leva três meses para render.</p>
-      <div class="batida raiz">
-        <p>Todos esses problemas têm a mesma raiz: a informação existe na sua empresa, mas está espalhada em planilhas, cadernos e na cabeça das pessoas. Organizar isso numa ferramenta única é o que transforma esforço em resultado.</p>
-        <ul class="numeros">
-          <li><b>43</b><span>sistemas no ar, feitos sob medida</span></li>
-          <li><b>+15</b><span>anos dentro de empresas</span></li>
-          <li><b>MBA</b><span>em Gestão Empresarial pela FGV</span></li>
-          <li><b>BR</b><span>Juiz de Fora e Zona da Mata presencial, o resto do Brasil online</span></li>
-        </ul>
-      </div>
+    <div class="mosaico">
+      <figure class="dor-card rv"><img src="dor-caixa.webp" alt="Comerciante atendendo um cliente no balcão" width="880" height="1100" loading="lazy"><figcaption>Você fecha o mês com boas vendas e mesmo assim não sobra dinheiro em caixa.</figcaption></figure>
+      <figure class="dor-card rv" style="--d:1"><img src="dor-orcamento.webp" alt="Pessoa escrevendo uma proposta à mesa" width="880" height="1100" loading="lazy"><figcaption>Cada orçamento sai de um jeito, depende de quem fez, e ninguém garante a margem.</figcaption></figure>
+      <figure class="dor-card rv" style="--d:2"><img src="dor-preco.webp" alt="Placa de desconto numa arara de roupas" width="880" height="1100" loading="lazy"><figcaption>O preço foi formado "olhando o concorrente" e ninguém sabe se ele paga os custos.</figcaption></figure>
+      <figure class="dor-card rv"><img src="dor-folha.webp" alt="Calculadora sobre papéis de folha de pagamento" width="880" height="1100" loading="lazy"><figcaption>A folha chega fechada do contador e você só confere se bate com o mês anterior.</figcaption></figure>
+      <figure class="dor-card rv" style="--d:1"><img src="dor-contratar.webp" alt="Entrevista de emprego numa mesa de escritório" width="880" height="1100" loading="lazy"><figcaption>Contratar é sempre correria: currículo no WhatsApp, entrevista sem roteiro, aposta no feeling.</figcaption></figure>
+      <figure class="dor-card rv" style="--d:2"><img src="dor-novato.webp" alt="Pessoa explicando um processo para colegas" width="880" height="1100" loading="lazy"><figcaption>Funcionário novo aprende "vendo o colega fazer" e leva três meses para render.</figcaption></figure>
     </div>
-    <div class="contador-batida" aria-hidden="true"><span id="bat-n">1</span> / 8</div>
+    <div class="raiz rv">
+      <p>Todos esses problemas têm a mesma raiz: a informação existe na sua empresa, mas está espalhada em planilhas, cadernos e na cabeça das pessoas. Organizar isso numa ferramenta única é o que transforma esforço em resultado.</p>
+      <ul class="numeros">
+        <li><b>43</b><span>sistemas no ar, feitos sob medida</span></li>
+        <li><b>15</b><span>anos dentro de empresas</span></li>
+        <li><b>MBA</b><span>em Gestão Empresarial pela FGV</span></li>
+        <li><b>BR</b><span>Juiz de Fora e Zona da Mata presencial, o resto do Brasil online</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<!-- CENA 3 · reforma, a linha do tempo anda com a rolagem -->
-<section class="cena reforma" id="reforma" data-tema="escuro">
-  <div class="palco-fixo">
-    <div class="wrap rf">
-      <div class="rf-esq">
+<!-- 3 · Reforma Tributária -->
+<section class="sec escuro reforma2" id="reforma" data-tema="escuro">
+  <div class="wrap">
+    <div class="rf2">
+      <div class="rv">
         <span class="chapeu">Reforma Tributária</span>
-        <div class="conta" id="prazo">10</div>
-        <span class="conta-tx" id="prazo-tx">semanas para a CBS começar a valer</span>
+        <div class="conta" id="prazo">2027</div>
+        <span class="conta-tx" id="prazo-tx">a CBS começa em janeiro</span>
       </div>
-      <div class="rf-dir">
-        <h2 class="rf-a"><b>A Reforma Tributária já começou.</b> Você sabe quanto vai pagar?</h2>
-        <p class="texto rf-b">Em janeiro de 2027 a CBS substitui PIS e Cofins, e a transição mexe em três coisas ao mesmo tempo: no seu preço, no seu crédito e no seu caixa. No Simples Nacional o efeito vem pelo cliente empresa, que passa a comparar o crédito que leva de cada fornecedor.</p>
-        <p class="texto rf-c">Eu rodo os números da sua empresa nos dois sistemas, ano a ano da transição. Você sai com a conta feita, com o que precisa mudar na tabela de preços e com a pauta pronta para a conversa com o seu contador.</p>
-        <a class="link rf-c" data-zap="Olá, Cyr. Quero a conta da Reforma Tributária para a minha empresa." href="#conversa">Quero a conta da minha empresa <span>→</span></a>
+      <div class="rv" style="--d:1">
+        <h2><b>A Reforma Tributária já começou.</b> Você sabe quanto vai pagar?</h2>
+        <p class="texto">Em janeiro de 2027 a CBS substitui PIS e Cofins, e a transição mexe em três coisas ao mesmo tempo: no seu preço, no seu crédito e no seu caixa. No Simples Nacional o efeito vem pelo cliente empresa, que passa a comparar o crédito que leva de cada fornecedor.</p>
+        <p class="texto">Eu rodo os números da sua empresa nos dois sistemas, ano a ano da transição. Você sai com a conta feita, com o que precisa mudar na tabela de preços e com a pauta pronta para a conversa com o seu contador.</p>
+        <a class="link" data-zap="Olá, Cyr. Quero a conta da Reforma Tributária para a minha empresa." href="#conversa">Quero a conta da minha empresa <span>→</span></a>
       </div>
-      <div class="linha-tempo" id="linha-tempo">
-        <div class="trilho"><i id="lt-fill"></i><b class="hoje" id="lt-hoje">Hoje</b></div>
-        <ol>
-          <li><b>2026</b><span>Ano de teste. As novas alíquotas aparecem na nota em valor simbólico, sem pagamento.</span></li>
-          <li><b>2027</b><span>A CBS substitui PIS e Cofins e entra o Imposto Seletivo.</span></li>
-          <li><b>2029–2032</b><span>ICMS e ISS caem ano a ano, enquanto o IBS sobe.</span></li>
-          <li><b>2033</b><span>Sistema novo pleno.</span></li>
+    </div>
+    <div class="tempo rv" id="tempo">
+      <div class="tempo-trilho"><i></i><b class="tempo-hoje">Hoje</b></div>
+      <ol>
+        <li><b>2026</b><span>Ano de teste. As novas alíquotas aparecem na nota em valor simbólico, sem pagamento.</span></li>
+        <li><b>2027</b><span>A CBS substitui PIS e Cofins e entra o Imposto Seletivo.</span></li>
+        <li><b>2029–2032</b><span>ICMS e ISS caem ano a ano, enquanto o IBS sobe.</span></li>
+        <li><b>2033</b><span>Sistema novo pleno.</span></li>
+      </ol>
+    </div>
+    <p class="nota rv">As regras da Reforma Tributária continuam em regulamentação. As análises são atualizadas conforme cada definição se confirma, e a decisão formal é sempre tomada junto com o seu contador.</p>
+  </div>
+</section>
+
+<!-- 4 · consultoria (carro-chefe) -->
+<section class="sec clara consult2" id="consultoria" data-tema="claro">
+  <div class="cs-luz" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="cs-intro rv">
+      <span class="chapeu">Consultoria</span>
+      <h2><b>Sistema sem gestão vira planilha bonita.</b> Por isso a ferramenta vem junto com o trabalho de gestão que faz ela virar decisão.</h2>
+      <p class="texto">Você pode contratar só a consultoria, só o sistema, ou os dois.</p>
+    </div>
+
+    <div class="diag2 rv" id="diag2">
+      <div class="diag2-txt">
+        <span class="chapeu">Ponto de partida</span>
+        <h3>Diagnóstico Empresarial 360º</h3>
+        <p>Em poucas sessões você enxerga a sua empresa inteira e sai com a lista do que resolver primeiro, ordenada pelo que mais pesa no caixa.</p>
+        <ol class="recebe2">
+          <li>Raio-X de gestão, finanças, preço, processos, equipe e mercado</li>
+          <li>Lista de problemas priorizada por impacto financeiro</li>
+          <li>Plano de ação com responsável e prazo</li>
+          <li>Reunião de devolutiva com você</li>
         </ol>
+        <a class="link" data-zap="Olá, Cyr. Quero saber mais sobre: Diagnóstico Empresarial 360º." href="#conversa">Quero esse <span>→</span></a>
       </div>
-      <p class="nota rf-d">As regras da Reforma Tributária continuam em regulamentação. As análises são atualizadas conforme cada definição se confirma, e a decisão formal é sempre tomada junto com o seu contador.</p>
+      <figure class="diag2-radar" aria-hidden="true">
+        <svg class="radar2" id="radar2" viewBox="-175 -165 350 330"></svg>
+        <figcaption>As seis áreas que o diagnóstico olha</figcaption>
+      </figure>
     </div>
-    <div class="claro" data-claro></div>
+
+    <div class="familias">
+      <div class="fam rv" style="--c:var(--agua)">
+        <span class="fam-n">01</span><h3>Finanças</h3>
+        <div class="srv2"><b>Gestão financeira e fluxo de caixa</b><span>Você passa a saber quanto lucrou antes de o mês acabar, e a enxergar o aperto de caixa com semanas de antecedência.</span></div>
+        <div class="srv2"><b>Formação de preço e ponto de equilíbrio</b><span>Quanto cobrar para pagar todos os custos e ainda sobrar. E até onde negociar sem entregar o lucro.</span></div>
+        <div class="srv2"><b>CMV, estoque e margem</b><span>É no custo da mercadoria que a margem vaza sem ninguém ver.</span></div>
+      </div>
+      <div class="fam rv" style="--d:1;--c:var(--verde)">
+        <span class="fam-n">02</span><h3>BPO, DP e RH</h3>
+        <div class="srv2"><b>BPO financeiro</b><span>Contas a pagar e a receber, conciliação e relatórios rodando com quem entende.</span></div>
+        <div class="srv2"><b>Departamento pessoal</b><span>Admissão, folha, férias, rescisão e obrigações no prazo, sem você precisar lembrar de cada data.</span></div>
+        <div class="srv2"><b>Recursos Humanos</b><span>Da vaga aberta ao funcionário rendendo.</span></div>
+      </div>
+      <div class="fam rv" style="--d:2;--c:var(--roxo)">
+        <span class="fam-n">03</span><h3>Auditoria</h3>
+        <div class="srv2"><b>Auditoria financeira interna</b><span>Uma revisão independente do seu financeiro, com sigilo e reporte direto a você.</span></div>
+        <div class="srv2"><b>Auditoria contábil e tributária</b><span>Alguém do seu lado conferindo o que o escritório contábil entrega.</span></div>
+        <div class="srv2"><b>Auditoria de marketing e ROI</b><span>Quanto da sua verba de anúncio virou venda de verdade.</span></div>
+      </div>
+      <div class="fam rv" style="--d:3;--c:var(--ambar)">
+        <span class="fam-n">04</span><h3>Processos, planejamento e mentoria</h3>
+        <div class="srv2"><b>Processos e documentação (POP)</b><span>Sua empresa para de depender da memória das pessoas.</span></div>
+        <div class="srv2"><b>Plano de negócios e viabilidade</b><span>Antes de colocar dinheiro, coloque conta no papel.</span></div>
+        <div class="srv2"><b>Mentoria para gestores</b><span>Para quem decide sozinho e sente falta de alguém técnico para pensar junto.</span></div>
+      </div>
+    </div>
+    <p class="nota rv">A conferência de folha e de DP não substitui o seu escritório contábil: dá a você o controle sobre o que ele entrega. Na auditoria de marketing, a gestão das campanhas segue com quem você já tem.</p>
   </div>
 </section>
 
-<!-- CENA 4 · consultoria (o carro-chefe): batidas presas enquanto rola -->
-<section class="cena cs-cena" id="consultoria" data-tema="claro">
-  <div class="palco-fixo">
-    <div class="cs-brilho" id="cs-brilho" aria-hidden="true"></div>
-    <div class="wrap cs">
-      <div class="cs-esq">
-        <div class="cs-t" data-b="0">
-          <span class="chapeu">Consultoria</span>
-          <h2><b>Sistema sem gestão vira planilha bonita.</b> Por isso a ferramenta vem junto com o trabalho de gestão que faz ela virar decisão.</h2>
-          <p class="texto">Você pode contratar só a consultoria, só o sistema, ou os dois.</p>
-        </div>
-        <div class="cs-t" data-b="1">
-          <span class="chapeu">Ponto de partida</span>
-          <h3 class="cs-h">Diagnóstico Empresarial 360º</h3>
-          <p class="texto">Em poucas sessões você enxerga a sua empresa inteira e sai com a lista do que resolver primeiro, ordenada pelo que mais pesa no caixa.</p>
-          <a class="link" data-zap="Olá, Cyr. Quero saber mais sobre: Diagnóstico Empresarial 360º." href="#conversa">Quero esse <span>→</span></a>
-        </div>
-        <div class="cs-t" data-b="2"><span class="cs-n">01 <i>/ 04</i></span><h3 class="cs-h">Finanças</h3><p class="texto">Resultado, preço e custo da mercadoria.</p></div>
-        <div class="cs-t" data-b="3"><span class="cs-n">02 <i>/ 04</i></span><h3 class="cs-h">BPO, DP e RH</h3><p class="texto">A rotina sai das suas costas, com quem entende.</p></div>
-        <div class="cs-t" data-b="4"><span class="cs-n">03 <i>/ 04</i></span><h3 class="cs-h">Auditoria</h3><p class="texto">Financeira, contábil e tributária, e de marketing.</p></div>
-        <div class="cs-t" data-b="5"><span class="cs-n">04 <i>/ 04</i></span><h3 class="cs-h">Processos, planejamento e mentoria</h3><p class="texto">O jeito certo escrito, a conta no papel e alguém para pensar junto.</p></div>
-      </div>
-
-      <div class="cs-dir">
-        <div class="cs-diag" data-b="1">
-          <svg class="radar" id="radar" viewBox="-170 -160 340 320" aria-hidden="true">
-            <g class="radar-grade"></g>
-            <polygon class="radar-forma" points=""></polygon>
-            <g class="radar-pontos"></g>
-            <g class="radar-rot"></g>
-          </svg>
-          <div class="cs-recebe">
-            <span class="rotulo">O que você recebe</span>
-            <ol>
-              <li>Raio-X de gestão, finanças, preço, processos, equipe e mercado</li>
-              <li>Lista de problemas priorizada por impacto financeiro</li>
-              <li>Plano de ação com responsável e prazo</li>
-              <li>Reunião de devolutiva com você</li>
-            </ol>
-          </div>
-        </div>
-        <div class="cs-fam" data-b="2" style="--c:var(--agua)">
-          <div class="cs-card"><b>Gestão financeira e fluxo de caixa</b><span>Você passa a saber quanto lucrou antes de o mês acabar, e a enxergar o aperto de caixa com semanas de antecedência.</span></div>
-          <div class="cs-card"><b>Formação de preço e ponto de equilíbrio</b><span>Descubra quanto você precisa cobrar para pagar todos os custos e ainda sobrar. E até onde pode negociar sem entregar o lucro.</span></div>
-          <div class="cs-card"><b>CMV, estoque e margem</b><span>É no custo da mercadoria que a margem vaza sem ninguém ver. Você passa a apurar mês a mês e a enxergar perda, quebra e desvio.</span></div>
-        </div>
-        <div class="cs-fam" data-b="3" style="--c:var(--verde)">
-          <div class="cs-card"><b>BPO financeiro</b><span>Contas a pagar e a receber, conciliação e relatórios rodando com quem entende, e você recebendo a informação pronta para decidir.</span></div>
-          <div class="cs-card"><b>Departamento pessoal</b><span>Admissão, folha, férias, rescisão e obrigações acontecendo no prazo, sem você precisar lembrar de cada data.</span></div>
-          <div class="cs-card"><b>Recursos Humanos</b><span>Da vaga aberta ao funcionário rendendo. Recrutamento, integração, cargos e avaliação estruturados.</span></div>
-          <p class="nota">A conferência de folha e de DP não substitui o seu escritório contábil: dá a você o controle sobre o que ele entrega.</p>
-        </div>
-        <div class="cs-fam" data-b="4" style="--c:var(--roxo)">
-          <div class="cs-card"><b>Auditoria financeira interna</b><span>Uma revisão independente do seu setor financeiro, com sigilo e reporte direto a você. Onde há desvio, aparece.</span></div>
-          <div class="cs-card"><b>Auditoria contábil e tributária</b><span>Alguém do seu lado conferindo o que o escritório contábil entrega, e falando a língua técnica para defender o seu interesse.</span></div>
-          <div class="cs-card"><b>Auditoria de marketing e ROI</b><span>Descubra quanto da sua verba de anúncio virou venda de verdade.</span></div>
-          <p class="nota">Na auditoria de marketing, a gestão das campanhas segue com quem você já tem.</p>
-        </div>
-        <div class="cs-fam" data-b="5" style="--c:var(--ambar)">
-          <div class="cs-card"><b>Processos e documentação (POP)</b><span>Sua empresa para de depender da memória das pessoas. O jeito certo de fazer fica escrito, treinado e cobrado.</span></div>
-          <div class="cs-card"><b>Plano de negócios e viabilidade</b><span>Antes de colocar dinheiro, coloque conta no papel. Para abrir, expandir ou entrar como sócio.</span></div>
-          <div class="cs-card"><b>Mentoria para gestores</b><span>Para quem decide sozinho e sente falta de alguém técnico para pensar junto, com base nos seus números.</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="cs-progresso" aria-hidden="true"><i></i></div>
+<!-- 5 · casos: faixa que corre para o lado -->
+<section class="sec escuro casos2" id="casos" data-tema="escuro">
+  <div class="wrap cab-sec rv">
+    <span class="chapeu">Quem já usa</span>
+    <h2><b>Sistemas em produção, usados por empresas reais.</b> Não são protótipos nem telas de demonstração.</h2>
+  </div>
+  <div class="faixa-casos" id="faixa-casos" tabindex="0" aria-label="Casos de clientes">
+    <article class="caso3 rv"><img src="caso-manutencao.webp" alt="Mecânico de capacete consertando engrenagens de uma máquina" width="720" height="480" loading="lazy"><div><span class="seg">Locação de máquinas</span><h3>Manutenção e ordens de serviço</h3><p>As OS viviam em planilha. Hoje o painel separa o custo da frota própria do serviço para cliente, com retrabalho e horas improdutivas medidos por OS.</p></div></article>
+    <article class="caso3 rv" style="--d:1"><img src="caso-fabrica.webp" alt="Operador trabalhando numa máquina industrial" width="720" height="480" loading="lazy"><div><span class="seg">Indústria</span><h3>PCP com acesso por perfil</h3><p>Ordens, prazos e capacidade saíram do papel. Cada função enxerga o que lhe cabe, com manual de operação entregue junto.</p></div></article>
+    <article class="caso3 rv" style="--d:2"><img src="caso-comvisual.webp" alt="Impressora de grande formato imprimindo um banner" width="720" height="480" loading="lazy"><div><span class="seg">Comunicação visual</span><h3>Meta, comissão e ticket médio</h3><p>A comissão era recalculada à mão todo mês. Agora sai pela regra da casa, por vendedor, comparada com o período anterior.</p></div></article>
+    <article class="caso3 rv" style="--d:3"><img src="caso-varejo.webp" alt="Dois homens conferindo o estoque de uma loja num tablet" width="720" height="480" loading="lazy"><div><span class="seg">Varejo e serviços</span><h3>DRE gerencial e CMV</h3><p>O resultado só aparecia semanas depois, com a contabilidade. Agora aparece no mês, com o CMV apurado por unidade.</p></div></article>
+    <article class="caso3 segs-card rv" style="--d:4"><div><span class="seg">Segmentos atendidos</span><p>Alimentação · Auto center · Comércio · Comunicação visual · Distribuição de medicamentos · E-commerce · Fisioterapia e academia · Hotelaria · Indústria · Indústria gráfica · Locação de máquinas · Logística · Varejo · Veículos</p></div></article>
+  </div>
+  <div class="wrap setas2">
+    <button class="seta2" data-ir="-1" aria-label="Caso anterior"><svg viewBox="0 0 24 24"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4-4.6-4.6z"/></svg></button>
+    <button class="seta2" data-ir="1" aria-label="Próximo caso"><svg viewBox="0 0 24 24"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4 4.6 4.6z"/></svg></button>
   </div>
 </section>
 
-<!-- CENA 5 · casos: rola para baixo, os cartões passam de lado -->
-<section class="cena casos" id="casos" data-tema="escuro">
-  <div class="palco-fixo">
-    <div class="wrap casos-cab"><span class="chapeu">Quem já usa</span><h2><b>Sistemas em produção, usados por empresas reais.</b> Não são protótipos nem telas de demonstração.</h2></div>
-    <div class="trilho-casos" id="trilho-casos">
-      <article class="caso-f"><img src="caso-manutencao.webp" alt="Mecânico de capacete consertando engrenagens de uma máquina" loading="lazy"><div><span class="seg">Locação de máquinas</span><h3>Manutenção e ordens de serviço</h3><p>As OS viviam em planilha. Hoje o painel separa o custo da frota própria do serviço para cliente, com retrabalho e horas improdutivas medidos por OS.</p></div></article>
-      <article class="caso-f"><img src="caso-industria.webp" alt="Linha de montagem com operadores de uniforme azul" loading="lazy"><div><span class="seg">Indústria</span><h3>PCP com acesso por perfil</h3><p>Ordens, prazos e capacidade saíram do papel. Cada função enxerga o que lhe cabe, com manual de operação entregue junto.</p></div></article>
-      <article class="caso-f"><img src="caso-comvisual.webp" alt="Impressora de grande formato imprimindo um banner" loading="lazy"><div><span class="seg">Comunicação visual</span><h3>Meta, comissão e ticket médio</h3><p>A comissão era recalculada à mão todo mês. Agora sai pela regra da casa, por vendedor, comparada com o período anterior.</p></div></article>
-      <article class="caso-f"><img src="caso-varejo.webp" alt="Dois homens conferindo o estoque de uma loja num tablet" loading="lazy"><div><span class="seg">Varejo e serviços</span><h3>DRE gerencial e CMV</h3><p>O resultado só aparecia semanas depois, com a contabilidade. Agora aparece no mês, com o CMV apurado por unidade.</p></div></article>
-      <article class="caso-f seg-card"><div><span class="seg">Segmentos atendidos</span><p class="segs">Alimentação · Auto center · Comércio · Comunicação visual · Distribuição de medicamentos · E-commerce · Fisioterapia e academia · Hotelaria · Indústria · Indústria gráfica · Locação de máquinas · Logística · Varejo · Veículos</p></div></article>
+<!-- 6 · etapas -->
+<section class="sec clara metodo2" id="metodo" data-tema="claro">
+  <div class="wrap">
+    <div class="cab-sec rv">
+      <span class="chapeu">Do primeiro contato à entrega</span>
+      <h2><b>Você sabe o que vem em cada etapa.</b></h2>
     </div>
-    <div class="claro" data-claro></div>
-  </div>
-</section>
-
-<!-- CENA 6 · etapas: um ponto percorre a linha das cinco etapas -->
-<section class="cena metodo" id="metodo" data-tema="claro">
-  <div class="palco-fixo">
-    <div class="wrap mt">
-      <div class="mt-cab">
-        <span class="chapeu">Do primeiro contato à entrega</span>
-        <h2><b>Você sabe o que vem em cada etapa.</b></h2>
-      </div>
-      <div class="mt-linha" aria-hidden="true">
-        <div class="mt-trilho"><i id="mt-fill"></i><b id="mt-ponto"></b></div>
-        <ol class="mt-nos"><li>Conversa</li><li>Operação</li><li>Proposta</li><li>Construção</li><li>Entrega</li></ol>
-      </div>
-      <div class="mt-cards">
-        <article class="mt-card"><span class="mt-n">01</span><div><h3>Conversa, sem custo</h3><p>Uma conversa de 20 minutos, no WhatsApp ou em vídeo, para você me contar o que está travando. Se eu não for a pessoa certa, digo na hora e indico o caminho.</p></div></article>
-        <article class="mt-card"><span class="mt-n">02</span><div><h3>Entendimento da operação</h3><p>Eu olho como a sua empresa funciona de verdade: as planilhas que existem, quem faz o quê e onde a informação se perde. Sem isso, sistema nenhum resolve.</p></div></article>
-        <article class="mt-card"><span class="mt-n">03</span><div><h3>Proposta com escopo fechado</h3><p>Você recebe por escrito o que será entregue, o prazo e o valor. Sem "a partir de", sem surpresa no meio do caminho.</p></div></article>
-        <article class="mt-card"><span class="mt-n">04</span><div><h3>Construção com você junto</h3><p>O sistema é montado em versões e você testa cada uma. Ajustamos com a sua equipe usando de verdade, não com você aprovando tela bonita.</p></div></article>
-        <article class="mt-card"><span class="mt-n">05</span><div><h3>Entrega e treinamento</h3><p>Você e a sua equipe aprendem a operar. O sistema fica com você, com os cálculos abertos, e o controle não depende mais de mim.</p></div></article>
-      </div>
-    </div>
+    <ol class="etapas3" id="etapas3">
+      <li class="rv"><span class="no"></span><b class="en">01</b><h3>Conversa, sem custo</h3><p>Uma conversa de 20 minutos, no WhatsApp ou em vídeo, para você me contar o que está travando. Se eu não for a pessoa certa, digo na hora e indico o caminho.</p></li>
+      <li class="rv" style="--d:1"><span class="no"></span><b class="en">02</b><h3>Entendimento da operação</h3><p>Eu olho como a sua empresa funciona de verdade: as planilhas que existem, quem faz o quê e onde a informação se perde. Sem isso, sistema nenhum resolve.</p></li>
+      <li class="rv" style="--d:2"><span class="no"></span><b class="en">03</b><h3>Proposta com escopo fechado</h3><p>Você recebe por escrito o que será entregue, o prazo e o valor. Sem "a partir de", sem surpresa no meio do caminho.</p></li>
+      <li class="rv" style="--d:3"><span class="no"></span><b class="en">04</b><h3>Construção com você junto</h3><p>O sistema é montado em versões e você testa cada uma. Ajustamos com a sua equipe usando de verdade, não com você aprovando tela bonita.</p></li>
+      <li class="rv" style="--d:4"><span class="no"></span><b class="en">05</b><h3>Entrega e treinamento</h3><p>Você e a sua equipe aprendem a operar. O sistema fica com você, com os cálculos abertos, e o controle não depende mais de mim.</p></li>
+    </ol>
   </div>
 </section>
 
@@ -918,9 +1087,9 @@ html.reduz .cs-brilho,html.reduz .cs-progresso,html.reduz .mt-linha{display:none
   </div>
 </section>
 
-<!-- CENA 7 · fechamento: volta à foto da abertura -->
+<!-- 7 · fechamento -->
 <section class="fecho" id="conversa" data-tema="escuro">
-  <img src="foto-painel.webp" alt="" loading="lazy" class="fecho-foto" id="fecho-foto">
+  <img src="fecho-conversa.webp" alt="" loading="lazy" class="fecho-foto" width="1600" height="1067">
   <div class="fecho-veu"></div>
   <div class="wrap fecho-grid">
     <div class="rv">
@@ -931,24 +1100,25 @@ html.reduz .cs-brilho,html.reduz .cs-progresso,html.reduz .mt-linha{display:none
     </div>
     <div class="rv" style="--d:1"><form id="form" class="frag" novalidate>
         <label for="n">Seu nome</label>
-        <input id="n" name="n" type="text" autocomplete="name" placeholder="Como devo te chamar" required>
+        <input id="n" name="n" type="text" autocomplete="name" placeholder="Como devo te chamar" required aria-describedby="n-erro">
+        <p class="erro-campo" id="n-erro" hidden>Escreva como devo te chamar.</p>
         <label for="e">Sua empresa</label>
         <input id="e" name="e" type="text" autocomplete="organization" placeholder="Nome e ramo de atividade">
         <label for="a">O que mais pesa hoje</label>
         <select id="a" name="a">
           <option selected>Ainda não sei, quero conversar</option>
           <option>Reforma Tributária</option>
-          <option>Financeiro e caixa</option>
-          <option>Comercial e vendas</option>
+          <option>Financeiro, caixa e BPO</option>
+          <option>Vendas e comercial</option>
           <option>Operação e produção</option>
           <option>Pessoas, folha e DP</option>
-          <option>BPO financeiro</option>
-          <option>Consultoria</option>
+          <option>Diagnóstico Empresarial 360º</option>
         </select>
         <button class="btn btn-prim" type="submit">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.4-.9-2.8-1.2-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1.9 2 1.2 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.2 1.4z"/></svg>
           Abrir no WhatsApp
         </button>
+        <p class="garantia-form">A primeira conversa não custa nada e dura 20 minutos.</p>
         <p class="aviso">Abre o WhatsApp com a mensagem pronta. Este site não guarda nada.</p>
       </form></div>
   </div>
@@ -986,9 +1156,10 @@ html.reduz .cs-brilho,html.reduz .cs-progresso,html.reduz .mt-linha{display:none
   $('#ano').textContent = new Date().getFullYear();
   $$('[data-zap]').forEach(function (a) { a.href = wa(a.dataset.zap); a.target = '_blank'; a.rel = 'noopener'; });
 
+  $('#n').addEventListener('input', function () { this.removeAttribute('aria-invalid'); $('#n-erro').hidden = true; });
   $('#form').addEventListener('submit', function (ev) {
     ev.preventDefault();
-    var n = $('#n'); if (!n.value.trim()) { n.focus(); n.setAttribute('aria-invalid', 'true'); return; }
+    var n = $('#n'); if (!n.value.trim()) { n.focus(); n.setAttribute('aria-invalid', 'true'); $('#n-erro').hidden = false; return; }
     var msg = 'Olá, Cyr. Vim pelo site.\n\nNome: ' + n.value.trim() +
       ($('#e').value.trim() ? '\nEmpresa: ' + $('#e').value.trim() : '') +
       '\nO que mais pesa hoje: ' + $('#a').value;
@@ -1168,7 +1339,7 @@ html.reduz .cs-brilho,html.reduz .cs-progresso,html.reduz .mt-linha{display:none
     G.q = QN.map(pt);
     G.C = [(G.q[0][0] + G.q[1][0] + G.q[2][0] + G.q[3][0]) / 4, (G.q[0][1] + G.q[1][1] + G.q[2][1] + G.q[3][1]) / 4];
     var ret = function (x0, y0, w) { var h = w / 1.6; return [[x0, y0], [x0 + w, y0], [x0 + w, y0 + h], [x0, y0 + h]]; };
-    if (m) { G.flat = ret(16, (H - W * 1.75 / 1.6) / 2, W * 1.75); G.lado = ret(16, 84, W * 1.75); }
+    if (m) { G.flat = ret(16, (H - W * 1.75 / 1.6) / 2, W * 1.75); G.lado = ret(16, 76, W * 1.3); }
     else {
       var w = Math.min(1180, W * .92, H * .8 * 1.6); G.flat = ret((W - w) / 2, (H - w / 1.6) / 2, w);
       var w2 = Math.min(W * .58, H * .76 * 1.6); G.lado = ret(Math.max(24, W * .04), (H - w2 / 1.6) / 2 + 20, w2);
@@ -1208,136 +1379,51 @@ html.reduz .cs-brilho,html.reduz .cs-progresso,html.reduz .mt-linha{display:none
     return A > .5 && p < .97 ? 'claro' : 'escuro';
   }
 
-  /* ================= cena 2 · dores ================= */
-  var batidasBox = $('#dores .batidas'), dores = $('#dores'), fotos = $$('#dores .fotos img'), batidas = $$('#dores .batida'), batN = $('#bat-n');
-  function cenaDores(p) {
-    var b = clamp(p * 8, 0, 7.999), i = Math.floor(b), fr = b - i;
-    if (i !== G.bat) {
-      var ant = G.bat; G.bat = i;
-      fotos.forEach(function (x, j) { x.classList.toggle('saindo', j === ant); x.classList.toggle('on', j === i); });
-      batidas.forEach(function (x, j) { x.classList.toggle('on', j === i); }); batN.textContent = i + 1;
-      clearTimeout(G.tb); G.tb = setTimeout(function () { fotos.forEach(function (x) { x.classList.remove('saindo'); }); }, 800);
-    }
-    batidasBox.style.transform = 'translate3d(0,' + ((.5 - fr) * 28).toFixed(1) + 'px,0)';
-    return 'escuro';
-  }
-
-  /* ================= cena 3 · reforma ================= */
-  var rf = $('#reforma'), rfA = $$('.rf-a'), rfB = $$('.rf-b'), rfC = $$('.rf-c'), rfD = $$('.rf-d');
-  var ltFill = $('#lt-fill'), ltHoje = $('#lt-hoje'), ltLi = $$('#linha-tempo li'), rfClaro = $('#reforma [data-claro]');
-  function cenaReforma(p) {
-    if (innerWidth < 900) p = .8;
-    [[rfA, .04], [rfB, .12], [rfC, .2], [rfD, .62]].forEach(function (g) { g[0].forEach(function (x) { x.classList.toggle('on', p >= g[1]); }); });
-    var fill = HOJE_PCT * suave(clamp((p - .22) / .4, 0, 1));
-    ltFill.style.width = fill + '%';
-    ltHoje.style.left = fill + '%'; ltHoje.style.opacity = fill > 1 ? 1 : 0;
-    ltLi.forEach(function (li, j) { li.classList.toggle('on', fill >= j * 25 - .5 && fill > 0); });
-    var cl = clamp((p - .86) / .12, 0, 1); rfClaro.style.opacity = cl.toFixed(3);
-    return cl > .5 ? 'claro' : 'escuro';
-  }
-
-  /* ================= cena 5 · casos ================= */
-  var casos = $('#casos'), trilho = $('#trilho-casos'), csClaro = $('#casos [data-claro]'), curso = 0;
-  function medirCasos() {
-    if (reduz) return;
-    curso = Math.max(0, trilho.scrollWidth - innerWidth);
-    casos.style.height = (curso + innerHeight * 1.05) + 'px';
-  }
-  function cenaCasos(p) {
-    var t = clamp(p / .82, 0, 1);
-    trilho.style.transform = 'translate3d(' + (-curso * sai(t)).toFixed(1) + 'px,0,0)';
-    var cl = clamp((p - .88) / .1, 0, 1); csClaro.style.opacity = cl.toFixed(3);
-    return cl > .5 ? 'claro' : 'escuro';
-  }
-
-  /* ================= cena 4 · consultoria ================= */
-  var cs = $('#consultoria'), csT = $$('.cs-t'), csDiag = $('.cs-diag'), csFam = $$('.cs-fam'), csLi = $$('.cs-recebe li');
-  var csDir = $('.cs-dir'), csBrilho = $('#cs-brilho'), csBar = $('.cs-progresso i'), CORES = ['#0B7C93', '#0B7C93', '#0B7C93', '#0F7A45', '#6B32BD', '#9C6413'];
-  var BAT = [0, .11, .46, .595, .73, .865];   /* início de cada batida */
-  /* raio-x: 6 áreas, forma ilustrativa */
-  var EIXOS = ['Gestão', 'Finanças', 'Preço', 'Processos', 'Equipe', 'Mercado'], VAL = [.62, .44, .36, .52, .7, .48], R = 120;
-  var radar = $('#radar'), ang = function (k) { return -Math.PI / 2 + k * Math.PI / 3; };
-  var pnt = function (k, r) { return [(Math.cos(ang(k)) * r).toFixed(1), (Math.sin(ang(k)) * r).toFixed(1)]; };
+  /* ================= raio-x do diagnóstico: desenhado uma vez; o CSS anima ao entrar ================= */
   (function () {
-    var g = '';
+    var EIXOS = ['Gestão', 'Finanças', 'Preço', 'Processos', 'Equipe', 'Mercado'], VAL = [.62, .44, .36, .52, .7, .48], R = 120;
+    var ang = function (k) { return -Math.PI / 2 + k * Math.PI / 3; };
+    var pnt = function (k, r) { return [(Math.cos(ang(k)) * r).toFixed(1), (Math.sin(ang(k)) * r).toFixed(1)]; };
+    var g = '<g class="grade">';
     [1, 2 / 3, 1 / 3].forEach(function (f) { g += '<polygon points="' + EIXOS.map(function (_, k) { return pnt(k, R * f).join(','); }).join(' ') + '"/>'; });
     EIXOS.forEach(function (_, k) { var q = pnt(k, R); g += '<line x1="0" y1="0" x2="' + q[0] + '" y2="' + q[1] + '"/>'; });
-    $('.radar-grade', radar).innerHTML = g;
-    $('.radar-rot', radar).innerHTML = EIXOS.map(function (n, k) { var q = pnt(k, R + 26); return '<text x="' + q[0] + '" y="' + (+q[1] + 4) + '" text-anchor="middle">' + n + '</text>'; }).join('');
+    g += '</g><polygon class="forma" points="' + VAL.map(function (v, k) { return pnt(k, R * v).join(','); }).join(' ') + '"/>';
+    VAL.forEach(function (v, k) { var q = pnt(k, R * v); g += '<circle class="pt" style="--k:' + k + '" r="4.5" cx="' + q[0] + '" cy="' + q[1] + '"/>'; });
+    EIXOS.forEach(function (n, k) { var q = pnt(k, R + 28); g += '<text x="' + q[0] + '" y="' + (+q[1] + 4) + '" text-anchor="middle">' + n + '</text>'; });
+    $('#radar2').innerHTML = g;
   })();
-  var rForma = $('.radar-forma', radar), rPontos = $('.radar-pontos', radar), rRot = $$('.radar-rot text', radar);
-  function desenhaRadar(t) {
-    var pts = VAL.map(function (v, k) { var d = clamp(t * 6 - k * .6, 0, 1); return pnt(k, R * v * sai(d)); });
-    rForma.setAttribute('points', pts.map(function (q) { return q.join(','); }).join(' '));
-    rPontos.innerHTML = pts.map(function (q) { return '<circle r="4" cx="' + q[0] + '" cy="' + q[1] + '"/>'; }).join('');
-    rRot.forEach(function (x, k) { x.classList.toggle('on', t * 6 - k * .6 > .5); });
-  }
-  function cenaConsult(p) {
-    var b = 0; for (var k = 0; k < BAT.length; k++) if (p >= BAT[k]) b = k;
-    csT.forEach(function (x) { var i = +x.dataset.b; x.classList.toggle('on', i === b); x.classList.toggle('foi', i < b); });
-    csDiag.classList.toggle('on', b <= 1); csDiag.classList.toggle('foi', b > 1);
-    csDiag.style.opacity = b === 0 ? .35 : '';
-    csFam.forEach(function (x) { var i = +x.dataset.b; x.classList.toggle('on', i === b); x.classList.toggle('foi', i < b); });
-    var d = clamp((p - BAT[1]) / (BAT[2] - BAT[1]), 0, 1);
-    desenhaRadar(b === 0 ? 0 : clamp(d / .35, 0, 1));
-    csLi.forEach(function (li, i) { li.classList.toggle('on', b >= 1 && d >= .3 + i * .16); });
-    csBrilho.style.setProperty('--cb', CORES[b]);
-    csBrilho.style.setProperty('--cy', ((p - .5) * -160).toFixed(1) + 'px');
-    csBrilho.style.setProperty('--cs', (1 + p * .25).toFixed(3));
-    csBar.style.width = (p * 100).toFixed(2) + '%';
-    var ini = BAT[b], fim = b + 1 < BAT.length ? BAT[b + 1] : 1, fb = clamp((p - ini) / (fim - ini), 0, 1);
-    csDir.style.transform = 'translate3d(0,' + ((.5 - fb) * 22).toFixed(1) + 'px,0)';
-    return 'claro';
-  }
 
-  /* ================= cena 6 · etapas ================= */
-  var mtBox = $('.mt-cards'), mt = $('#metodo'), mtCards = $$('.mt-card'), mtNos = $$('.mt-nos li'), mtFill = $('#mt-fill'), mtPonto = $('#mt-ponto');
-  function cenaMetodo(p) {
-    var t = clamp(p / .92, 0, 1), i = Math.min(4, Math.floor(t * 5));
-    var pos = Math.min(100, (t * 5 <= 4 ? i * 25 + (t * 5 - i) * 25 * suave(clamp((t * 5 - i) / .6, 0, 1)) : 100));
-    pos = i === 0 ? 0 : (i - 1) * 25 + 25 * suave(clamp((t * 5 - i) / .35, 0, 1));
-    mtFill.style.width = pos + '%'; mtPonto.style.left = pos + '%';
-    mtNos.forEach(function (x, j) { x.classList.toggle('on', j <= i); });
-    mtCards.forEach(function (x, j) { x.classList.toggle('on', j === i); x.classList.toggle('foi', j < i); });
-    mtBox.style.transform = 'translate3d(0,' + ((.5 - (t * 5 - i)) * 18).toFixed(1) + 'px,0)';
-    return 'claro';
-  }
+  /* Reforma Tributária: posição de hoje na linha do tempo */
+  $('#tempo').style.setProperty('--hoje', HOJE_PCT.toFixed(1) + '%');
 
-  /* ================= entrada dos blocos de texto ================= */
+  /* casos: setas avançam um cartão; sem avanço automático */
+  var faixa = $('#faixa-casos'), setas = $$('.seta2');
+  function passoCaso() { var c = faixa.children; return c.length > 1 ? c[1].offsetLeft - c[0].offsetLeft : faixa.clientWidth; }
+  setas.forEach(function (b) { b.addEventListener('click', function () { faixa.scrollBy({ left: passoCaso() * +b.dataset.ir, behavior: reduz ? 'auto' : 'smooth' }); }); });
+  function estadoSetas() { setas[0].disabled = faixa.scrollLeft < 8; setas[1].disabled = faixa.scrollLeft + faixa.clientWidth > faixa.scrollWidth - 8; }
+  faixa.addEventListener('scroll', estadoSetas, { passive: true }); estadoSetas();
+
+  /* ================= entrada: dispara uma vez quando o bloco aparece ================= */
   var io = new IntersectionObserver(function (es) {
     es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('on'); io.unobserve(en.target); } });
-  }, { rootMargin: '0px 0px -3% 0px' });
-  $$('.rv').forEach(function (el) { io.observe(el); });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  $$('.rv, #tempo, #diag2, #etapas3, .fam').forEach(function (el) { io.observe(el); });
 
-  /* ================= motor: um quadro por rolagem ================= */
+  /* ================= um quadro por rolagem: só a abertura é guiada pela rolagem ================= */
   function prog(sec) {
     var r = sec.getBoundingClientRect(), c = sec.offsetHeight - innerHeight;
-    return { p: c > 0 ? clamp(-r.top / c, 0, 1) : 0, vis: r.bottom > 0 && r.top < innerHeight, r: r };
+    return { p: c > 0 ? clamp(-r.top / c, 0, 1) : 0, vis: r.bottom > 0 && r.top < innerHeight };
   }
-  var cab = $('#cab'), zap = $('#zap'), fecho = $('#conversa'), fechoFoto = $('#fecho-foto'), pend = false;
-  var cenas = [[ab, cenaAbertura], [dores, cenaDores], [rf, cenaReforma], [cs, cenaConsult], [casos, cenaCasos], [mt, cenaMetodo]];
+  var cab = $('#cab'), zap = $('#zap'), pend = false, abH = 0;
   function quadro() {
     pend = false;
-    var tema = null;
-    var leituras = cenas.map(function (c) { return prog(c[0]); });
-    cenas.forEach(function (c, k) {
-      var s = leituras[k];
-      if (s.vis) {
-        var t = reduz && c[0] !== ab ? c[0].dataset.tema : c[1](reduz ? 0 : s.p);
-        if (s.r.top <= 34 && s.r.bottom > 34) tema = t;
-      }
-    });
-    if (!tema) $$('[data-tema]').forEach(function (sec) { var r = sec.getBoundingClientRect(); if (r.top <= 34 && r.bottom > 34) tema = sec.dataset.tema; });
-    var topo = scrollY < 8;
-    cab.classList.toggle('rolado', tema === 'claro');
-    cab.classList.toggle('vidro', tema !== 'claro' && !topo);
-    zap.classList.toggle('on', scrollY > ab.offsetHeight * .3);
-    var rf2 = fecho.getBoundingClientRect();
-    if (!reduz && rf2.bottom > 0 && rf2.top < innerHeight) fechoFoto.style.transform = 'translate3d(0,' + (((rf2.top + rf2.height / 2) - innerHeight / 2) * -.08).toFixed(1) + 'px,0)';
+    var y = scrollY, s = prog(ab);
+    if (s.vis && !reduz) cenaAbertura(s.p);
+    cab.classList.toggle('rolado', y > 8);
+    zap.classList.toggle('on', y > abH * .3);
   }
-  function tudo() { medir(); medirCasos(); quadro(); }
-  addEventListener('load', function () { fotos.concat($$('.caso-f img')).forEach(function (im) { if (im.decode) im.decode().catch(function () {}); }); });
-  addEventListener('scroll', function () { if (!pend) { pend = true; requestAnimationFrame(quadro); } }, { passive: true });
+  function tudo() { medir(); abH = ab.offsetHeight; if (reduz) cenaAbertura(0); quadro(); }
+  addEventListener('scroll', function () { cab.classList.toggle('rolado', scrollY > 8); if (!pend) { pend = true; requestAnimationFrame(quadro); } }, { passive: true });
   addEventListener('resize', tudo);
   addEventListener('load', tudo);
   tudo();
