@@ -1122,7 +1122,7 @@ html.reduz .dica{display:none}
           Abrir no WhatsApp
         </button>
         <p class="garantia-form">A primeira conversa não custa nada e dura 20 minutos.</p>
-        <p class="aviso">Abre o WhatsApp com a mensagem pronta. Este site não guarda nada.</p>
+        <p class="aviso">Abre o WhatsApp com a mensagem pronta. Este site não guarda o que você escreve.</p>
       </form></div>
   </div>
 </section>
@@ -1136,6 +1136,7 @@ html.reduz .dica{display:none}
     <nav aria-label="Contato">
       <a href="https://wa.me/5532988431897" target="_blank" rel="noopener">(32) 98843-1897</a>
       <a href="mailto:consultoria@cyrandrade.com.br">consultoria@cyrandrade.com.br</a>
+      <a href="politica-de-privacidade.html">Privacidade</a>
     </nav>
     <span>Juiz de Fora/MG · © <span id="ano">2026</span></span>
   </div>
@@ -1432,5 +1433,74 @@ html.reduz .dica{display:none}
   tudo();
 })();
 </script>
+<!-- Medição de visitas e anúncios (06/11/2026). Desligada enquanto MEDICAO estiver vazio:
+     sem ID, nada carrega e o aviso de cookies não aparece. Ligar = preencher os IDs,
+     rodar montar.py + gerar_v2.py e publicar. Política em politica-de-privacidade.html. -->
+<style>
+.consent{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:70;max-width:560px;
+  background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:var(--r);
+  box-shadow:0 1px 2px rgba(16,42,74,.04),0 8px 32px rgba(16,42,74,.14);padding:16px 16px 14px;font-size:.95rem;line-height:1.45}
+.consent p{margin:0 0 12px}
+.consent a{color:var(--agua);text-decoration:underline;text-underline-offset:3px}
+.consent-bt{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+.consent button{min-height:44px;padding:0 20px;border-radius:999px;border:0;font:700 .92rem/1 var(--fm);cursor:pointer;
+  background:var(--card);color:var(--tx);box-shadow:inset 0 0 0 1px var(--line-forte)}
+.consent button.sim{background:var(--marca);color:var(--marca-tx);box-shadow:none}
+.consent button:focus-visible{outline:2px solid var(--agua);outline-offset:3px}
+</style>
+<div class="consent" id="consent" role="region" aria-label="Cookies" hidden>
+  <p>Com o seu aceite, o site conta visitas e mede anúncios com cookies do Google e da Meta. <a href="politica-de-privacidade.html">Privacidade</a></p>
+  <div class="consent-bt"><button type="button" data-consent="nao">Recusar</button><button type="button" class="sim" data-consent="sim">Aceitar</button></div>
+</div>
+<script>
+(function () {
+  // ga4: "G-XXXXXXXXXX" (Google Analytics) · ads: "AW-XXXXXXXXX" (Google Ads, opcional) · pixel: só o número (Meta)
+  var MEDICAO = { ga4: '', ads: '', pixel: '' };
+  if (!MEDICAO.ga4 && !MEDICAO.ads && !MEDICAO.pixel) return;
+  var CHAVE = 'cyr_cookies_v1', ligado = false;
+  function ler() { try { return localStorage.getItem(CHAVE); } catch (e) { return null; } }
+  function gravar(v) { try { localStorage.setItem(CHAVE, v); } catch (e) {} }
+  function carregar() {
+    if (ligado) return; ligado = true;
+    if (MEDICAO.ga4 || MEDICAO.ads) {
+      var s = document.createElement('script'); s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + (MEDICAO.ga4 || MEDICAO.ads);
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      gtag('js', new Date());
+      if (MEDICAO.ga4) gtag('config', MEDICAO.ga4);
+      if (MEDICAO.ads) gtag('config', MEDICAO.ads);
+    }
+    if (MEDICAO.pixel) {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+      s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', MEDICAO.pixel); fbq('track', 'PageView');
+    }
+  }
+  // A conversão do site é abrir o WhatsApp: pelo link ou pelo formulário (que chama window.open).
+  function contato() {
+    if (!ligado) return;
+    if (window.gtag) gtag('event', 'contato_whatsapp');
+    if (window.fbq) fbq('track', 'Contact');
+  }
+  document.addEventListener('click', function (ev) {
+    var a = ev.target.closest && ev.target.closest('a[href*="wa.me"]');
+    if (a) contato();
+  }, true);
+  var abrir = window.open;
+  window.open = function (url) { if (String(url).indexOf('wa.me') > -1) contato(); return abrir.apply(window, arguments); };
+  var aviso = document.getElementById('consent'), escolha = ler();
+  if (escolha === 'sim') carregar(); else if (escolha !== 'nao') aviso.hidden = false;
+  aviso.addEventListener('click', function (ev) {
+    var d = ev.target.getAttribute && ev.target.getAttribute('data-consent');
+    if (!d) return;
+    gravar(d); aviso.hidden = true;
+    if (d === 'sim') carregar();
+  });
+})();
+</script>
+
 </body>
 </html>
