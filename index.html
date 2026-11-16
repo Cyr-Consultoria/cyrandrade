@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Reforma Tributária, fim da 6x1 e sistemas sob medida | Cyr Andrade</title>
-<meta name="description" content="Preço por segmento para a CBS e o IBS, DRE e escala para o fim da 6x1, e sistemas de gestão sob medida. Juiz de Fora/MG e todo o Brasil.">
+<title>Consultoria de gestão e sistemas sob medida | Cyr Andrade</title>
+<meta name="description" content="Consultoria de gestão e sistemas sob medida para micro e pequena empresa: Diagnóstico Empresarial 360º, Reforma Tributária e fim da 6x1, sistemas feitos para a sua operação. Juiz de Fora/MG e todo o Brasil.">
 <link rel="canonical" href="https://cyrandrade.com.br/">
 <meta name="theme-color" content="#050607">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Reforma Tributária, fim da 6x1 e sistemas sob medida | Cyr Andrade">
-<meta property="og:description" content="Preço por segmento para a CBS e o IBS, DRE e escala para o fim da 6x1, e sistemas de gestão sob medida.">
+<meta property="og:title" content="Consultoria de gestão e sistemas sob medida | Cyr Andrade">
+<meta property="og:description" content="Diagnóstico Empresarial 360º, Reforma Tributária e fim da 6x1, e sistemas feitos para a sua operação.">
 <meta property="og:url" content="https://cyrandrade.com.br/">
 <meta property="og:image" content="https://cyrandrade.com.br/og-capa.png">
 <meta property="og:image:width" content="1200">
@@ -161,6 +161,36 @@ h3{font-weight:600;font-size:1.12rem;line-height:1.3;letter-spacing:-.01em}
 .sobe{opacity:0;transform:translateY(16px);animation:sobe .9s var(--assenta) forwards;animation-delay:calc(var(--d,0) * 90ms + 80ms)}
 @keyframes sobe{to{opacity:1;transform:none}}
 
+/* ===== abertura v8: credenciais e a faixa "agora" ===== */
+.credito{list-style:none;display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:28px;font:400 .66rem/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--tx2)}
+.credito li{display:flex;align-items:baseline;gap:8px}
+.credito b{font:300 1.4rem/1 var(--fm);letter-spacing:-.03em;color:var(--tx);text-transform:none}
+.agora{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;margin-top:22px;padding:12px 14px;min-height:44px;max-width:560px;border:1px dashed var(--linha-forte);text-decoration:none;color:var(--tx2);font-size:.92rem;transition:border-color .2s}
+.agora:hover{border-color:var(--tx2)}
+.agora .mono{font-size:.62rem;color:var(--tx)}
+.agora b{font:600 1rem/1 var(--fm);color:var(--tx)}
+.agora i{font-style:normal;margin-left:auto}
+/* ===== portas de entrada ===== */
+.portas{display:grid;gap:16px;margin-top:40px;align-items:stretch}
+@media (min-width:1000px){.portas{grid-template-columns:1.12fr 1fr 1fr}}
+.porta{display:flex;flex-direction:column;gap:14px;padding:26px 22px 24px;border:1px solid var(--linha);background:var(--bg)}
+.porta.principal{border-color:var(--linha-forte);box-shadow:inset 0 2px 0 var(--tx)}
+.porta>.mono{font-size:.64rem;color:var(--tx3)}
+.porta>svg{width:54px;height:54px}
+.porta .radar{width:100%;max-width:300px;height:auto;margin:0 auto;overflow:visible}
+.porta .radar text{font-size:15px}
+.porta h3{font-size:1.45rem;font-weight:300;letter-spacing:-.02em}
+.porta>p{color:var(--tx2)}
+.porta dl{border-top:1px dashed var(--linha)}
+.porta dt{margin-top:14px;font:400 .62rem/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--tx3)}
+.porta dd{margin-top:6px;font-size:.96rem;line-height:1.5;color:var(--tx)}
+.porta .link{display:block;margin-top:auto;align-self:stretch;padding:12px 0;line-height:1.35}
+.porta .link span{display:inline-block;margin-left:8px}
+.porta.on .radar .forma{transform:none;opacity:1}
+.porta.on .radar .pt{opacity:1}
+.pendente{display:inline-block;padding:2px 8px;border:1px dashed #FFB74D;color:#FFB74D;font:400 .72rem/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.casos-tit{margin-top:72px;font-size:clamp(1.4rem,2.6vw,2rem);font-weight:300;letter-spacing:-.02em}
+#perguntas .faq{max-width:780px}
 /* ===== Reforma Tributária ===== */
 .dupla{display:grid;gap:32px}
 @media (min-width:900px){.dupla{grid-template-columns:320px 1fr;gap:64px}}
@@ -377,11 +407,11 @@ body .consent button,body .consent button.sim{border-radius:0;background:transpa
       <span><b>CYR <i>ANDRADE</i></b><small>CONSULTORIA EMPRESARIAL</small></span>
     </a>
     <nav class="menu" aria-label="Seções">
-      <a href="#reforma">Reforma</a>
-      <a href="#escala">Fim da 6x1</a>
-      <a href="#sistemas">Sistemas</a>
-      <a href="#consultoria">Consultoria</a>
+      <a href="#portas">Por onde começar</a>
+      <a href="#quem">Quem faz</a>
       <a href="#metodo">Como funciona</a>
+      <a href="#reforma">Reforma e 6x1</a>
+      <a href="#sistemas">Sistemas</a>
     </nav>
     <a class="btn btn-sm" data-zap="Olá, Cyr. Vim pelo site e quero conversar sobre a minha empresa." href="#conversa">Conversar</a>
   </div>
@@ -394,16 +424,17 @@ body .consent button,body .consent button.sim{border-radius:0;background:transpa
   <div class="wrap abre-grid">
     <div>
       <span class="chapeu sobe">Consultoria e sistemas sob medida · Juiz de Fora/MG</span>
-      <h1 class="sobe" style="--d:1">A conta da <b>Reforma Tributária</b> e do <b>fim da 6x1</b> na sua empresa.</h1>
-      <p class="sub sobe" style="--d:2">Preço refeito por segmento para a CBS e o IBS. DRE e escala de trabalho refeitas para 42 e depois 40 horas por semana, sem redução de salário.</p>
-      <div class="leituras sobe" style="--d:3">
-        <div class="leitura"><b class="js-cbs-n">01/2027</b><span class="js-cbs-t">a CBS começa a valer</span></div>
-        <div class="leitura"><b class="js-6x1-n">12/2026</b><span class="js-6x1-t">duas folgas e 42 horas</span></div>
-      </div>
-      <div class="acao sobe" style="--d:4">
+      <h1 class="sobe" style="--d:1">Consultoria de gestão e <b>sistemas sob medida</b> para micro e pequena empresa.</h1>
+      <p class="sub sobe" style="--d:2">A ferramenta vem junto com o trabalho de gestão que faz ela virar decisão. Você pode contratar só a consultoria, só o sistema, ou os dois.</p>
+      <div class="acao sobe" style="--d:3">
         <a class="btn btn-prim" data-zap="Olá, Cyr. Vim pelo site e quero conversar sobre a minha empresa." href="#conversa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.4-.9-2.8-1.2-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1.9 2 1.2 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.2 1.4z"/></svg> Falar sobre a minha empresa</a>
-        <span class="garantia">A primeira conversa não custa nada e dura 20 minutos.</span>
       </div>
+      <ul class="credito sobe" style="--d:4">
+        <li><b>52</b>sistemas no ar</li><li><b>15</b>anos dentro de empresas</li><li><b>MBA</b>Gestão Empresarial, FGV</li>
+      </ul>
+      <a class="agora sobe" style="--d:5" href="#portas"><span class="mono">Agora</span>
+        <span><b class="js-cbs-n">01/2027</b> <span class="js-cbs-t">a CBS começa a valer</span></span>
+        <span><b class="js-6x1-n">12/2026</b> <span class="js-6x1-t">duas folgas e 42 horas</span></span><i aria-hidden="true">→</i></a>
     </div>
     <figure class="arte" aria-hidden="true">
       <svg id="prisma" viewBox="0 50 560 510"></svg>
@@ -412,10 +443,133 @@ body .consent button,body .consent button.sim{border-radius:0;background:transpa
   <span class="desce" aria-hidden="true">Rolar<i></i></span>
 </section>
 
+<!-- 02 · por onde começar -->
+<section class="sec" id="portas">
+  <div class="wrap">
+    <div class="regua rv"><b>02</b> Por onde começar</div>
+    <h2 class="rv">Três formas de <b>começar</b>.</h2>
+    <div class="portas">
+      <article class="porta principal rv" id="diag">
+        <span class="mono">01 · Ponto de partida</span>
+        <svg class="radar" id="radar" viewBox="-205 -172 410 344" aria-hidden="true"></svg>
+        <h3>Diagnóstico Empresarial 360º</h3>
+        <p>Em poucas sessões você enxerga a sua empresa inteira e sai com a lista do que resolver primeiro, ordenada pelo que mais pesa no caixa.</p>
+        <dl>
+          <dt>Para quem é</dt><dd>Para quem sabe que algo não vai bem e não sabe por onde começar.</dd>
+          <dt>Você recebe</dt><dd>Raio-X de gestão, finanças, preço, processos, equipe e mercado. Lista de problemas priorizada por impacto financeiro. Plano de ação com responsável e prazo. Reunião de devolutiva com você.</dd>
+          <dt>Prazo</dt><dd>Poucas sessões.</dd>
+          <dt>Valor</dt><dd>Proposta por escrito antes de começar.</dd>
+          <dt>Como começa</dt><dd>Uma conversa para entender o que está travando a sua empresa.</dd>
+        </dl>
+        <a class="link" data-zap="Olá, Cyr. Quero saber mais sobre: Diagnóstico Empresarial 360º." href="#conversa">Quero começar pelo diagnóstico <span>→</span></a>
+      </article>
+      <article class="porta rv" style="--d:1" id="porta-reforma">
+        <span class="mono">02 · Prazos da lei</span>
+        <svg viewBox="0 0 54 54" data-icone="guia" aria-hidden="true"></svg>
+        <h3>Reforma Tributária e fim da 6x1</h3>
+        <p>Os números da sua empresa nos dois sistemas, ano a ano da transição, e a DRE refeita com a escala de 42 e depois 40 horas.</p>
+        <dl>
+          <dt>Para quem é</dt><dd>Para quem precisa refazer preço, DRE e escala antes dos prazos da CBS e da 6x1.</dd>
+          <dt>Você recebe</dt><dd>A conta feita, o que precisa mudar na tabela de preços e a pauta pronta para a conversa com o seu contador. A escala simulada no Simulador Fim da 6x1: fechar um dia, reduzir horas, hora extra, contratar e reajustar o preço.</dd>
+          <dt>Prazo</dt><dd>Poucas sessões.</dd>
+          <dt>Valor</dt><dd>Proposta por escrito antes de começar.</dd>
+          <dt>Como começa</dt><dd>Uma conversa com o faturamento, a folha e as compras dos últimos 12 meses.</dd>
+        </dl>
+        <p class="nota">As regras da Reforma Tributária continuam em regulamentação, e a decisão formal é sempre tomada junto com o seu contador.</p>
+        <a class="link" data-zap="Olá, Cyr. Quero a conta da Reforma Tributária e do fim da 6x1 para a minha empresa." href="#conversa">Quero a conta da minha empresa <span>→</span></a>
+      </article>
+      <article class="porta rv" style="--d:2" id="porta-sistema">
+        <span class="mono">03 · Sob medida</span>
+        <svg viewBox="0 0 54 54" data-icone="pacote" aria-hidden="true"></svg>
+        <h3>Sistema sob medida</h3>
+        <p>DRE e caixa, orçamento e comissão, manutenção e PCP, ponto e folha. Sistemas feitos para a sua operação.</p>
+        <dl>
+          <dt>Para quem é</dt><dd>Para quem já sabe o que precisa controlar e hoje resolve na planilha e no WhatsApp.</dd>
+          <dt>Você recebe</dt><dd>O sistema na nuvem, com acesso por pessoa, os cálculos abertos e o treinamento da sua equipe. Também há versão local.</dd>
+          <dt>Prazo</dt><dd>Definido na proposta, com versões que você testa.</dd>
+          <dt>Valor</dt><dd>Proposta por escrito. O desenvolvimento é pago uma vez; depois, só a hospedagem, sem cobrança por usuário.</dd>
+          <dt>Como começa</dt><dd>Uma conversa sobre como a sua operação funciona hoje.</dd>
+        </dl>
+        <a class="link" data-zap="Olá, Cyr. Quero um sistema sob medida para a minha empresa." href="#conversa">Quero um sistema sob medida <span>→</span></a>
+      </article>
+    </div>
+    <p class="nota rv" style="margin-top:24px">Nas três, você recebe por escrito o que será entregue, o prazo e o valor. Sem "a partir de", sem surpresa no meio do caminho.</p>
+  </div>
+</section>
+
+<!-- 03 · quem faz e quem já usa -->
+<section class="sec alt" id="quem">
+  <div class="wrap">
+    <div class="regua rv"><b>03</b> Quem faz e quem já usa</div>
+    <div class="duo">
+      <div class="rv">
+        <h2><b>Cyr Andrade</b></h2>
+        <p class="texto">Administrador e consultor empresarial. Passei os últimos 15 anos dentro de empresas de verdade, resolvendo o que aperta: caixa curto, preço errado, processo travado, equipe sem rumo.</p>
+        <p class="texto">Durante muito tempo a resposta para tudo foi a planilha. Com inteligência artificial, aquilo que antes exigia uma equipe de desenvolvimento e meses de projeto hoje eu entrego em semanas, por um valor que cabe no orçamento de uma empresa pequena. Deixei de montar planilha melhor e passei a construir o sistema que a planilha estava tentando imitar.</p>
+        <p class="credencial">Bacharel em Administração (FJF) · MBA em Gestão Empresarial (FGV)</p>
+      </div>
+      <ul class="numeros rv" style="--d:1">
+        <li><b>52</b><span>sistemas no ar, feitos sob medida</span></li>
+        <li><b>15</b><span>anos dentro de empresas</span></li>
+        <li><b>MBA</b><span>em Gestão Empresarial pela FGV</span></li>
+        <li><b>BR</b><span>Juiz de Fora e Zona da Mata presencial, o resto do Brasil online</span></li>
+      </ul>
+    </div>
+    <h3 class="casos-tit rv"><b>Sistemas em produção, usados por empresas reais.</b></h3>
+  </div>
+  <div class="faixa" id="faixa" tabindex="0" aria-label="Casos de clientes">
+    <article class="caso rv"><svg class="caso-fig" viewBox="0 0 360 240" data-fig="os" aria-hidden="true"></svg><div><span class="mono">Locação de máquinas</span><h3>Manutenção e ordens de serviço</h3><p>As OS viviam em planilha. Hoje o painel separa o custo da frota própria do serviço para cliente, com retrabalho e horas improdutivas medidos por OS.</p></div></article>
+    <article class="caso rv" style="--d:1"><svg class="caso-fig" viewBox="0 0 360 240" data-fig="pcp" aria-hidden="true"></svg><div><span class="mono">Indústria</span><h3>PCP com acesso por perfil</h3><p>Ordens, prazos e capacidade saíram do papel. Cada função enxerga o que lhe cabe, com manual de operação entregue junto.</p></div></article>
+    <article class="caso rv" style="--d:2"><svg class="caso-fig" viewBox="0 0 360 240" data-fig="meta" aria-hidden="true"></svg><div><span class="mono">Comunicação visual</span><h3>Meta, comissão e ticket médio</h3><p>A comissão era recalculada à mão todo mês. Agora sai pela regra da casa, por vendedor, comparada com o período anterior.</p></div></article>
+    <article class="caso rv" style="--d:3"><svg class="caso-fig" viewBox="0 0 360 240" data-fig="dre" aria-hidden="true"></svg><div><span class="mono">Varejo e serviços</span><h3>DRE gerencial e CMV</h3><p>O resultado só aparecia semanas depois, com a contabilidade. Agora aparece no mês, com o CMV apurado por unidade.</p></div></article>
+    <article class="caso segs-card rv" style="--d:4"><svg class="caso-fig" viewBox="0 0 360 240" data-fig="grade" aria-hidden="true"></svg><div><span class="mono">Segmentos atendidos</span><p>Alimentação · Auto center · Comércio · Comunicação visual · Distribuição de medicamentos · E-commerce · Fisioterapia e academia · Hotelaria · Indústria · Indústria gráfica · Locação de máquinas · Logística · Varejo · Veículos</p></div></article>
+  </div>
+  <div class="wrap setas">
+    <button class="seta" data-ir="-1" aria-label="Caso anterior"><svg viewBox="0 0 24 24"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4-4.6-4.6z"/></svg></button>
+    <button class="seta" data-ir="1" aria-label="Próximo caso"><svg viewBox="0 0 24 24"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4 4.6 4.6z"/></svg></button>
+  </div>
+</section>
+
+<!-- 08 · etapas -->
+<section class="sec" id="metodo">
+  <div class="wrap">
+    <div class="regua rv"><b>04</b> Do primeiro contato à entrega</div>
+    <h2 class="rv"><b>Você sabe o que vem em cada etapa.</b></h2>
+    <ol class="etapas">
+      <li class="rv"><span class="no">01</span><div><h3>Primeira conversa</h3><p>Uma conversa no WhatsApp ou em vídeo, para você me contar o que está travando. Se eu não for a pessoa certa, digo na hora e indico o caminho.</p></div></li>
+      <li class="rv" style="--d:1"><span class="no">02</span><div><h3>Entendimento da operação</h3><p>Eu olho como a sua empresa funciona de verdade: as planilhas que existem, quem faz o quê e onde a informação se perde. Sem isso, sistema nenhum resolve.</p></div></li>
+      <li class="rv" style="--d:2"><span class="no">03</span><div><h3>Proposta com escopo fechado</h3><p>Você recebe por escrito o que será entregue, o prazo e o valor. Sem "a partir de", sem surpresa no meio do caminho.</p></div></li>
+      <li class="rv" style="--d:3"><span class="no">04</span><div><h3>Construção com você junto</h3><p>O sistema é montado em versões e você testa cada uma. Ajustamos com a sua equipe usando de verdade, não com você aprovando tela bonita.</p></div></li>
+      <li class="rv" style="--d:4"><span class="no">05</span><div><h3>Entrega e treinamento</h3><p>Você e a sua equipe aprendem a operar. O sistema fica com você, com os cálculos abertos, e o controle não depende mais de mim.</p></div></li>
+    </ol>
+    <p class="nota rv" style="margin-top:8px">É o caminho do sistema sob medida. No Diagnóstico e na conta da Reforma e da 6x1, o trabalho termina na devolutiva com você, com o plano e os números por escrito.</p>
+  </div>
+</section>
+
+<!-- 05 · dores -->
+<section class="sec" id="dores">
+  <div class="wrap">
+    <div class="regua rv"><b>05</b> Provavelmente você já viveu isso</div>
+    <h2 class="rv"><b>Não é falta de esforço.</b> É falta de informação na hora certa.</h2>
+    <ol class="legenda-dores">
+      <li class="rv"><span class="n">D.01</span>Você fecha o mês com boas vendas e mesmo assim não sobra dinheiro em caixa.</li>
+      <li class="rv" style="--d:1"><span class="n">D.02</span>Cada orçamento sai de um jeito, depende de quem fez, e ninguém garante a margem.</li>
+      <li class="rv"><span class="n">D.03</span>O preço foi formado "olhando o concorrente" e ninguém sabe se ele paga os custos.</li>
+      <li class="rv" style="--d:1"><span class="n">D.04</span>A folha chega fechada do contador e você só confere se bate com o mês anterior.</li>
+      <li class="rv"><span class="n">D.05</span>Contratar é sempre correria: currículo no WhatsApp, entrevista sem roteiro, aposta no feeling.</li>
+      <li class="rv" style="--d:1"><span class="n">D.06</span>Funcionário novo aprende "vendo o colega fazer" e leva três meses para render.</li>
+    </ol>
+    <div class="raiz">
+      <p class="rv">Todos esses problemas têm a mesma raiz: a informação existe na sua empresa, mas está espalhada em planilhas, cadernos e na cabeça das pessoas. Organizar isso numa ferramenta única é o que transforma esforço em resultado.</p>
+
+    </div>
+  </div>
+</section>
+
 <!-- 02 · Reforma Tributária -->
 <section class="sec" id="reforma">
   <div class="wrap">
-    <div class="regua rv"><b>02</b> Reforma Tributária</div>
+    <div class="regua rv"><b>06</b> Reforma Tributária</div>
     <div class="dupla">
       <div class="rv">
         <div class="conta js-cbs-n">01/2027</div>
@@ -460,7 +614,7 @@ body .consent button,body .consent button.sim{border-radius:0;background:transpa
 <!-- 03 · fim da 6x1 -->
 <section class="sec alt" id="escala">
   <div class="wrap">
-    <div class="regua rv"><b>03</b> Fim da escala 6x1</div>
+    <div class="regua rv"><b>07</b> Fim da escala 6x1</div>
     <div class="dupla">
       <div class="rv">
         <div class="conta js-6x1-n">12/2026</div>
@@ -487,35 +641,10 @@ body .consent button,body .consent button.sim{border-radius:0;background:transpa
   </div>
 </section>
 
-<!-- 04 · dores -->
-<section class="sec" id="dores">
-  <div class="wrap">
-    <div class="regua rv"><b>04</b> Provavelmente você já viveu isso</div>
-    <h2 class="rv"><b>Não é falta de esforço.</b> É falta de informação na hora certa.</h2>
-    <ol class="legenda-dores">
-      <li class="rv"><span class="n">D.01</span>Você fecha o mês com boas vendas e mesmo assim não sobra dinheiro em caixa.</li>
-      <li class="rv" style="--d:1"><span class="n">D.02</span>Cada orçamento sai de um jeito, depende de quem fez, e ninguém garante a margem.</li>
-      <li class="rv"><span class="n">D.03</span>O preço foi formado "olhando o concorrente" e ninguém sabe se ele paga os custos.</li>
-      <li class="rv" style="--d:1"><span class="n">D.04</span>A folha chega fechada do contador e você só confere se bate com o mês anterior.</li>
-      <li class="rv"><span class="n">D.05</span>Contratar é sempre correria: currículo no WhatsApp, entrevista sem roteiro, aposta no feeling.</li>
-      <li class="rv" style="--d:1"><span class="n">D.06</span>Funcionário novo aprende "vendo o colega fazer" e leva três meses para render.</li>
-    </ol>
-    <div class="raiz">
-      <p class="rv">Todos esses problemas têm a mesma raiz: a informação existe na sua empresa, mas está espalhada em planilhas, cadernos e na cabeça das pessoas. Organizar isso numa ferramenta única é o que transforma esforço em resultado.</p>
-      <ul class="numeros rv" style="--d:1">
-        <li><b>52</b><span>sistemas no ar, feitos sob medida</span></li>
-        <li><b>15</b><span>anos dentro de empresas</span></li>
-        <li><b>MBA</b><span>em Gestão Empresarial pela FGV</span></li>
-        <li><b>BR</b><span>Juiz de Fora e Zona da Mata presencial, o resto do Brasil online</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
 <!-- 05 · sistemas -->
 <section class="sec alt" id="sistemas">
   <div class="wrap">
-    <div class="regua rv"><b>05</b> Sistemas</div>
+    <div class="regua rv"><b>08</b> Sistemas</div>
     <h2 class="rv">O sistema que a sua empresa precisa <b>ninguém vende pronto</b>.</h2>
     <p class="texto rv" style="margin-top:20px">Você paga por um sistema de prateleira que cobre só parte da operação, resolve o resto no WhatsApp e na planilha, e ainda descobre o resultado do mês quando o dinheiro já acabou.</p>
     <div class="tour">
@@ -556,28 +685,9 @@ body .consent button,body .consent button.sim{border-radius:0;background:transpa
 <!-- 06 · consultoria -->
 <section class="sec" id="consultoria">
   <div class="wrap">
-    <div class="regua rv"><b>06</b> Consultoria</div>
+    <div class="regua rv"><b>09</b> Consultoria</div>
     <h2 class="rv"><b>Sistema sem gestão vira planilha bonita.</b> Por isso a ferramenta vem junto com o trabalho de gestão que faz ela virar decisão.</h2>
     <p class="texto rv" style="margin-top:18px">Você pode contratar só a consultoria, só o sistema, ou os dois.</p>
-
-    <div class="diag rv" id="diag">
-      <div>
-        <span class="chapeu">Ponto de partida</span>
-        <h3>Diagnóstico Empresarial 360º</h3>
-        <p>Em poucas sessões você enxerga a sua empresa inteira e sai com a lista do que resolver primeiro, ordenada pelo que mais pesa no caixa.</p>
-        <ol class="recebe">
-          <li>Raio-X de gestão, finanças, preço, processos, equipe e mercado</li>
-          <li>Lista de problemas priorizada por impacto financeiro</li>
-          <li>Plano de ação com responsável e prazo</li>
-          <li>Reunião de devolutiva com você</li>
-        </ol>
-        <a class="link" data-zap="Olá, Cyr. Quero saber mais sobre: Diagnóstico Empresarial 360º." href="#conversa">Quero esse <span>→</span></a>
-      </div>
-      <figure aria-hidden="true">
-        <svg class="radar" id="radar" viewBox="-175 -165 350 330"></svg>
-        <figcaption class="radar-leg">As seis áreas que o diagnóstico olha</figcaption>
-      </figure>
-    </div>
 
     <div class="familias">
       <div class="fam rv"><span class="fam-n">F.01</span><h3>Finanças</h3>
@@ -601,71 +711,28 @@ body .consent button,body .consent button.sim{border-radius:0;background:transpa
   </div>
 </section>
 
-<!-- 07 · casos -->
-<section class="sec alt" id="casos">
+<!-- 10 · perguntas -->
+<section class="sec alt" id="perguntas">
   <div class="wrap">
-    <div class="regua rv"><b>07</b> Quem já usa</div>
-    <h2 class="rv"><b>Sistemas em produção, usados por empresas reais.</b> Não são protótipos nem telas de demonstração.</h2>
-  </div>
-  <div class="faixa" id="faixa" tabindex="0" aria-label="Casos de clientes">
-    <article class="caso rv"><svg class="caso-fig" viewBox="0 0 360 240" data-fig="os" aria-hidden="true"></svg><div><span class="mono">Locação de máquinas</span><h3>Manutenção e ordens de serviço</h3><p>As OS viviam em planilha. Hoje o painel separa o custo da frota própria do serviço para cliente, com retrabalho e horas improdutivas medidos por OS.</p></div></article>
-    <article class="caso rv" style="--d:1"><svg class="caso-fig" viewBox="0 0 360 240" data-fig="pcp" aria-hidden="true"></svg><div><span class="mono">Indústria</span><h3>PCP com acesso por perfil</h3><p>Ordens, prazos e capacidade saíram do papel. Cada função enxerga o que lhe cabe, com manual de operação entregue junto.</p></div></article>
-    <article class="caso rv" style="--d:2"><svg class="caso-fig" viewBox="0 0 360 240" data-fig="meta" aria-hidden="true"></svg><div><span class="mono">Comunicação visual</span><h3>Meta, comissão e ticket médio</h3><p>A comissão era recalculada à mão todo mês. Agora sai pela regra da casa, por vendedor, comparada com o período anterior.</p></div></article>
-    <article class="caso rv" style="--d:3"><svg class="caso-fig" viewBox="0 0 360 240" data-fig="dre" aria-hidden="true"></svg><div><span class="mono">Varejo e serviços</span><h3>DRE gerencial e CMV</h3><p>O resultado só aparecia semanas depois, com a contabilidade. Agora aparece no mês, com o CMV apurado por unidade.</p></div></article>
-    <article class="caso segs-card rv" style="--d:4"><svg class="caso-fig" viewBox="0 0 360 240" data-fig="grade" aria-hidden="true"></svg><div><span class="mono">Segmentos atendidos</span><p>Alimentação · Auto center · Comércio · Comunicação visual · Distribuição de medicamentos · E-commerce · Fisioterapia e academia · Hotelaria · Indústria · Indústria gráfica · Locação de máquinas · Logística · Varejo · Veículos</p></div></article>
-  </div>
-  <div class="wrap setas">
-    <button class="seta" data-ir="-1" aria-label="Caso anterior"><svg viewBox="0 0 24 24"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4-4.6-4.6z"/></svg></button>
-    <button class="seta" data-ir="1" aria-label="Próximo caso"><svg viewBox="0 0 24 24"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4 4.6 4.6z"/></svg></button>
-  </div>
-</section>
-
-<!-- 08 · etapas -->
-<section class="sec" id="metodo">
-  <div class="wrap">
-    <div class="regua rv"><b>08</b> Do primeiro contato à entrega</div>
-    <h2 class="rv"><b>Você sabe o que vem em cada etapa.</b></h2>
-    <ol class="etapas">
-      <li class="rv"><span class="no">01</span><div><h3>Conversa, sem custo</h3><p>Uma conversa de 20 minutos, no WhatsApp ou em vídeo, para você me contar o que está travando. Se eu não for a pessoa certa, digo na hora e indico o caminho.</p></div></li>
-      <li class="rv" style="--d:1"><span class="no">02</span><div><h3>Entendimento da operação</h3><p>Eu olho como a sua empresa funciona de verdade: as planilhas que existem, quem faz o quê e onde a informação se perde. Sem isso, sistema nenhum resolve.</p></div></li>
-      <li class="rv" style="--d:2"><span class="no">03</span><div><h3>Proposta com escopo fechado</h3><p>Você recebe por escrito o que será entregue, o prazo e o valor. Sem "a partir de", sem surpresa no meio do caminho.</p></div></li>
-      <li class="rv" style="--d:3"><span class="no">04</span><div><h3>Construção com você junto</h3><p>O sistema é montado em versões e você testa cada uma. Ajustamos com a sua equipe usando de verdade, não com você aprovando tela bonita.</p></div></li>
-      <li class="rv" style="--d:4"><span class="no">05</span><div><h3>Entrega e treinamento</h3><p>Você e a sua equipe aprendem a operar. O sistema fica com você, com os cálculos abertos, e o controle não depende mais de mim.</p></div></li>
-    </ol>
-  </div>
-</section>
-
-<!-- 09 · quem faz + perguntas -->
-<section class="sec alt" id="quem">
-  <div class="wrap">
-    <div class="regua rv"><b>09</b> Quem faz</div>
-    <div class="duo">
-      <div class="rv">
-        <h2><b>Cyr Andrade</b></h2>
-        <p class="texto">Administrador e consultor empresarial. Passei os últimos 15 anos dentro de empresas de verdade, resolvendo o que aperta: caixa curto, preço errado, processo travado, equipe sem rumo.</p>
-        <p class="texto">Durante muito tempo a resposta para tudo foi a planilha. Com inteligência artificial, aquilo que antes exigia uma equipe de desenvolvimento e meses de projeto hoje eu entrego em semanas, por um valor que cabe no orçamento de uma empresa pequena. Deixei de montar planilha melhor e passei a construir o sistema que a planilha estava tentando imitar.</p>
-        <p class="credencial">Bacharel em Administração (FJF) · MBA em Gestão Empresarial (FGV)</p>
-      </div>
+    <div class="regua rv"><b>10</b> Perguntas frequentes</div>
       <div class="faq rv" style="--d:1">
-        <span class="rotulo">Perguntas frequentes</span>
-        <details><summary>Quanto custa um sistema desses?</summary><p>Depende do tamanho do problema, não do tamanho da sua empresa. Um orçamento personalizado é bem mais simples que um DRF completo com projeção de caixa. Por isso o valor só sai depois da conversa inicial, que é gratuita, e vem por escrito, com escopo e prazo fechados.</p></details>
+                <details><summary>Quanto custa um sistema desses?</summary><p>Depende do tamanho do problema, não do tamanho da sua empresa. Um orçamento personalizado é bem mais simples que um DRF completo com projeção de caixa. Por isso o valor só sai depois da conversa inicial e vem por escrito, com escopo e prazo fechados.</p></details>
         <details><summary>Quanto custa manter o sistema no ar?</summary><p>O desenvolvimento é pago uma vez. Depois existe só o custo de hospedagem, dimensionado ao seu uso e informado na proposta, sem cobrança por usuário. Se você preferir não ter esse custo, entrego a versão local, que roda na sua máquina.</p></details>
         <details><summary>Isso substitui o meu ERP?</summary><p>Na maioria das vezes não, e nem é o objetivo. O ERP cuida da nota fiscal e da obrigação. O que eu construo cobre aquilo que o ERP não faz do seu jeito, e que hoje você resolve na planilha, no caderno ou na base do improviso.</p></details>
         <details><summary>Meus números ficam seguros?</summary><p>Sim. Na nuvem, o acesso é individual e registrado, com backup e histórico de alterações. O projeto pode ser conduzido sob acordo de confidencialidade, e nenhum número de cliente vira material de divulgação.</p></details>
         <details><summary>Minha empresa é pequena demais para isso?</summary><p>É justamente o contrário. Empresa grande já tem controladoria, RH e TI. Quem mais sente falta de informação organizada é a micro e a pequena, onde o dono acumula funções e decide no escuro.</p></details>
       </div>
-    </div>
   </div>
 </section>
 
 <!-- 10 · contato -->
 <section class="fecho" id="conversa">
   <div class="wrap">
-    <div class="regua rv"><b>10</b> Contato</div>
+    <div class="regua rv"><b>11</b> Contato</div>
     <div class="fecho-grid">
       <div class="rv">
-        <h2><b>A primeira conversa não custa nada e dura 20 minutos.</b></h2>
-        <p class="texto">Me conte o que está travando a sua empresa. Você sai da conversa sabendo por onde começar, mesmo que a resposta seja que ainda não é hora de contratar ninguém.</p>
+        <h2><b>Me conte o que está travando a sua empresa.</b></h2>
+        <p class="texto">Você sai da conversa sabendo por onde começar, mesmo que a resposta seja que ainda não é hora de contratar ninguém.</p>
         <p class="contato-linha">Juiz de Fora/MG · Zona da Mata · online para todo o Brasil</p>
       </div>
       <div class="rv" style="--d:1">
@@ -678,15 +745,14 @@ body .consent button,body .consent button.sim{border-radius:0;background:transpa
         <label for="a">O que mais pesa hoje</label>
         <select id="a" name="a">
           <option selected>Ainda não sei, quero conversar</option>
-          <option>Reforma Tributária</option>
+          <option>Diagnóstico Empresarial 360º</option>
+          <option>Reforma Tributária e fim da 6x1</option>
+          <option>Sistema sob medida</option>
           <option>Financeiro, caixa e BPO</option>
           <option>Vendas e comercial</option>
-          <option>Operação e produção</option>
-          <option>Fim da 6x1, folha e DP</option>
-          <option>Diagnóstico Empresarial 360º</option>
+          <option>Pessoas, folha e DP</option>
         </select>
         <button class="btn btn-prim" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.4-.9-2.8-1.2-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1.9 2 1.2 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.2.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.2.1.7-.2 1.4z"/></svg> Abrir no WhatsApp</button>
-        <p class="garantia-form">A primeira conversa não custa nada e dura 20 minutos.</p>
         <p class="aviso">Abre o WhatsApp com a mensagem pronta. Este site não guarda o que você escreve.</p>
       </form>
       </div>
@@ -752,7 +818,7 @@ body .consent button,body .consent button.sim{border-radius:0;background:transpa
   if (dC > 0) { var c1 = conta(dC); escreve('js-cbs', c1.n, c1.u + ' para a CBS começar a valer'); } else escreve('js-cbs', '2027', 'a CBS já está valendo');
   if (d1 > 0) { var c2 = conta(d1); escreve('js-6x1', c2.n, c2.u + ' para as duas folgas e as 42 horas'); }
   else if (d2 > 0) escreve('js-6x1', '42 h', 'por semana e duas folgas desde 16/12/2026; 40 h em 12/2027');
-  else escreve('js-6x1', '40 h', 'por semana e duas folgas desde 16/12/2027');
+  else escreve('js-6x1', '40 h', 'por semana desde 16/12/2027; duas folgas desde 16/12/2026');
 
   /* linha do tempo da Reforma: 2026 a 2033 em quatro colunas iguais */
   (function () {
@@ -831,7 +897,7 @@ body .consent button,body .consent button.sim{border-radius:0;background:transpa
     linha(prisma, [iso(CX, CY, -A - 34, 0, -24), iso(CX, CY, A + 34, 0, -24)], 'centro', 0);
     linha(prisma, [iso(CX, CY, 0, -B - 34, -24), iso(CX, CY, 0, B + 34, -24)], 'centro', 0);
     linha(prisma, [[CX, CY + 40], [CX, 74]], 'centro', 0);
-    var camadas = [['03 Caixa', 'split payment', colunas], ['02 Crédito', 'IBS e CBS', livro], ['01 Preço', 'imposto por fora', nota]];
+    var camadas = [['03 Caixa', 'fluxo projetado', colunas], ['02 Resultado', 'DRE gerencial', livro], ['01 Preço', 'formação e margem', nota]];
     camadas.forEach(function (c, i) {
       var g = el('g', {}, prisma), k = 1 + i * 3, t = chapa(g, CX, CY, A, B, 0, H, k);
       c[2](g, CX, CY, A, B, H, k + 1);
@@ -869,7 +935,7 @@ body .consent button,body .consent button.sim{border-radius:0;background:transpa
     [baseY, topoY].forEach(function (y) { el('path', { d: 'M' + (x - 6) + ',' + y.toFixed(1) + 'H' + (x + 6), 'class': 'tr fino' }, c); });
     var my2 = ((baseY + topoY) / 2).toFixed(1);
     var t = el('text', { x: x - 8, y: my2, 'class': 'svg-tx', transform: 'rotate(-90 ' + (x - 8) + ' ' + my2 + ')', 'text-anchor': 'middle' }, c);
-    t.textContent = 'transição 2026–2033';
+    t.textContent = 'do preço ao caixa';
   }
   explode(reduz ? 1 : 0);
 
